@@ -1,0 +1,104 @@
+/* ============================================================
+   GLOBAL CSS — Wedding Invitation Design System
+   Imported once via main.js
+   ============================================================ */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Montserrat:wght@300;400;500;600&family=Moul&family=Hanuman:wght@400;700&display=swap');
+
+/* ── Custom Properties ───────────────────────────────────── */
+:root {
+  /* Palette (matched to reference photo) */
+  --cream:        #fdf8f0;
+  --cream-mid:    #f8eddf;
+  --cream-deep:   #f0dece;
+  --petal-blush:  #f5c6cc;
+  --rose-mid:     #d9718b;
+  --rose-deep:    #a63856;
+  --coral:        #e05d72;
+  --gold-light:   #f5d98e;
+  --gold-mid:     #d4a43a;
+  --gold-deep:    #9e6e10;
+  --purple-lt:    #c4a8f0;
+  --purple-mid:   #8b5fc9;
+  --purple-deep:  #52328a;
+  --sage-lt:      #a5c8b0;
+  --sage-mid:     #5a8a6c;
+  --text-dark:    #2e1c16;
+  --text-mid:     #6b4038;
+  --text-lt:      #9e7060;
+
+  /* Typography */
+  --font-script:  'Alex Brush', cursive;
+  --font-serif:   'Cormorant Garamond', Georgia, serif;
+  --font-khmer:   'Moul', 'Hanuman', serif;
+  --font-khmer2:  'Hanuman', sans-serif;
+  --font-cap:     'Cinzel', serif;
+  --font-body:    'Montserrat', sans-serif;
+
+  /* Reusable Gradients */
+  --gold-gradient: linear-gradient(135deg,
+    #f5d98e 0%, #d4a43a 35%, #a07018 55%, #d4a43a 75%, #f5d98e 100%);
+  --page-bg: linear-gradient(175deg, #fdf5ec 0%, #f9eddf 30%, #fbeee4 60%, #f4e8d8 100%);
+}
+
+/* ── Reset ───────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Use a slightly smaller base on small phones (320px) */
+  font-size: 15px;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--cream);
+  color: var(--text-dark);
+  overflow-x: hidden;
+  min-height: 100svh;
+  -webkit-font-smoothing: antialiased;
+
+  /* Mobile-specific: disable browser tap highlight & elastic overscroll */
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: none;
+  /* Respect notch / home-bar safe areas on iOS */
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* ── Utility: Gold text ──────────────────────────────────── */
+.text-gold {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Utility: Fade-in animations ─────────────────────────── */
+.fade-in {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Floating petal keyframe ─────────────────────────────── */
+@keyframes petalFall {
+  0%   { transform: translateY(0) rotate(0deg) scale(1);     opacity: 0; }
+  10%  { opacity: 0.7; }
+  90%  { opacity: 0.45; }
+  100% { transform: translateY(110vh) rotate(720deg) scale(0.6); opacity: 0; }
+}
+
+/* ── Scroll-hint bounce ──────────────────────────────────── */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(6px); }
+}
