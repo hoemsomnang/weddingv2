@@ -49,10 +49,10 @@
   width: 100%;
   height: auto;
   display: block;
-  opacity: 0.45;
-  filter: blur(4px) saturate(1.15) brightness(1.02);
-  -webkit-mask-image: radial-gradient(ellipse 70% 65% at 50% 50%, black 30%, transparent 100%);
-  mask-image: radial-gradient(ellipse 70% 65% at 50% 50%, black 30%, transparent 100%);
+  opacity: 0.52;
+  filter: blur(2px) saturate(1.15) brightness(1.02);
+  -webkit-mask-image: radial-gradient(ellipse 75% 70% at 50% 50%, black 45%, transparent 100%);
+  mask-image: radial-gradient(ellipse 75% 70% at 50% 50%, black 45%, transparent 100%);
   pointer-events: none;
   animation: gazeboFadeIn 2s ease-out both;
 }
@@ -63,7 +63,7 @@
     transform: translateY(12px) scale(0.96);
   }
   to {
-    opacity: 0.45;
+    opacity: 0.52;
     transform: translateY(0) scale(1);
   }
 }
@@ -220,6 +220,21 @@ position: absolute;
   flex: 1;
 }
 
+/* Luminous soft ambient backdrop behind content to make typography pop */
+.cover-content::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(92%, 480px);
+  height: 75%;
+  background: radial-gradient(ellipse at center, rgba(255, 252, 246, 0.72) 0%, rgba(255, 250, 242, 0.45) 48%, transparent 76%);
+  pointer-events: none;
+  z-index: -1;
+  filter: blur(10px);
+}
+
 /* ── Entrance animations ────────────────────────────────── */
 .fade-in {
   opacity: 0;
@@ -242,11 +257,16 @@ position: absolute;
   font-weight: 700;
   line-height: 1.5;
   margin-bottom: 8px;
-  background: var(--gold-gradient);
+  background: linear-gradient(135deg, #e5b342 0%, #b87b14 42%, #865205 68%, #c99222 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  filter: drop-shadow(0 1px 2px rgba(160, 110, 20, 0.25));
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  filter:
+    drop-shadow(0 0 1px rgba(255, 255, 255, 0.95))
+    drop-shadow(0 1px 1px rgba(255, 255, 255, 0.8))
+    drop-shadow(0 1.5px 3px rgba(70, 35, 5, 0.5));
 }
 
 /* ── Monogram crest ─────────────────────────────────────── */
@@ -292,22 +312,30 @@ position: absolute;
 
 /* ── Khmer subtitle ─────────────────────────────────────── */
 .khmer-sub {
-font-family: var(--font-khmer), 'Hanuman', serif;
-    font-size: clamp(15px, 3.8vw, 18px);
-    font-weight: 700;
-    line-height: 1.8;
-    background: var(--gold-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    filter: drop-shadow(0 1px 2px rgba(160, 110, 20, 0.25));
+  font-family: var(--font-khmer), 'Hanuman', serif;
+  font-size: clamp(15px, 3.8vw, 18px);
+  font-weight: 700;
+  line-height: 1.8;
+  background: linear-gradient(135deg, #e5b342 0%, #b87b14 42%, #865205 68%, #c99222 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  filter:
+    drop-shadow(0 0 1px rgba(255, 255, 255, 0.95))
+    drop-shadow(0 1px 1px rgba(255, 255, 255, 0.8))
+    drop-shadow(0 1.5px 3px rgba(70, 35, 5, 0.5));
 }
 
 .khmer-sub.khmer-sub-bold {
   font-family: var(--font-khmer), 'Hanuman', serif;
   font-weight: 700;
   font-size: clamp(15px, 3.8vw, 18px);
-  filter: drop-shadow(0 1px 2px rgba(160, 110, 20, 0.25));
+  filter:
+    drop-shadow(0 0 1px rgba(255, 255, 255, 0.95))
+    drop-shadow(0 1px 1px rgba(255, 255, 255, 0.8))
+    drop-shadow(0 1.5px 3px rgba(70, 35, 5, 0.5));
 }
 
 /* ── Date block ─────────────────────────────────────────── */
@@ -372,11 +400,16 @@ font-family: var(--font-khmer), 'Hanuman', serif;
   font-weight: 700;
   letter-spacing: 0.6px;
   margin-bottom: 2px;
-  background: var(--gold-gradient);
+  background: linear-gradient(135deg, #e5b342 0%, #b87b14 42%, #865205 68%, #c99222 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  filter: drop-shadow(0 1px 2px rgba(160, 110, 20, 0.25));
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  filter:
+    drop-shadow(0 0 1px rgba(255, 255, 255, 0.95))
+    drop-shadow(0 1px 1px rgba(255, 255, 255, 0.8))
+    drop-shadow(0 1.5px 3px rgba(70, 35, 5, 0.5));
 }
 
 .guest-divider-svg {
@@ -440,18 +473,23 @@ font-family: var(--font-khmer), 'Hanuman', serif;
 
 .btn-open-text {
   font-family: var(--font-khmer), 'Hanuman', serif;
-  font-size: clamp(10px, 2.8vw, 12px);
+  font-size: clamp(10.5px, 3vw, 12.5px);
   font-weight: 700;
-  letter-spacing: 0.2px;
+  letter-spacing: 0.3px;
   line-height: 1.5;
-  padding: 3px 4px;
+  padding: 3px 6px;
   display: inline-block;
   white-space: nowrap;
-  background: var(--gold-gradient);
+  background: linear-gradient(135deg, #e5b342 0%, #b87b14 42%, #865205 68%, #c99222 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  filter: drop-shadow(0 1px 2px rgba(160, 110, 20, 0.28));
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  filter:
+    drop-shadow(0 0 1px rgba(255, 255, 255, 0.95))
+    drop-shadow(0 1px 1px rgba(255, 255, 255, 0.85))
+    drop-shadow(0 1.5px 2.5px rgba(70, 35, 5, 0.55));
 }
 
 .btn-open-subtext {
@@ -848,7 +886,7 @@ font-family: var(--font-khmer), 'Hanuman', serif;
     transform: translate(-50%, -46%);
   }
   .bg-gazebo-img {
-    filter: blur(5px) saturate(1.15) brightness(1.02);
+    filter: blur(2.5px) saturate(1.15) brightness(1.02);
   }
 
   /* Top floral arrangement scaled for iPad */
