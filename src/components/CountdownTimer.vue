@@ -30,20 +30,28 @@ let timer = null
 onMounted(() => { timer = setInterval(() => { now.value = Date.now() }, 1000) })
 onUnmounted(() => clearInterval(timer))
 
-function pad(n) { return String(Math.max(0, n)).padStart(2, '0') }
+function toKhmerNumber(n) {
+  const khmerDigits = ['០', '១', '២', '៣', '៤', '៥', '៦', '៧', '៨', '៩']
+  return String(n).replace(/[0-9]/g, d => khmerDigits[d])
+}
+
+function pad(n) {
+  const padded = String(Math.max(0, n)).padStart(2, '0')
+  return toKhmerNumber(padded)
+}
 
 const labels = invitation.countdownLabels || {
-  days: 'Days',
-  hours: 'Hours',
-  mins: 'Mins',
-  secs: 'Secs',
+  days: 'ថ្ងៃ',
+  hours: 'ម៉ោង',
+  mins: 'នាទី',
+  secs: 'វិនាទី',
 }
 
 const units = computed(() => {
   const diff = new Date(props.targetDate) - now.value
   if (diff <= 0) return [
-    { label: labels.days,  value: '00' }, { label: labels.hours, value: '00' },
-    { label: labels.mins,  value: '00' }, { label: labels.secs,  value: '00' },
+    { label: labels.days,  value: toKhmerNumber('00') }, { label: labels.hours, value: toKhmerNumber('00') },
+    { label: labels.mins,  value: toKhmerNumber('00') }, { label: labels.secs,  value: toKhmerNumber('00') },
   ]
   return [
     { label: labels.days,  value: pad(Math.floor(diff / 86400000)) },
@@ -70,8 +78,8 @@ const units = computed(() => {
 }
 
 .num {
-  font-family: var(--font-cap);
-  font-size: 7vw;            /* ~28px on 400px phone */
+  font-family: var(--font-khmer), var(--font-khmer2), var(--font-cap);
+  font-size: 7.2vw;          /* ~29px on 400px phone */
   font-weight: 700;
   line-height: 1;
   background: var(--gold-gradient);
@@ -89,11 +97,15 @@ const units = computed(() => {
 }
 
 .unit-label {
-  font-family: var(--font-cap);
-  font-size: 2.5vw;          /* ~10px on 400px phone */
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--text-lt);
+  font-family: var(--font-khmer2), var(--font-cap);
+  font-size: 3.0vw;          /* ~12px on 400px phone */
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 1px 2px rgba(160, 110, 20, 0.2));
 }
 
 .sep {

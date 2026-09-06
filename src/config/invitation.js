@@ -9,11 +9,11 @@
 const invitation = {
 
   /* ── Couple ──────────────────────────────────────────────── */
-  groomName: 'Piseth',
-  brideName: 'Sreypov',
+  groomName: 'ពិសិដ្ឋ',
+  brideName: 'ស្រីពៅ',
 
   /** Two initials shown inside the golden monogram crest */
-  initials: ['P', 'S'],
+  initials: ['ព', 'ស'],
 
   /* ── Wedding Date ────────────────────────────────────────── */
   /**
@@ -23,50 +23,57 @@ const invitation = {
   targetDate: '2026-11-24T08:00:00',
 
   /** Human-readable date shown on the invitation card */
-  dateDisplay: 'Sunday, November 24, 2026',
+  dateDisplay: 'ថ្ងៃអាទិត្យ ទី២៤ ខែវិច្ឆិកា ឆ្នាំ២០២៦',
 
   /* ── Venue ───────────────────────────────────────────────── */
-  venue: 'The Grand Hall · Phnom Penh, Cambodia',
+  venue: 'សាល ដឹ ហ្គ្រេន ហល · រាជធានីភ្នំពេញ',
 
   /* ── Khmer Text ──────────────────────────────────────────── */
   /** Main heading in Khmer (top of card) */
-  khmerGreeting: 'សិរីមង្គលអាពាហ៍ពិពាហ៍',
+  khmerGreeting: 'សិរីសួស្តីអាពាហ៍ពិពាហ៍',
 
   /** Subtitle lines in Khmer (shown below couple names) */
   khmerSubtitle: [
     'សូមគោរពអញ្ជើញចូលរួម',
-    'អភិពិធីខួប​ស្នេហ៍',
+    'សិរីមង្គលអាពាហ៍ពិពាហ៍',
   ],
 
-  /** "Save The Date" label above the date (change language here if needed) */
-  saveTheDateLabel: 'Save The Date',
+  /** "Save The Date" label above the date (in Khmer) */
+  saveTheDateLabel: 'កាលបរិច្ឆេទថ្ងៃមង្គល',
+
+  /* ── Honored Guest & Open Invitation ─────────────────────── */
+  guestHonorLabel: 'ភ្ញៀវកិត្តិយស',
+  btnOpenInvitation: 'សូមចុចបើកសំបុត្រ',
+  openInvitationAlert: 'សូមស្វាគមន៍មកកាន់ពិធីមង្គលការរបស់យើងខ្ញុំ! 💍✨',
 
   /* ── Visual Assets ───────────────────────────────────────── */
   /** Bottom floral background (Left & Right SVGs follow wedding_meadow_transparent) */
   bottomFloralLeft: '/wedding_bottom_left.svg',
   bottomFloralRight: '/wedding_bottom_right.svg',
   bottomFloralImage: '/background.png',
+  btnOpenFrameImage: '/golden_frame_button_trans.png',
+
 
   /* ── Studio Branding ─────────────────────────────────────── */
-  watermark: 'E-Invitation by SAMBOT ONLINE',
+  watermark: 'សំបុត្រអញ្ជើញឌីជីថល ដោយ SAMBOT ONLINE',
 
   /* ── Countdown Unit Labels ───────────────────────────────── */
   countdownLabels: {
-    days: 'Days',
-    hours: 'Hours',
-    mins: 'Mins',
-    secs: 'Secs',
+    days: 'ថ្ងៃ',
+    hours: 'ម៉ោង',
+    mins: 'នាទី',
+    secs: 'វិនាទី',
   },
 
   /* ── UI Strings & Alerts ─────────────────────────────────── */
-  scrollHintText: 'Scroll',
-  rsvpAlertMessage: 'RSVP page coming soon! 💌',
-  calendarDetails: 'You are cordially invited to celebrate our special day!',
+  scrollHintText: 'អូសចុះក្រោម',
+  rsvpAlertMessage: 'ទំព័រឆ្លើយតប (RSVP) នឹងមកដល់ឆាប់ៗនេះ! 💌',
+  calendarDetails: 'សូមគោរពអញ្ជើញចូលរួមអបអរសាទរក្នុងថ្ងៃមង្គលការដ៏វិសេសវិសាលរបស់យើងខ្ញុំ!',
 
   /* ── RSVP Button ─────────────────────────────────────────── */
   /** Text labels for the action buttons */
-  btnRsvpLabel:     '💌 RSVP Now',
-  btnCalendarLabel: '📅 Add to Calendar',
+  btnRsvpLabel:     '💌 ឆ្លើយតបការចូលរួម',
+  btnCalendarLabel: '📅 កត់ត្រាប្រតិទិន',
 
   /**
    * Google Calendar event duration in hours (from targetDate).

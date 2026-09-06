@@ -14,14 +14,14 @@
     <ButterflyEffect theme="white" />
 
     <!-- ── Background Wedding Gazebo Rotunda ─────────────── -->
-    <div class="cover-bg-gazebo" aria-hidden="true">
+  <!--  <div class="cover-bg-gazebo" aria-hidden="true">
       <img
         src="@/assets/purple_wedding_gazebo_trans.png"
         class="bg-gazebo-img"
         alt="Wedding Garden Gazebo"
         draggable="false"
       />
-    </div>
+    </div> -->
 
     <!-- ── Top floral header arrangement ─────────────────── -->
     <div class="top-floral-header" aria-hidden="true">
@@ -69,32 +69,17 @@
 
     <!-- ── Main content ───────────────────────────────────── -->
     <main class="cover-content" role="main">
-
-
-
-
-
       <!-- Khmer subtitle (lines from invitation.js) -->
       <p
         v-for="(line, i) in invitation.khmerSubtitle"
         :key="i"
         class="khmer-sub fade-in"
-        :class="{ visible: entered }"
+        :class="{ visible: entered, 'khmer-sub-bold': i === 1 }"
         :style="{ '--delay': (0.6 + i * 0.08) + 's' }"
       >
         {{ line }}
       </p>
 
-      <!-- Date & venue -->
-      <div
-        class="date-block fade-in"
-        :class="{ visible: entered }"
-        style="--delay: 0.72s"
-      >
-        <p class="date-eyebrow">{{ invitation.saveTheDateLabel }}</p>
-        <p class="date-main">{{ invitation.dateDisplay }}</p>
-        <p class="date-venue">{{ invitation.venue }}</p>
-      </div>
 
       <!-- Divider 2 -->
       <GoldDivider
@@ -104,13 +89,52 @@
         style="--delay: 0.78s; margin: 12px auto 18px"
       />
 
-      <!-- Countdown -->
+
+      <!-- ── Honored Guest & Open Invitation Section ── -->
       <div
-        class="countdown-wrap fade-in"
+        class="guest-open-wrap fade-in"
         :class="{ visible: entered }"
-        style="--delay: 0.88s"
+        style="--delay: 0.94s"
       >
-        <CountdownTimer :target-date="invitation.targetDate" />
+        <p class="guest-title">{{ invitation.guestHonorLabel }}</p>
+
+        <!-- Golden tapered divider with center motif (matching image) -->
+        <svg class="guest-divider-svg" viewBox="0 0 200 10" fill="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="goldLineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#d4a43a" stop-opacity="0.1"/>
+              <stop offset="20%" stop-color="#d4a43a"/>
+              <stop offset="50%" stop-color="#f5d98e"/>
+              <stop offset="80%" stop-color="#d4a43a"/>
+              <stop offset="100%" stop-color="#d4a43a" stop-opacity="0.1"/>
+            </linearGradient>
+          </defs>
+          <line x1="8" y1="5" x2="92" y2="5" stroke="url(#goldLineGrad)" stroke-width="1.2" stroke-linecap="round"/>
+          <circle cx="100" cy="5" r="2.2" fill="#d4a43a"/>
+          <circle cx="100" cy="5" r="1.2" fill="#fef3c7"/>
+          <line x1="108" y1="5" x2="192" y2="5" stroke="url(#goldLineGrad)" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+
+        <!-- Ornate Vintage Cartouche Plaque Button (matching reference image) -->
+        <!-- Ornate Khmer Golden Frame Button -->
+        <button
+          type="button"
+          class="btn-cartouche-plaque"
+          @click="onOpenInvitation"
+          aria-label="Open Invitation"
+        >
+          <img
+            :src="invitation.btnOpenFrameImage || '/golden_frame_button_trans.png'"
+            class="cartouche-plaque-img"
+            alt="Golden Frame"
+            draggable="false"
+          />
+
+          <!-- Button Text Labels matching reference image -->
+          <div class="btn-open-labels">
+            <span class="btn-open-text">{{ invitation.btnOpenInvitation }}</span>
+          </div>
+        </button>
       </div>
 
 
@@ -252,6 +276,10 @@ onMounted(() => {
 onUnmounted(() => clearTimeout(hintTimer))
 
 // ── Actions ───────────────────────────────────────────────
+function onOpenInvitation() {
+  alert(invitation.openInvitationAlert)
+}
+
 function onRSVP() {
   alert(invitation.rsvpAlertMessage)
 }
