@@ -34,8 +34,8 @@ const invitation = {
 
   /** Subtitle lines in Khmer (shown below couple names) */
   khmerSubtitle: [
-    'សូមគោរពអញ្ជើញចូលរួម',
     'សិរីមង្គលអាពាហ៍ពិពាហ៍',
+    'សូមគោរពអញ្ជើញចូលរួម',
   ],
 
   /** "Save The Date" label above the date (in Khmer) */

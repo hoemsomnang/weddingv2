@@ -124,7 +124,7 @@
           aria-label="Open Invitation"
         >
           <img
-            :src="invitation.btnOpenFrameImage || '/golden_frame_button_trans.png'"
+            src="@/assets/golden_frame_button_trans.png"
             class="cartouche-plaque-img"
             alt="Golden Frame"
             draggable="false"
