@@ -345,12 +345,13 @@ font-family: var(--font-khmer), 'Hanuman', serif;
 }
 
 .btn-cartouche-plaque {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: clamp(238px, 62vw, 217px);
-    aspect-ratio: 1366 / 746;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* ⬇️ Decrease the width values here (e.g. from ~238px down to ~185px - 200px) */
+  width: clamp(165px, 48vw, 185px);
+  aspect-ratio: 1366 / 746;
     background: transparent;
     border: none;
     padding: 0;
@@ -394,7 +395,8 @@ font-family: var(--font-khmer), 'Hanuman', serif;
 
 .btn-open-text {
   font-family: var(--font-khmer), 'Hanuman', serif;
-  font-size: clamp(13.5px, 3.8vw, 16.5px);
+  /* ⬇️ Decrease font-size here (e.g. down from ~15px to ~12px - 13.5px) */
+  font-size: clamp(10.5px, 3vw, 12.5px);
   font-weight: 700;
   letter-spacing: 0.3px;
   white-space: nowrap;
