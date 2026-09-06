@@ -23,16 +23,37 @@
     <!-- ── Top floral header arrangement ─────────────────── -->
     <div class="top-floral-header" aria-hidden="true">
       <img
+        src="@/assets/horizontal_floral_bridge_trans.png"
+        class="top-floral-bridge-bg"
+        alt="Top Floral Bridge"
+        draggable="false"
+      />
+      <img
         src="@/assets/purple_top_left_trans.png"
         class="top-flower-left"
         alt="Top Left Floral Corner"
         draggable="false"
         @load="onImgLoad"
       />
+      
+            
       <img
-        src="@/assets/purple_top_center_trans.png"
+        src="@/assets/purple_flower_bouquet_2.png"
+        class="top-flower-left-bg"
+        alt="Top Left Background Bouquet"
+        draggable="false"
+      />
+
+      <img
+        src="@/assets/purple_flower_bouquet_2.png"
         class="top-flower-center"
         alt="Top Center Floral Garland"
+        draggable="false"
+      />
+      <img
+        src="@/assets/purple_flower_bouquet_2.png"
+        class="top-flower-right-bg"
+        alt="Top Right Background Bouquet"
         draggable="false"
       />
       <img
