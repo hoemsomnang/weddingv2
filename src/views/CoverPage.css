@@ -30,40 +30,40 @@
   z-index: 1;
 }
 
-/* ── Background Wedding Gazebo ───────────────────────────── */
+/* ── Background Wedding Gazebo (Blurred atmospheric backdrop) ── */
 .cover-bg-gazebo {
   position: absolute;
-  bottom: clamp(120px, 24vw, 190px);
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
-  width: clamp(260px, 72vw, 360px);
-  max-width: 380px;
+  transform: translate(-50%, -46%);
+  width: clamp(280px, 78vw, 390px);
+  max-width: 420px;
   pointer-events: none;
   z-index: 1;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .bg-gazebo-img {
   width: 100%;
   height: auto;
   display: block;
-  opacity: 0.88;
-  filter: drop-shadow(0 6px 20px rgba(120, 50, 160, 0.18));
-  -webkit-mask-image: linear-gradient(to top, black 72%, transparent 100%);
-  mask-image: linear-gradient(to top, black 72%, transparent 100%);
+  opacity: 0.45;
+  filter: blur(4px) saturate(1.15) brightness(1.02);
+  -webkit-mask-image: radial-gradient(ellipse 70% 65% at 50% 50%, black 30%, transparent 100%);
+  mask-image: radial-gradient(ellipse 70% 65% at 50% 50%, black 30%, transparent 100%);
   pointer-events: none;
-  animation: gazeboFadeIn 1.4s ease-out both;
+  animation: gazeboFadeIn 2s ease-out both;
 }
 
 @keyframes gazeboFadeIn {
   from {
     opacity: 0;
-    transform: translateY(10px) scale(0.97);
+    transform: translateY(12px) scale(0.96);
   }
   to {
-    opacity: 0.88;
+    opacity: 0.45;
     transform: translateY(0) scale(1);
   }
 }
@@ -839,6 +839,16 @@ font-family: var(--font-khmer), 'Hanuman', serif;
     max-width: 620px;
     padding: clamp(190px, 25vw, 240px) 24px 24px;
     margin: 0 auto;
+  }
+
+  /* Blurred gazebo backdrop scaled for iPad */
+  .cover-bg-gazebo {
+    width: clamp(380px, 50vw, 490px);
+    max-width: 520px;
+    transform: translate(-50%, -46%);
+  }
+  .bg-gazebo-img {
+    filter: blur(5px) saturate(1.15) brightness(1.02);
   }
 
   /* Top floral arrangement scaled for iPad */

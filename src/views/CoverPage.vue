@@ -13,6 +13,16 @@
     <!-- ── Dainty Butterflies fluttering across the page ── -->
     <ButterflyEffect theme="white" />
 
+    <!-- ── Background Wedding Gazebo (Atmospheric Blurred Backdrop) ── -->
+    <div class="cover-bg-gazebo" aria-hidden="true">
+      <img
+        src="@/assets/purple_wedding_gazebo_trans.webp"
+        class="bg-gazebo-img"
+        alt="Wedding Gazebo Arch Backdrop"
+        draggable="false"
+        decoding="async"
+      />
+    </div>
 
     <!-- ── Top floral header arrangement ─────────────────── -->
     <div class="top-floral-header" aria-hidden="true">
