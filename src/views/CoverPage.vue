@@ -10,6 +10,9 @@
     <!-- ── Floating petals (decorative, behind everything) ── -->
     <FloatingPetals />
 
+    <!-- ── Dainty Butterflies fluttering across the page ── -->
+    <ButterflyEffect theme="white" />
+
     <!-- ── Background Wedding Gazebo Rotunda ─────────────── -->
     <div class="cover-bg-gazebo" aria-hidden="true">
       <img
@@ -117,9 +120,6 @@
 
     <!-- ── Bottom floral background ─────── -->
     <div class="bottom-floral" aria-hidden="true">
-      <!-- ── Dainty Butterflies fluttering around bottom flowers ── -->
-      <ButterflyEffect theme="white" />
-
       <img
         src="@/assets/background.png"
         class="bottom-bg-img"

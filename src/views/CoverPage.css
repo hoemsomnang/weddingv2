@@ -16,7 +16,7 @@
 
   /* Dreamy watercolor wedding canvas backdrop */
   background:
-    url('@/assets/wedding_page_bg.jpg') center top / cover no-repeat,
+    url('@/assets/wedding_page_bg_old.jpg') center top / cover no-repeat,
     linear-gradient(175deg, #fdf5ec 0%, #f9eddf 30%, #fbeee4 60%, #f4e8d8 100%);
 }
 
@@ -146,6 +146,35 @@ position: absolute;
   display: block;
   z-index: 3;
   filter: drop-shadow(0 4px 8px rgba(90, 40, 110, 0.06));
+}
+
+/* ── Left edge continuous floral vine column ── */
+.left-edge-vine-column {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: clamp(58px, 15vw, 88px);
+  height: 100%;
+  pointer-events: none;
+  z-index: 2; /* Layered nicely behind the top header corner and foreground flowers */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+
+@keyframes leftVineBreeze1 {
+  0%   { transform: rotate(0deg) translateX(0); }
+  50%  { transform: rotate(1deg) translateX(2px); }
+  100% { transform: rotate(-0.8deg) translateX(-1px); }
+}
+
+@keyframes leftVineBreeze2 {
+  0%   { transform: rotate(0deg) translateX(0); }
+  50%  { transform: rotate(-1.2deg) translateX(1px); }
+  100% { transform: rotate(0.9deg) translateX(2px); }
 }
 
 /* ── Main content ───────────────────────────────────────── */
