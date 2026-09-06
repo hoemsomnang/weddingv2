@@ -69,6 +69,29 @@
 
     <!-- ── Main content ───────────────────────────────────── -->
     <main class="cover-content" role="main">
+      <!-- Ceremony Heading above logo -->
+      <h1
+        class="greeting fade-in"
+        :class="{ visible: entered }"
+        style="--delay: 0.45s"
+      >
+        {{ invitation.khmerGreeting }}
+      </h1>
+
+      <!-- S&R Monogram Crest Logo -->
+      <div
+        class="crest-wrap fade-in"
+        :class="{ visible: entered }"
+        style="--delay: 0.52s"
+      >
+        <img
+          src="@/assets/wedding_monogram_crest_sr_trans.png"
+          class="monogram-crest-img"
+          alt="S&R Wedding Monogram Crest"
+          draggable="false"
+        />
+      </div>
+
       <!-- Khmer subtitle (lines from invitation.js) -->
       <p
         v-for="(line, i) in invitation.khmerSubtitle"

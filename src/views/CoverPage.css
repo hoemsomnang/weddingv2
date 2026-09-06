@@ -102,8 +102,6 @@ position: absolute;
   z-index: 0;
   pointer-events: none;
   filter: drop-shadow(0 4px 10px rgba(90, 40, 110, 0.08));
-  transform-origin: 50% 0%;
-  animation: topFlowerLeftBgSway 7s ease-in-out infinite;
 }
 
 @keyframes topFlowerLeftBgSway {
@@ -131,8 +129,6 @@ position: absolute;
   z-index: 0;
   pointer-events: none;
   filter: drop-shadow(0 4px 10px rgba(90, 40, 110, 0.08));
-  transform-origin: 50% 0%;
-  animation: topFlowerRightBgSway 7s ease-in-out infinite;
 }
 
 @keyframes topFlowerRightBgSway {
@@ -239,19 +235,33 @@ position: absolute;
 }
 .fade-scale.visible { opacity: 1; transform: scale(1); }
 
-/* ── Khmer greeting ─────────────────────────────────────── */
+/* ── Khmer greeting / ceremony heading ──────────────────── */
 .greeting {
-  font-family: var(--font-khmer);
-  font-size: 4.2vw;          /* ~17px on 400px screen */
-  color: var(--rose-deep);
-  line-height: 1.55;
-  margin-bottom: 16px;
-  text-shadow: 0 2px 6px rgba(166,56,86,0.14);
+  font-family: var(--font-khmer), 'Hanuman', serif;
+  font-size: clamp(15px, 3.8vw, 18px);
+  font-weight: 700;
+  line-height: 1.5;
+  margin-bottom: 8px;
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 1px 2px rgba(160, 110, 20, 0.25));
 }
 
 /* ── Monogram crest ─────────────────────────────────────── */
 .crest-wrap {
-  margin-bottom: 16px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: center;
+}
+
+.monogram-crest-img {
+  width: clamp(110px, 38vw, 155px);
+  height: auto;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 16px rgba(120, 80, 20, 0.15));
 }
 
 /* ── Couple names ───────────────────────────────────────── */

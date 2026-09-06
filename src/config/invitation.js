@@ -29,12 +29,11 @@ const invitation = {
   venue: 'សាល ដឹ ហ្គ្រេន ហល · រាជធានីភ្នំពេញ',
 
   /* ── Khmer Text ──────────────────────────────────────────── */
-  /** Main heading in Khmer (top of card) */
-  khmerGreeting: 'សិរីសួស្តីអាពាហ៍ពិពាហ៍',
+  /** Main heading in Khmer (above logo) */
+  khmerGreeting: 'សិរីមង្គលអាពាហ៍ពិពាហ៍',
 
-  /** Subtitle lines in Khmer (shown below couple names) */
+  /** Subtitle lines in Khmer (below logo) */
   khmerSubtitle: [
-    'សិរីមង្គលអាពាហ៍ពិពាហ៍',
     'សូមគោរពអញ្ជើញចូលរួម',
   ],
 
