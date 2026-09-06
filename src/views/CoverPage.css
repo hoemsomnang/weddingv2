@@ -388,17 +388,21 @@ font-family: var(--font-khmer), 'Hanuman', serif;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  line-height: 1;
   pointer-events: none;
-  padding: 0 36px;
+  padding: 0 12px;
+  width: 100%;
+  max-width: 85%;
+  overflow: visible;
 }
 
 .btn-open-text {
   font-family: var(--font-khmer), 'Hanuman', serif;
-  /* ⬇️ Decrease font-size here (e.g. down from ~15px to ~12px - 13.5px) */
-  font-size: clamp(10.5px, 3vw, 12.5px);
+  font-size: clamp(10px, 2.8vw, 12px);
   font-weight: 700;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.2px;
+  line-height: 1.5;
+  padding: 3px 4px;
+  display: inline-block;
   white-space: nowrap;
   background: var(--gold-gradient);
   -webkit-background-clip: text;
