@@ -45,13 +45,6 @@ const invitation = {
   btnOpenInvitation: 'សូមចុចបើកសំបុត្រ',
   openInvitationAlert: 'សូមស្វាគមន៍មកកាន់ពិធីមង្គលការរបស់យើងខ្ញុំ! 💍✨',
 
-  /* ── Visual Assets ───────────────────────────────────────── */
-  /** Bottom floral background (Left & Right SVGs follow wedding_meadow_transparent) */
-  bottomFloralLeft: '/wedding_bottom_left.svg',
-  bottomFloralRight: '/wedding_bottom_right.svg',
-  bottomFloralImage: '/background.png',
-  btnOpenFrameImage: '/golden_frame_button_trans.png',
-
 
   /* ── Studio Branding ─────────────────────────────────────── */
   watermark: 'សំបុត្រអញ្ជើញឌីជីថល ដោយ SAMBOT ONLINE',

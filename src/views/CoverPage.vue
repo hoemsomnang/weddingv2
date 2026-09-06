@@ -13,15 +13,6 @@
     <!-- ── Dainty Butterflies fluttering across the page ── -->
     <ButterflyEffect theme="white" />
 
-    <!-- ── Background Wedding Gazebo Rotunda ─────────────── -->
-  <!--  <div class="cover-bg-gazebo" aria-hidden="true">
-      <img
-        src="@/assets/purple_wedding_gazebo_trans.png"
-        class="bg-gazebo-img"
-        alt="Wedding Garden Gazebo"
-        draggable="false"
-      />
-    </div> -->
 
     <!-- ── Top floral header arrangement ─────────────────── -->
     <div class="top-floral-header" aria-hidden="true">
