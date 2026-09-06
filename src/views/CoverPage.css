@@ -14,11 +14,9 @@
   width: 100%;
   overflow-x: hidden;
 
-  /* Layered watercolor parchment */
+  /* Dreamy watercolor wedding canvas backdrop */
   background:
-    radial-gradient(ellipse 90% 55% at 50% 26%, rgba(241,215,200,0.55) 0%, transparent 65%),
-    radial-gradient(ellipse 60% 45% at 14% 80%, rgba(200,220,210,0.32) 0%, transparent 55%),
-    radial-gradient(ellipse 60% 45% at 86% 80%, rgba(185,175,215,0.28) 0%, transparent 55%),
+    url('@/assets/wedding_page_bg.jpg') center top / cover no-repeat,
     linear-gradient(175deg, #fdf5ec 0%, #f9eddf 30%, #fbeee4 60%, #f4e8d8 100%);
 }
 
@@ -353,7 +351,8 @@ position: absolute;
   pointer-events: none;
   z-index: 2;
   line-height: 0;
-  margin-top: 0;
+  margin-top: auto;
+  margin-bottom: -4px;
 }
 
 .bottom-bg-img {
@@ -364,6 +363,7 @@ position: absolute;
   display: block;
   object-fit: cover;
   object-position: bottom;
+  margin-bottom: -2px;
   filter: drop-shadow(0 -4px 16px rgba(200, 140, 120, 0.24));
 }
 
@@ -386,12 +386,12 @@ position: absolute;
 }
 
 .side-edge-flower-left {
-  left: clamp(-10px, -2vw, -2px);
+  left: clamp(-18px, -4vw, -8px);
   animation: sideEdgeSwayLeft 8.2s cubic-bezier(0.42, 0, 0.58, 1) infinite;
 }
 
 .side-edge-flower-right {
-  right: clamp(-10px, -2vw, -2px);
+  right: clamp(-18px, -4vw, -8px);
   transform: scaleX(-1);
   animation: sideEdgeSwayRight 7.6s cubic-bezier(0.42, 0, 0.58, 1) infinite;
 }
@@ -410,12 +410,12 @@ position: absolute;
 }
 
 .bottom-right-pillar-flower {
-  right: clamp(-18px, -4vw, -8px);
+  right: clamp(-20px, -4.5vw, -10px);
   animation: none;
 }
 
 .bottom-left-pillar-flower {
-  left: clamp(-18px, -4vw, -8px);
+  left: clamp(-20px, -4.5vw, -10px);
   transform: scaleX(-1);
   animation: none;
 }
@@ -425,22 +425,18 @@ position: absolute;
 .bottom-purple-flower1 {
   position: absolute;
   bottom: clamp(24px, 7.5vw, 68px);
-  width: clamp(90px, 24vw, 200px);
+  width: clamp(94px, 25vw, 205px);
   height: auto;
   pointer-events: none;
   z-index: 3;
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 16%, black 100%),
-                      linear-gradient(to bottom, transparent 0%, black 12%, black 100%);
-  -webkit-mask-composite: source-in;
-  mask-image: linear-gradient(to right, transparent 0%, black 16%, black 100%);
 }
 
 .bottom-purple-flower {
-  right: 0;
+  right: clamp(-16px, -3.5vw, -8px);
 }
 
 .bottom-purple-flower1 {
-  left: 0;
+  left: clamp(-16px, -3.5vw, -8px);
   transform: scaleX(-1);
 }
 
@@ -448,23 +444,19 @@ position: absolute;
 .purple-flower-bouquet,
 .purple-flower-bouquet1 {
   position: absolute;
-  bottom: 0px;
-  width: clamp(75px, 20vw, 165px);
+  bottom: -2px;
+  width: clamp(80px, 21vw, 170px);
   height: auto;
   pointer-events: none;
   z-index: 3;
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 16%, black 100%),
-                      linear-gradient(to bottom, transparent 0%, black 12%, black 100%);
-  -webkit-mask-composite: source-in;
-  mask-image: linear-gradient(to right, transparent 0%, black 16%, black 100%);
 }
 
 .purple-flower-bouquet {
-  right: 0;
+  right: clamp(-12px, -2.8vw, -5px);
 }
 
 .purple-flower-bouquet1 {
-  left: 0;
+  left: clamp(-12px, -2.8vw, -5px);
   transform: scaleX(-1);
 }
 
