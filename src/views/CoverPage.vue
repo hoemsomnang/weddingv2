@@ -104,14 +104,12 @@
       </p>
 
 
-      <!-- Divider 2 -->
+      <!-- Ornate Gold Flourish Divider -->
       <GoldDivider
-        variant="short"
         class="fade-in"
         :class="{ visible: entered }"
-        style="--delay: 0.78s; margin: 12px auto 18px"
+        style="--delay: 0.78s; margin: clamp(18px, 4vw, 26px) auto clamp(20px, 4.5vw, 30px)"
       />
-
 
       <!-- ── Honored Guest & Open Invitation Section ── -->
       <div
