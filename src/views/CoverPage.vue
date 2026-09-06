@@ -17,44 +17,51 @@
     <!-- ── Top floral header arrangement ─────────────────── -->
     <div class="top-floral-header" aria-hidden="true">
       <img
-        src="@/assets/horizontal_floral_bridge_trans.png"
+        src="@/assets/horizontal_floral_bridge_trans.webp"
         class="top-floral-bridge-bg"
         alt="Top Floral Bridge"
         draggable="false"
+        decoding="async"
+        fetchpriority="high"
       />
       <img
-        src="@/assets/purple_top_left_trans.png"
+        src="@/assets/purple_top_left_trans.webp"
         class="top-flower-left"
         alt="Top Left Floral Corner"
         draggable="false"
+        decoding="async"
         @load="onImgLoad"
       />
       
             
       <img
-        src="@/assets/purple_flower_bouquet_2.png"
+        src="@/assets/purple_flower_bouquet_2.webp"
         class="top-flower-left-bg"
         alt="Top Left Background Bouquet"
         draggable="false"
+        decoding="async"
       />
 
       <img
-        src="@/assets/purple_flower_bouquet_2.png"
+        src="@/assets/purple_flower_bouquet_2.webp"
         class="top-flower-center"
         alt="Top Center Floral Garland"
         draggable="false"
+        decoding="async"
       />
       <img
-        src="@/assets/purple_flower_bouquet_2.png"
+        src="@/assets/purple_flower_bouquet_2.webp"
         class="top-flower-right-bg"
         alt="Top Right Background Bouquet"
         draggable="false"
+        decoding="async"
       />
       <img
-        src="@/assets/purple_top_right_trans.png"
+        src="@/assets/purple_top_right_trans.webp"
         class="top-flower-right"
         alt="Top Right Floral Corner"
         draggable="false"
+        decoding="async"
       />
     </div>
 
@@ -76,10 +83,12 @@
         style="--delay: 0.52s"
       >
         <img
-          src="@/assets/wedding_monogram_crest_sr_trans.png"
+          src="@/assets/wedding_monogram_crest_sr_trans.webp"
           class="monogram-crest-img"
           alt="S&R Wedding Monogram Crest"
           draggable="false"
+          decoding="async"
+          fetchpriority="high"
         />
       </div>
 
@@ -138,10 +147,12 @@
           aria-label="Open Invitation"
         >
           <img
-            src="@/assets/golden_frame_button_trans.png"
+            src="@/assets/golden_frame_button_trans.webp"
             class="cartouche-plaque-img"
             alt="Golden Frame"
             draggable="false"
+            decoding="async"
+            fetchpriority="high"
           />
 
           <!-- Button Text Labels matching reference image -->
@@ -159,100 +170,114 @@
     <!-- ── Bottom floral background ─────── -->
     <div class="bottom-floral" aria-hidden="true">
       <img
-        src="@/assets/background.png"
+        src="@/assets/background.webp"
         class="bottom-bg-img"
         alt="Wedding bottom background"
         draggable="false"
+        decoding="async"
       />
       <!-- ── Vertical side edge floral spires (Left & Right) ── -->
       <img
-        src="@/assets/purple_edge_flowers_trans.png"
+        src="@/assets/purple_edge_flowers_trans.webp"
         class="side-edge-flower side-edge-flower-left"
         alt="Wedding left edge floral spire"
         draggable="false"
+        decoding="async"
       />
       <img
-        src="@/assets/purple_edge_flowers_trans.png"
+        src="@/assets/purple_edge_flowers_trans.webp"
         class="side-edge-flower side-edge-flower-right"
         alt="Wedding right edge floral spire"
         draggable="false"
+        decoding="async"
       />
 
       <!-- Purpla FLower rgith -->
       <img
-        src="@/assets/purple_flower_bouquet_2.png"
+        src="@/assets/purple_flower_bouquet_2.webp"
         class="bottom-right-pillar-flower"
         alt="Wedding purple flower arrangement"
         draggable="false"
+        decoding="async"
       />
       <img
-        src="@/assets/purple_flower.png"
+        src="@/assets/purple_flower.webp"
         class="bottom-purple-flower"
         alt="Wedding purple flower"
         draggable="false"
+        decoding="async"
       />
 
       <img
-        src="@/assets/purple_flower bouquet_.png"
+        src="@/assets/purple_flower bouquet_.webp"
         class="purple-flower-bouquet"
         alt="Wedding purple flower"
         draggable="false"
+        decoding="async"
       />
 
       <img
-        src="@/assets/bottom3.svg"
+        src="@/assets/bottom3.webp"
         class="bottom-bottom3"
         alt="Wedding purple flower"
         draggable="false"
+        decoding="async"
       />
 
       <img
-        src="@/assets/bottom18.svg"
+        src="@/assets/bottom18.webp"
         class="bottom-bottom18"
         alt="Wedding purple flower"
         draggable="false"
+        decoding="async"
       />
 
       <!-- Purpla FLower left -->
       <img
-        src="@/assets/purple_flower_bouquet_2.png"
+        src="@/assets/purple_flower_bouquet_2.webp"
         class="bottom-left-pillar-flower"
         alt="Wedding purple flower arrangement"
         draggable="false"
+        decoding="async"
       />
       <img
-        src="@/assets/purple_flower.png"
+        src="@/assets/purple_flower.webp"
         class="bottom-purple-flower1"
         alt="Wedding purple flower"
         draggable="false"
+        decoding="async"
       />
       <img
-        src="@/assets/purple_flower bouquet_.png"
+        src="@/assets/purple_flower bouquet_.webp"
         class="purple-flower-bouquet1"
         alt="Wedding purple flower"
         draggable="false"
+        decoding="async"
       />
 
       <img
-        src="@/assets/bottom3.svg"
+        src="@/assets/bottom3.webp"
         class="bottom-bottom3-1"
         alt="Wedding purple flower"
         draggable="false"
+        decoding="async"
       />
 
       <img
-        src="@/assets/bottom18.svg"
+        src="@/assets/bottom18.webp"
         class="bottom-bottom18-1"
         alt="Wedding purple flower"
         draggable="false"
+        decoding="async"
       />
 
       <!-- Center flower in remaining slot -->
       <img
-        src="@/assets/purple_flower_bouquet_v2.png"
+        src="@/assets/purple_flower_bouquet_v2.webp"
         class="bottom-center-flower"
         alt="Wedding center floral bouquet"
         draggable="false"
+        decoding="async"
       />
       
     </div>
@@ -277,13 +302,14 @@ const showScrollHint = ref(true)
 let hintTimer = null
 
 function onImgLoad() {
-  // trigger animations after SVG corner images are ready
-  setTimeout(() => { entered.value = true }, 150)
+  entered.value = true
 }
 
 onMounted(() => {
-  // Fallback: trigger even if image is cached (already loaded)
-  setTimeout(() => { entered.value = true }, 500)
+  // Trigger entrance immediately on next tick for lightning-fast mobile perception
+  requestAnimationFrame(() => {
+    entered.value = true
+  })
   hintTimer = setTimeout(() => { showScrollHint.value = false }, 6000)
 })
 

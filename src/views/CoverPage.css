@@ -16,7 +16,7 @@
 
   /* Dreamy watercolor wedding canvas backdrop */
   background:
-    url('@/assets/wedding_page_bg_old.jpg') center top / cover no-repeat,
+    url('@/assets/wedding_page_bg_old.webp') center top / cover no-repeat,
     linear-gradient(175deg, #fdf5ec 0%, #f9eddf 30%, #fbeee4 60%, #f4e8d8 100%);
 }
 
