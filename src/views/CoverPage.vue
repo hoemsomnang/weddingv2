@@ -5,7 +5,7 @@
          date, countdown, action buttons, and bottom floral meadow.
 -->
 <template>
-  <div class="cover-page">
+  <div class="cover-page" :class="{ 'is-opened': isOpened, 'is-opening': isOpening }">
 
     <!-- ── Floating petals (decorative, behind everything) ── -->
     <FloatingPetals />
@@ -23,6 +23,49 @@
         decoding="async"
       />
     </div>
+
+    <!-- ── Royal Golden Gate (3D Perspective Doors with Smooth Zoom Open/Close) ── -->
+    <div
+      class="royal-gate-scene"
+      :class="{ 'gate-opened': isOpened, 'gate-opening': isOpening }"
+      :style="{ pointerEvents: isOpened ? 'auto' : 'none', cursor: isOpened ? 'pointer' : 'default' }"
+      @click="isOpened ? onCloseInvitation() : null"
+      aria-hidden="true"
+    >
+      <div class="royal-gate-stage">
+        <!-- Frame & Columns -->
+        <img
+          src="@/assets/golden_gate_frame.webp"
+          class="gate-layer gate-frame-img"
+          alt="Royal Gate Frame"
+          draggable="false"
+          decoding="async"
+        />
+
+        <!-- Left Gate Door (Hinged at left pillar) -->
+        <div class="gate-door-wrap gate-door-left">
+          <img
+            src="@/assets/golden_gate_door_left.webp"
+            class="gate-layer gate-door-img"
+            alt="Left Gate Door"
+            draggable="false"
+            decoding="async"
+          />
+        </div>
+
+        <!-- Right Gate Door (Hinged at right pillar) -->
+        <div class="gate-door-wrap gate-door-right">
+          <img
+            src="@/assets/golden_gate_door_right.webp"
+            class="gate-layer gate-door-img"
+            alt="Right Gate Door"
+            draggable="false"
+            decoding="async"
+          />
+        </div>
+      </div>
+    </div>
+
 
     <!-- ── Top floral header arrangement ─────────────────── -->
     <div class="top-floral-header" aria-hidden="true">
@@ -170,8 +213,6 @@
         </button>
       </div>
 
-
-
     </main>
 
 
@@ -287,8 +328,19 @@
         draggable="false"
         decoding="async"
       />
-      
     </div>
+
+    <!-- ── Floating Close Button (to close the doors without popup) ── -->
+    <button
+      v-if="isOpened"
+      type="button"
+      class="btn-close-invitation"
+      @click="onCloseInvitation"
+      aria-label="Close Doors"
+    >
+      <span class="close-icon">✕</span>
+      <span class="btn-close-text">បិទទ្វារ</span>
+    </button>
 
   </div>
 </template>
@@ -309,12 +361,15 @@ const entered = ref(false)
 const showScrollHint = ref(true)
 let hintTimer = null
 
+// ── 3D Gate Zoom & Open/Close State ──────────────────────
+const isOpened = ref(false)
+const isOpening = ref(false)
+
 function onImgLoad() {
   entered.value = true
 }
 
 onMounted(() => {
-  // Trigger entrance immediately on next tick for lightning-fast mobile perception
   requestAnimationFrame(() => {
     entered.value = true
   })
@@ -324,8 +379,24 @@ onMounted(() => {
 onUnmounted(() => clearTimeout(hintTimer))
 
 // ── Actions ───────────────────────────────────────────────
+let openTimer = null
+
 function onOpenInvitation() {
-  alert(invitation.openInvitationAlert)
+  if (isOpened.value || isOpening.value) return
+  isOpening.value = true
+  // Camera zooms into the fountain and doors swing open, then card blooms from fountain
+  openTimer = setTimeout(() => {
+    isOpened.value = true
+  }, 1400)
+}
+
+function onCloseInvitation() {
+  if (!isOpened.value && !isOpening.value) return
+  if (openTimer) clearTimeout(openTimer)
+  isOpened.value = false
+  setTimeout(() => {
+    isOpening.value = false
+  }, 800)
 }
 
 function onRSVP() {

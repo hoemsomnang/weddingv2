@@ -30,7 +30,7 @@
   z-index: 1;
 }
 
-/* ── Background Wedding Gazebo (Blurred atmospheric backdrop) ── */
+/* ── Background Wedding Gazebo (Atmospheric Blurred Backdrop) ── */
 .cover-bg-gazebo {
   position: absolute;
   top: 50%;
@@ -55,6 +55,7 @@
   mask-image: radial-gradient(ellipse 75% 70% at 50% 50%, black 45%, transparent 100%);
   pointer-events: none;
   animation: gazeboFadeIn 2s ease-out both;
+  transition: opacity 1.8s ease, filter 1.8s ease;
 }
 
 @keyframes gazeboFadeIn {
@@ -66,6 +67,116 @@
     opacity: 0.52;
     transform: translateY(0) scale(1);
   }
+}
+
+/* ── Royal Golden Gate (3D Doors & Zoom Opening) ────────── */
+.royal-gate-scene {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.92);
+  width: min(92vw, 440px);
+  max-width: 440px;
+  aspect-ratio: 1 / 1;
+  perspective: 1200px;
+  perspective-origin: 50% 50%;
+  pointer-events: none;
+  z-index: 6;
+  opacity: 0; /* Hidden initially before user clicks open */
+  transition: opacity 0.45s ease, transform 1.8s cubic-bezier(0.25, 1, 0.35, 1);
+  will-change: transform, opacity;
+}
+
+.royal-gate-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.gate-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  display: block;
+}
+
+.gate-frame-img {
+  z-index: 5;
+  filter: drop-shadow(0 8px 26px rgba(180, 130, 40, 0.28));
+}
+
+.gate-door-wrap {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  transition: transform 1.6s cubic-bezier(0.25, 1, 0.35, 1);
+  will-change: transform;
+}
+
+.gate-door-left {
+  transform-origin: 22.66% 50%;
+  z-index: 4;
+  transform: rotateY(0deg);
+}
+
+.gate-door-right {
+  transform-origin: 77.34% 50%;
+  z-index: 4;
+  transform: rotateY(0deg);
+}
+
+/* ── Active Zoom & Open State ───────────────────────────── */
+.cover-page.is-opened .royal-gate-scene,
+.cover-page.is-opening .royal-gate-scene {
+  opacity: 1; /* Door becomes visible on click! */
+  transform: translate(-50%, -50%) scale(2.4);
+}
+
+.cover-page.is-opened .gate-door-left,
+.cover-page.is-opening .gate-door-left {
+  /* Swing open forward towards viewer from the front */
+  transform: rotateY(78deg);
+}
+
+.cover-page.is-opened .gate-door-right,
+.cover-page.is-opening .gate-door-right {
+  /* Swing open forward towards viewer from the front */
+  transform: rotateY(-78deg);
+}
+
+/* Hide / fade cover content on open */
+.cover-page.is-opened .cover-content,
+.cover-page.is-opening .cover-content {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.92);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.cover-content {
+  transition: opacity 0.6s ease 0.35s, transform 0.6s cubic-bezier(0.25, 1, 0.35, 1) 0.35s;
+}
+
+/* Soft fade on floral borders when opened */
+.cover-page.is-opened .top-floral-header,
+.cover-page.is-opening .top-floral-header,
+.cover-page.is-opened .bottom-floral,
+.cover-page.is-opening .bottom-floral {
+  opacity: 0.25;
+  filter: blur(3px);
+  transition: opacity 1.4s ease, filter 1.4s ease;
+}
+
+.top-floral-header,
+.bottom-floral {
+  transition: opacity 1.2s ease, filter 1.2s ease;
 }
 
 /* ── Top floral header arrangement ───────────────────── */
@@ -229,10 +340,10 @@ position: absolute;
   transform: translateX(-50%);
   width: min(92%, 480px);
   height: 75%;
-  background: radial-gradient(ellipse at center, rgba(255, 252, 246, 0.72) 0%, rgba(255, 250, 242, 0.45) 48%, transparent 76%);
+  background: radial-gradient(ellipse at center, rgba(255, 252, 246, 0.42) 0%, rgba(255, 250, 242, 0.22) 48%, transparent 76%);
   pointer-events: none;
   z-index: -1;
-  filter: blur(10px);
+  filter: blur(3px);
 }
 
 /* ── Entrance animations ────────────────────────────────── */
@@ -1086,4 +1197,36 @@ position: absolute;
   }
 }
 
+/* ── Floating Close Button (to close doors) ──────────────── */
+.btn-close-invitation {
+  position: fixed;
+  top: max(16px, env(safe-area-inset-top));
+  right: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1.5px solid #d4a43a;
+  border-radius: 999px;
+  color: #63327a;
+  font-family: 'Battambang', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(100, 40, 120, 0.16);
+  transition: transform 0.2s ease, background 0.2s ease, opacity 0.3s ease;
+  z-index: 70;
+  animation: fadeIn 0.4s ease-out both;
+}
 
+.btn-close-invitation:hover {
+  background: #fdf6ec;
+  transform: scale(1.05);
+}
+
+.btn-close-invitation .close-icon {
+  font-size: 14px;
+  font-weight: 700;
+  color: #b88628;
+}
