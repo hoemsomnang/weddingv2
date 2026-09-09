@@ -151,6 +151,15 @@
   transform: rotateY(-78deg);
 }
 
+/* Remove golden gate frame when opened / opening */
+.cover-page.is-opened .gate-frame-img,
+.cover-page.is-opening .gate-frame-img {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
 /* Hide / fade cover content on open */
 .cover-page.is-opened .cover-content,
 .cover-page.is-opening .cover-content {

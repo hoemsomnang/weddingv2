@@ -1,0 +1,643 @@
+/* ============================================================
+   HomePreviewPage.css — Luxury Royal Wedding Invitation Preview
+   ============================================================ */
+
+.home-preview-page {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  width: 100%;
+  max-width: 540px;
+  margin: 0 auto;
+  background: linear-gradient(180deg, #faf3ea 0%, #fdf8f2 40%, #f7ecde 100%);
+  color: var(--text-dark, #2e1c16);
+  overflow-x: hidden;
+  box-shadow: 0 0 60px rgba(120, 80, 20, 0.12);
+  padding-bottom: 240px;
+  font-family: var(--font-body, 'Montserrat', sans-serif);
+}
+
+/* ── Top Navigation Bar ──────────────────────────────────── */
+.preview-nav-bar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  background: rgba(253, 248, 240, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(212, 164, 58, 0.25);
+  box-shadow: 0 4px 16px rgba(100, 60, 20, 0.05);
+}
+
+.btn-back-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #d4a43a;
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-family: var(--font-khmer2, 'Hanuman', sans-serif);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #9e6e10;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(212, 164, 58, 0.15);
+  transition: all 0.25s ease;
+}
+
+.btn-back-nav:hover {
+  background: #fdf5e6;
+  transform: translateX(-2px);
+  box-shadow: 0 4px 12px rgba(212, 164, 58, 0.28);
+}
+
+.preview-badge {
+  font-family: var(--font-cap, 'Cinzel', serif);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #9e6e10;
+  padding: 4px 12px;
+  border-radius: 12px;
+  background: rgba(245, 217, 142, 0.25);
+  border: 1px solid rgba(212, 164, 58, 0.3);
+}
+
+/* ── Chandelier Header Section ───────────────────────────── */
+.chandelier-section {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  overflow: visible;
+  z-index: 10;
+}
+
+.chandelier-glow-backdrop {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, rgba(245, 217, 142, 0.45) 0%, rgba(245, 217, 142, 0) 70%);
+  filter: blur(20px);
+  pointer-events: none;
+  animation: glowPulse 4s ease-in-out infinite alternate;
+}
+
+@keyframes glowPulse {
+  0% { opacity: 0.5; transform: translateX(-50%) scale(0.9); }
+  100% { opacity: 0.9; transform: translateX(-50%) scale(1.1); }
+}
+
+.chandelier-img {
+  width: min(75vw, 320px);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 28px rgba(160, 110, 20, 0.35));
+  animation: chandelierFloat 6s ease-in-out infinite alternate;
+  transform-origin: top center;
+}
+
+@keyframes chandelierFloat {
+  0% { transform: translateY(0) rotate(-0.8deg); }
+  100% { transform: translateY(4px) rotate(0.8deg); }
+}
+
+/* ── Flanking Peacock Pillars ────────────────────────────── */
+.peacock-flank-container {
+  position: relative;
+  width: 100%;
+  margin-top: -30px;
+  z-index: 12;
+}
+
+.peacock-pillar {
+  position: absolute;
+  top: 40px;
+  width: min(28vw, 120px);
+  height: auto;
+  pointer-events: none;
+  z-index: 8;
+  filter: drop-shadow(0 6px 18px rgba(180, 130, 40, 0.25));
+  animation: pillarFloat 5s ease-in-out infinite alternate;
+}
+
+.peacock-pillar-left {
+  left: 4px;
+}
+
+.peacock-pillar-right {
+  right: 4px;
+  animation-delay: -2.5s;
+}
+
+@keyframes pillarFloat {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(6px); }
+}
+
+/* ── Hero Greeting & Monogram ────────────────────────────── */
+.hero-greeting-block {
+  text-align: center;
+  padding: 20px 20px 0;
+  position: relative;
+  z-index: 15;
+}
+
+.khmer-ceremony-title {
+  font-family: var(--font-khmer, 'Moul', serif);
+  font-size: clamp(1.2rem, 4.2vw, 1.6rem);
+  color: #a07018;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8), 0 2px 8px rgba(180, 130, 40, 0.25);
+  margin-bottom: 6px;
+  letter-spacing: 0.02em;
+}
+
+.khmer-ceremony-sub {
+  font-family: var(--font-khmer2, 'Hanuman', sans-serif);
+  font-size: clamp(0.9rem, 3.2vw, 1.05rem);
+  color: #6b4038;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+/* ── Floral Arch Centerpiece ─────────────────────────────── */
+.arch-frame-wrap {
+  position: relative;
+  width: min(88vw, 400px);
+  margin: 10px auto 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arch-img-bg {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 14px 32px rgba(120, 80, 20, 0.2));
+  display: block;
+}
+
+.arch-inner-content {
+  position: absolute;
+  top: 18%;
+  left: 20%;
+  right: 20%;
+  bottom: 22%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 5;
+}
+
+.arch-crest-logo {
+  width: clamp(75px, 20vw, 100px);
+  height: auto;
+  filter: drop-shadow(0 4px 12px rgba(180, 130, 40, 0.35));
+  margin-bottom: 8px;
+}
+
+.arch-couple-names {
+  font-family: var(--font-khmer, 'Moul', serif);
+  font-size: clamp(1.1rem, 3.8vw, 1.35rem);
+  color: #8a5710;
+  line-height: 1.4;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9);
+}
+
+.arch-ampersand {
+  display: inline-block;
+  font-family: var(--font-script, 'Alex Brush', cursive);
+  font-size: 1.5rem;
+  color: #d4a43a;
+  margin: 0 4px;
+}
+
+.arch-date-pill {
+  margin-top: 10px;
+  font-family: var(--font-khmer2, 'Hanuman', sans-serif);
+  font-size: clamp(0.72rem, 2.5vw, 0.85rem);
+  font-weight: 700;
+  color: #7b4a15;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 4px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(212, 164, 58, 0.4);
+  box-shadow: 0 2px 8px rgba(160, 110, 20, 0.12);
+}
+
+/* ── Content Cards ───────────────────────────────────────── */
+.preview-card {
+  width: min(92vw, 460px);
+  margin: 22px auto 0;
+  background: rgba(255, 255, 255, 0.88);
+  border-radius: 20px;
+  padding: 22px 20px;
+  border: 1px solid rgba(212, 164, 58, 0.35);
+  box-shadow: 0 10px 30px rgba(140, 90, 30, 0.08), inset 0 0 0 1px rgba(255, 255, 255, 0.9);
+  position: relative;
+  z-index: 15;
+}
+
+.card-title-wrap {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.card-title {
+  font-family: var(--font-khmer, 'Moul', serif);
+  font-size: 1.05rem;
+  color: #a07018;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ── Couple Details ──────────────────────────────────────── */
+.couple-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.couple-person {
+  text-align: center;
+  padding: 14px 10px;
+  background: linear-gradient(180deg, #fffdfa 0%, #fbf5ec 100%);
+  border-radius: 14px;
+  border: 1px solid rgba(212, 164, 58, 0.22);
+}
+
+.person-role {
+  font-family: var(--font-khmer2, 'Hanuman', sans-serif);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #a07018;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+
+.person-name {
+  font-family: var(--font-khmer, 'Moul', serif);
+  font-size: 1.02rem;
+  color: #4a2818;
+  margin-bottom: 4px;
+}
+
+.person-parents {
+  font-family: var(--font-khmer2, 'Hanuman', sans-serif);
+  font-size: 0.78rem;
+  color: #7d594b;
+  line-height: 1.4;
+}
+
+/* ── Program Schedule ────────────────────────────────────── */
+.timeline-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 12px 14px;
+  background: #fdfbf7;
+  border-radius: 12px;
+  border-left: 3px solid #d4a43a;
+  box-shadow: 0 2px 8px rgba(100, 60, 20, 0.03);
+}
+
+.timeline-time-badge {
+  flex-shrink: 0;
+  font-family: var(--font-cap, 'Cinzel', serif);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #9e6e10;
+  background: #faeed7;
+  padding: 5px 9px;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+
+.timeline-desc {
+  font-family: var(--font-khmer2, 'Hanuman', sans-serif);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #4a2b20;
+  line-height: 1.4;
+}
+
+.timeline-sub {
+  font-family: var(--font-khmer2, 'Hanuman', sans-serif);
+  font-size: 0.76rem;
+  color: #8c6352;
+  font-weight: 400;
+  margin-top: 2px;
+}
+
+/* ── Venue & Actions ─────────────────────────────────────── */
+.venue-details {
+  text-align: center;
+  margin-top: 8px;
+}
+
+.venue-name {
+  font-family: var(--font-khmer, 'Moul', serif);
+  font-size: 0.95rem;
+  color: #6d4218;
+  margin-bottom: 6px;
+}
+
+.venue-address {
+  font-family: var(--font-khmer2, 'Hanuman', sans-serif);
+  font-size: 0.82rem;
+  color: #7b5646;
+  margin-bottom: 18px;
+}
+
+.action-buttons-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn-action-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #d4a43a 0%, #b88628 50%, #9e6e10 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 14px;
+  font-family: var(--font-khmer2, 'Hanuman', sans-serif);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(184, 134, 40, 0.35);
+  transition: all 0.25s ease;
+}
+
+.btn-action-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(184, 134, 40, 0.45);
+}
+
+.btn-action-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 11px 20px;
+  background: #ffffff;
+  color: #8b5b15;
+  border: 1.5px solid #d4a43a;
+  border-radius: 14px;
+  font-family: var(--font-khmer2, 'Hanuman', sans-serif);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(160, 110, 20, 0.08);
+  transition: all 0.25s ease;
+}
+
+.btn-action-secondary:hover {
+  background: #fcf6ec;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(160, 110, 20, 0.16);
+}
+
+/* ── Footer ──────────────────────────────────────────────── */
+.preview-footer {
+  text-align: center;
+  margin-top: 36px;
+  padding: 0 20px;
+  position: relative;
+  z-index: 15;
+}
+
+.footer-blessing {
+  font-family: var(--font-khmer2, 'Hanuman', sans-serif);
+  font-size: 0.85rem;
+  color: #8a5710;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.footer-watermark {
+  font-family: var(--font-khmer2, 'Hanuman', sans-serif);
+  font-size: 0.72rem;
+  color: #ab8675;
+}
+
+/* ── Left Side Floral Accent ─────────────────────────────── */
+.left-flower-wrap {
+    position: absolute;
+    bottom: 0px;
+    left: -39px;
+    width: min(42vw, 175px);
+    pointer-events: none;
+    z-index: 8;
+    line-height: 0;
+}
+
+.left-lisianthus-bg-img {
+  position: absolute;
+  bottom: 10px;
+  left: -12px;
+  width: 105%;
+  height: 165px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 16px rgba(180, 80, 120, 0.2));
+  transform-origin: bottom left;
+  transform: rotate(-8deg);
+  z-index: 1;
+  pointer-events: none;
+  animation: lisianthusSway 7s ease-in-out infinite alternate;
+}
+
+@keyframes lisianthusSway {
+  0% {
+    transform: rotate(-8deg) scale(1);
+  }
+  100% {
+    transform: rotate(-5deg) scale(1.02);
+  }
+}
+
+.left-flower-img {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 120px;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 20px rgba(120, 60, 160, 0.22));
+  transform-origin: bottom left;
+  animation: leftFlowerSway 6s ease-in-out infinite alternate;
+}
+
+@keyframes leftFlowerSway {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  100% {
+    transform: rotate(2.5deg) scale(1.02);
+  }
+}
+
+/* ── Right Side Floral Accent ────────────────────────────── */
+.right-flower-wrap {
+  position: absolute;
+  bottom: 0px;
+  right: -39px;
+  width: min(42vw, 175px);
+  pointer-events: none;
+  z-index: 8;
+  line-height: 0;
+}
+
+.right-lisianthus-bg-img {
+  position: absolute;
+  bottom: 10px;
+  right: -12px;
+  width: 105%;
+  height: 165px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 16px rgba(180, 80, 120, 0.2));
+  transform-origin: center center;
+  transform: scaleX(-1) rotate(-8deg);
+  z-index: 1;
+  pointer-events: none;
+  animation: rightLisianthusSway 7s ease-in-out infinite alternate;
+}
+
+@keyframes rightLisianthusSway {
+  0% {
+    transform: scaleX(-1) rotate(-8deg) scale(1);
+  }
+  100% {
+    transform: scaleX(-1) rotate(-5deg) scale(1.02);
+  }
+}
+
+.right-flower-img {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 120px;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 20px rgba(120, 60, 160, 0.22));
+  transform-origin: center center;
+  transform: scaleX(-1);
+  animation: rightFlowerSway 6s ease-in-out infinite alternate;
+}
+
+@keyframes rightFlowerSway {
+  0% {
+    transform: scaleX(-1) rotate(0deg) scale(1);
+  }
+  100% {
+    transform: scaleX(-1) rotate(-2.5deg) scale(1.02);
+  }
+}
+
+/* ── Bottom Purple Floral Border Background ──────────────── */
+.bottom-floral-bg-wrap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  pointer-events: none;
+  z-index: 5;
+  line-height: 0;
+  overflow: hidden;
+}
+
+.bottom-floral-bg-img {
+     width: 100%;
+    height: auto;
+    max-height: 220px;
+    object-fit: cover;
+    object-position: bottom center;
+    display: block;
+    filter: drop-shadow(0 -4px 18px rgba(130, 70, 160, 0.18));
+    margin-bottom: -50px;
+}
+
+/* ── Bottom Rose Peony Wreath Arrangement ─────────────────── */
+.bottom-wreath-section {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  pointer-events: none;
+  z-index: 10;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+}
+
+.bottom-wreath-img {
+    width: min(92vw, 420px);
+    height: 90px;
+    position: absolute;
+    bottom: -14px;
+    max-height: 280px;
+    object-fit: contain;
+    object-position: bottom center;
+    display: block;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+}
+
+.bottom-bouquet-img {
+    width: min(92vw, 420px);
+    height: 90px;
+    position: absolute;
+    bottom: -14px;
+    max-height: 280px;
+    object-fit: contain;
+    object-position: bottom center;
+    display: block;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+}
+
+@keyframes wreathFloat {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    transform: translateY(-5px) scale(1.02);
+  }
+}
+

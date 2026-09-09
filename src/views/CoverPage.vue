@@ -33,36 +33,15 @@
       aria-hidden="true"
     >
       <div class="royal-gate-stage">
-        <!-- Frame & Columns -->
+        <!-- Frame & Columns (removed when clicked open) -->
         <img
+          v-if="!isOpened && !isOpening"
           src="@/assets/golden_gate_frame.webp"
           class="gate-layer gate-frame-img"
           alt="Royal Gate Frame"
           draggable="false"
           decoding="async"
         />
-
-        <!-- Left Gate Door (Hinged at left pillar) -->
-        <div class="gate-door-wrap gate-door-left">
-          <img
-            src="@/assets/golden_gate_door_left.webp"
-            class="gate-layer gate-door-img"
-            alt="Left Gate Door"
-            draggable="false"
-            decoding="async"
-          />
-        </div>
-
-        <!-- Right Gate Door (Hinged at right pillar) -->
-        <div class="gate-door-wrap gate-door-right">
-          <img
-            src="@/assets/golden_gate_door_right.webp"
-            class="gate-layer gate-door-img"
-            alt="Right Gate Door"
-            draggable="false"
-            decoding="async"
-          />
-        </div>
       </div>
     </div>
 
@@ -330,7 +309,7 @@
       />
     </div>
 
-    <!-- ── Floating Close Button (to close the doors without popup) ── -->
+    <!-- ── Floating Close Button ── -->
     <button
       v-if="isOpened"
       type="button"
@@ -347,6 +326,7 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+import { useRouter } from 'vue-router'
 import FloatingPetals  from '@/components/FloatingPetals.vue'
 import ButterflyEffect from '@/components/ButterflyEffect.vue'
 import MonogramCrest   from '@/components/MonogramCrest.vue'
@@ -355,6 +335,8 @@ import GoldDivider    from '@/components/GoldDivider.vue'
 
 // ── All content lives in one file — edit src/config/invitation.js ──
 import invitation from '@/config/invitation.js'
+
+const router = useRouter()
 
 // ── Entrance animation state ──────────────────────────────
 const entered = ref(false)
@@ -379,15 +361,9 @@ onMounted(() => {
 onUnmounted(() => clearTimeout(hintTimer))
 
 // ── Actions ───────────────────────────────────────────────
-let openTimer = null
-
 function onOpenInvitation() {
-  if (isOpened.value || isOpening.value) return
-  isOpening.value = true
-  // Camera zooms into the fountain and doors swing open, then card blooms from fountain
-  openTimer = setTimeout(() => {
-    isOpened.value = true
-  }, 1400)
+  // Directly navigate to the new homePreviewPage (no popup)
+  router.push({ name: 'homePreviewPage' })
 }
 
 function onCloseInvitation() {
