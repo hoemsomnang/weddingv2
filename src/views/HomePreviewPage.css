@@ -507,6 +507,52 @@
   }
 }
 
+.left-calla-flower-img {
+    position: absolute;
+    bottom: -28px;
+    left: 82px;
+    width: 130px;
+    height: 120px;
+    object-fit: contain;
+    filter: drop-shadow(0 6px 18px rgba(120, 60, 160, 0.22));
+    transform-origin: bottom left;
+    z-index: 1;
+    pointer-events: none;
+    animation: leftCallaSway 6.5s ease-in-out infinite alternate;
+}
+
+@keyframes leftCallaSway {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  100% {
+    transform: rotate(-2deg) scale(1.02);
+  }
+}
+
+.left-purple-tulip-cluster-img {
+    position: absolute;
+    bottom: -53px;
+    left: 146px;
+    width: 115px;
+    height: 115px;
+    object-fit: contain;
+    filter: drop-shadow(0 6px 18px rgba(120, 60, 160, 0.22));
+    transform-origin: bottom left;
+    z-index: 0;
+    pointer-events: none;
+    animation: leftPurpleTulipSway 7s ease-in-out infinite alternate;
+}
+
+@keyframes leftPurpleTulipSway {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  100% {
+    transform: rotate(2deg) scale(1.02);
+  }
+}
+
 /* ── Right Side Floral Accent ────────────────────────────── */
 .right-flower-wrap {
   position: absolute;
@@ -560,6 +606,86 @@
   }
   100% {
     transform: scaleX(-1) rotate(-2.5deg) scale(1.02);
+  }
+}
+
+.right-calla-flower-img {
+  position: absolute;
+  bottom: -28px;
+  right: 82px;
+  width: 130px;
+  height: 120px;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 18px rgba(120, 60, 160, 0.22));
+  transform-origin: center center;
+  transform: scaleX(-1);
+  z-index: 1;
+  pointer-events: none;
+  animation: rightCallaSway 6.5s ease-in-out infinite alternate;
+}
+
+@keyframes rightCallaSway {
+  0% {
+    transform: scaleX(-1) rotate(0deg) scale(1);
+  }
+  100% {
+    transform: scaleX(-1) rotate(2deg) scale(1.02);
+  }
+}
+
+.right-purple-tulip-cluster-img {
+  position: absolute;
+  bottom: -53px;
+  right: 146px;
+  width: 115px;
+  height: 115px;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 18px rgba(120, 60, 160, 0.22));
+  transform-origin: center center;
+  transform: scaleX(-1);
+  z-index: 0;
+  pointer-events: none;
+  animation: rightPurpleTulipSway 7s ease-in-out infinite alternate;
+}
+
+@keyframes rightPurpleTulipSway {
+  0% {
+    transform: scaleX(-1) rotate(0deg) scale(1);
+  }
+  100% {
+    transform: scaleX(-1) rotate(-2deg) scale(1.02);
+  }
+}
+
+/* ── Center Floral Accent ────────────────────────────────── */
+.center-flower-wrap {
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(36vw, 130px);
+  pointer-events: none;
+  z-index: 6;
+  line-height: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.center-flower-img {
+     width: 100%;
+    height: 100px;
+    object-fit: contain;
+    filter: drop-shadow(0 6px 20px rgba(120, 60, 160, 0.25));
+    animation: centerFlowerPulse-53e2aeed 6s ease-in-out infinite alternate;
+}
+
+@keyframes centerFlowerPulse {
+  0% {
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    transform: scale(1.025) translateY(-2px);
   }
 }
 

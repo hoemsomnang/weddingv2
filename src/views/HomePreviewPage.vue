@@ -57,6 +57,18 @@
         alt="Left Spring Tulip & Lilac Flower"
         draggable="false"
       />
+      <img
+        src="@/assets/flower_tulip_purple_pink_bouquet_trans.webp"
+        class="left-calla-flower-img"
+        alt="Left Calla Lily & Purple Rose Bouquet"
+        draggable="false"
+      />
+      <img
+        src="@/assets/flower_purple_tulip_cluster_trans.webp"
+        class="left-purple-tulip-cluster-img"
+        alt="Left Purple Tulip Cluster"
+        draggable="false"
+      />
     </div>
 
     <!-- ── Right Side Floral Accent ── -->
@@ -71,6 +83,28 @@
         src="@/assets/flower_tulip_lilac_spring_trans.webp"
         class="right-flower-img"
         alt="Right Spring Tulip & Lilac Flower"
+        draggable="false"
+      />
+      <img
+        src="@/assets/flower_tulip_purple_pink_bouquet_trans.webp"
+        class="right-calla-flower-img"
+        alt="Right Tulip & Lilac Bouquet"
+        draggable="false"
+      />
+      <img
+        src="@/assets/flower_purple_tulip_cluster_trans.webp"
+        class="right-purple-tulip-cluster-img"
+        alt="Right Purple Tulip Cluster"
+        draggable="false"
+      />
+    </div>
+
+    <!-- ── Center Floral Accent ── -->
+    <div class="center-flower-wrap" aria-hidden="true">
+      <img
+        src="@/assets/flower_yellow_purple_bouquet_trans.webp"
+        class="center-flower-img"
+        alt="Center Yellow & Purple Flower"
         draggable="false"
       />
     </div>
