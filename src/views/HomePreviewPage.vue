@@ -46,6 +46,24 @@
     <!-- ── Left Side Floral Accent ── -->
     <div class="left-flower-wrap" aria-hidden="true">
       <img
+        src="@/assets/flower_tulip_lilac_spring_trans.webp"
+        class="left-tulip-bg-extra-img"
+        alt="Left Spring Tulip Accent"
+        draggable="false"
+      />
+      <img
+        src="@/assets/flower_lavender_purple_ribbon_trans.webp"
+        class="left-lavender-ribbon-img"
+        alt="Left Lavender Purple Ribbon Bouquet"
+        draggable="false"
+      />
+      <img
+        src="@/assets/anemone_colorful_bouquet_trans.webp"
+        class="left-anemone-bg-img"
+        alt="Left Colorful Anemone Bouquet"
+        draggable="false"
+      />
+      <img
         src="@/assets/flower_pink_lisianthus_branch_trans.webp"
         class="left-lisianthus-bg-img"
         alt="Left Pink Lisianthus Branch"
@@ -73,6 +91,24 @@
 
     <!-- ── Right Side Floral Accent ── -->
     <div class="right-flower-wrap" aria-hidden="true">
+      <img
+        src="@/assets/flower_tulip_lilac_spring_trans.webp"
+        class="right-tulip-bg-extra-img"
+        alt="Right Spring Tulip Accent"
+        draggable="false"
+      />
+      <img
+        src="@/assets/flower_lavender_purple_ribbon_trans.webp"
+        class="right-lavender-ribbon-img"
+        alt="Right Lavender Purple Ribbon Bouquet"
+        draggable="false"
+      />
+      <img
+        src="@/assets/anemone_colorful_bouquet_trans.webp"
+        class="right-anemone-bg-img"
+        alt="Right Colorful Anemone Bouquet"
+        draggable="false"
+      />
       <img
         src="@/assets/flower_pink_lisianthus_branch_trans.webp"
         class="right-lisianthus-bg-img"
