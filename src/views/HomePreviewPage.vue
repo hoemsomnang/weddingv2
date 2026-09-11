@@ -70,6 +70,13 @@
         decoding="async"
       />
       <img
+        src="@/assets/purple_white_tulip_ribbon_trans.webp"
+        class="left-tulip-ribbon-bg-img"
+        alt="Left Purple White Tulip Ribbon Bouquet"
+        draggable="false"
+        decoding="async"
+      />
+      <img
         src="@/assets/anemone_colorful_bouquet_trans.webp"
         class="left-anemone-bg-img"
         alt="Left Colorful Anemone Bouquet"
@@ -119,6 +126,13 @@
         src="@/assets/flower_lavender_purple_ribbon_trans.webp"
         class="right-lavender-ribbon-img"
         alt="Right Lavender Purple Ribbon Bouquet"
+        draggable="false"
+        decoding="async"
+      />
+      <img
+        src="@/assets/purple_white_tulip_ribbon_trans.webp"
+        class="right-tulip-ribbon-bg-img"
+        alt="Right Purple White Tulip Ribbon Bouquet"
         draggable="false"
         decoding="async"
       />

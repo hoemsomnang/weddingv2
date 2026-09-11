@@ -526,6 +526,30 @@
   }
 }
 
+.left-tulip-ribbon-bg-img {
+    position: absolute;
+    bottom: 9px;
+    left: 81px;
+    width: 120px;
+    height: 145px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 16px rgba(120, 60, 160, 0.22));
+    transform-origin: bottom left;
+    transform: rotate(6deg);
+    z-index: -1;
+    pointer-events: none;
+    animation: leftTulipRibbonSway-53e2aeed 7.2s ease-in-out infinite alternate;
+}
+
+@keyframes leftTulipRibbonSway {
+  0% {
+    transform: rotate(6deg) scale(1);
+  }
+  100% {
+    transform: rotate(9deg) scale(1.02);
+  }
+}
+
 .left-anemone-bg-img {
   position: absolute;
   bottom: 45px;
@@ -696,6 +720,30 @@
   }
   100% {
     transform: scaleX(-1) rotate(-3deg) scale(1.02);
+  }
+}
+
+.right-tulip-ribbon-bg-img {
+    position: absolute;
+    bottom: 2px;
+    right: 197px;
+    width: 120px;
+    height: 145px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 16px rgba(120, 60, 160, 0.22));
+    transform-origin: bottom right;
+    transform: scaleX(-1) rotate(6deg);
+    z-index: -1;
+    pointer-events: none;
+    animation: rightTulipRibbonSway-53e2aeed 7.2s ease-in-out infinite alternate;
+}
+
+@keyframes rightTulipRibbonSway {
+  0% {
+    transform: scaleX(-1) rotate(6deg) scale(1);
+  }
+  100% {
+    transform: scaleX(-1) rotate(9deg) scale(1.02);
   }
 }
 
