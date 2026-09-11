@@ -5,6 +5,19 @@
 <template>
   <div class="home-preview-page">
 
+    <!-- ── Full-Screen Sunset Sky Page Background ── -->
+    <div class="preview-page-fullscreen-bg" aria-hidden="true">
+      <img
+        src="@/assets/chateau_sky_sunset_backdrop.webp"
+        class="preview-fullscreen-bg-img"
+        alt="Fairytale Sunset Sky Page Background"
+        draggable="false"
+        decoding="async"
+        fetchpriority="high"
+      />
+      <div class="preview-fullscreen-bg-overlay"></div>
+    </div>
+
     <!-- ── Ambient Floating Petals & Butterflies ── -->
     <FloatingPetals />
     <ButterflyEffect theme="white" />
@@ -52,6 +65,17 @@
       <h1 class="khmer-ceremony-title">{{ invitation.khmerGreeting }}</h1>
       <p class="khmer-ceremony-sub">{{ invitation.khmerSubtitle[0] || 'សូមគោរពអញ្ជើញចូលរួម' }}</p>
     </section>
+
+    <!-- ── Background Fairytale Chateau & Garden ── -->
+    <div class="preview-bg-chateau-wrap" aria-hidden="true">
+      <img
+        src="@/assets/chateau_garden_original_trans.webp"
+        class="preview-bg-chateau-img"
+        alt="Fairytale Chateau & Garden Backdrop"
+        draggable="false"
+        decoding="async"
+      />
+    </div>
 
     <!-- ── Left Side Floral Accent ── -->
     <div class="left-flower-wrap" aria-hidden="true">

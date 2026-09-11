@@ -21,6 +21,51 @@
   font-family: var(--font-body, 'Montserrat', sans-serif);
 }
 
+/* ── Full-Screen Sunset Sky Page Background ──────────────── */
+.preview-page-fullscreen-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.preview-fullscreen-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  opacity: 0.85;
+  filter: saturate(1.1) brightness(1.02);
+  transform: scale(1.03);
+  animation: bgPageZoomSlow 24s ease-in-out infinite alternate;
+}
+
+.preview-fullscreen-bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 35%, rgba(255, 255, 255, 0.1) 0%, rgba(250, 243, 234, 0.3) 60%, rgba(247, 236, 222, 0.55) 100%);
+  pointer-events: none;
+}
+
+@keyframes bgPageZoomSlow {
+  0% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1.06);
+  }
+}
+
 /* ── Top Navigation Bar ──────────────────────────────────── */
 .preview-nav-bar {
   position: sticky;
@@ -466,6 +511,44 @@
   font-family: var(--font-khmer2, 'Hanuman', sans-serif);
   font-size: 0.72rem;
   color: #ab8675;
+}
+
+/* ── Background Fairytale Chateau & Garden ────────────────── */
+.preview-bg-chateau-wrap {
+  position: absolute;
+  bottom: 220px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  pointer-events: none;
+  z-index: 1; /* Sits behind flowers (z-index: 8) and hero text (z-index: 15) */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  line-height: 0;
+}
+
+.preview-bg-chateau-img {
+  width: min(100%, 520px);
+  height: auto;
+  max-height: 60vh;
+  object-fit: contain;
+  object-position: bottom center;
+  display: block;
+  opacity: 0.92;
+  filter: blur(2px) drop-shadow(0 -6px 24px rgba(140, 90, 30, 0.12));
+  animation: chateauBackdropFade 1.2s ease-out both;
+}
+
+@keyframes chateauBackdropFade {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 0.95;
+    transform: translateY(0);
+  }
 }
 
 /* ── Left Side Floral Accent ─────────────────────────────── */
