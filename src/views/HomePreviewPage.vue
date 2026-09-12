@@ -219,9 +219,23 @@
             </div>
           </div>
 
-          <!-- Invitation Subtitle -->
+          <!-- Invitation Subtitle with Left & Right Small Ornaments -->
           <div class="honor-invite-title">
-            មានកិត្តិយសសូមគោរពអញ្ជើញ
+            <img
+              src="@/assets/gold_baroque_pediment_trans.webp"
+              class="honor-ornament-wing honor-ornament-left"
+              alt="Gold Ornament Left"
+              draggable="false"
+              decoding="async"
+            />
+            <span class="honor-invite-text">មានកិត្តិយសសូមគោរពអញ្ជើញ</span>
+            <img
+              src="@/assets/gold_baroque_pediment_trans.webp"
+              class="honor-ornament-wing honor-ornament-right"
+              alt="Gold Ornament Right"
+              draggable="false"
+              decoding="async"
+            />
           </div>
 
           <!-- Formal Invitation Body Text -->
