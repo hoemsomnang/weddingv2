@@ -276,6 +276,26 @@
     line-height: 0;
     overflow: visible;
 }
+
+.left-magenta_purple {
+    position: absolute;
+    bottom: -14px;
+    left: 100px;
+    width: clamp(80px, 32vw, 125px);
+    height: auto;
+    max-height: clamp(80px, 18vh, 86px);
+    object-fit: contain;
+    object-position: bottom left;
+    filter: drop-shadow(0 4px 14px rgba(120, 60, 160, 0.22));
+    transform-origin: bottom left;
+    transform: rotate(3deg);
+    display: block;
+    pointer-events: none;
+    z-index: 3;
+    line-height: 0;
+    overflow: visible;
+}
+
 /* ── Right Side Floral Accent ────────────────────────────── */
 .call-lily-right-img {
     position: absolute;
@@ -369,6 +389,26 @@
     display: block;
     pointer-events: none;
     z-index: 4;
+    line-height: 0;
+    overflow: visible;
+}
+
+
+.right-magenta_purple {
+    position: absolute;
+    bottom: -14px;
+    right: 100px;
+    width: clamp(80px, 32vw, 125px);
+    height: auto;
+    max-height: clamp(80px, 18vh, 86px);
+    object-fit: contain;
+    object-position: bottom right;
+    filter: drop-shadow(0 4px 14px rgba(120, 60, 160, 0.22));
+    transform-origin: bottom right;
+    transform: rotate(3deg);
+    display: block;
+    pointer-events: none;
+    z-index: 3;
     line-height: 0;
     overflow: visible;
 }

@@ -102,8 +102,16 @@
         decoding="async"
       />
 
+    <img
+        src="@/assets/magenta_purple_rose_dew_right_trans.webp"
+        class="left-magenta_purple" 
+        alt="Left Floral Accent"
+        draggable="false"
+        decoding="async"
+      />
 
-      
+
+
     <!-- ── Right Side Floral Accent ── -->
     <img
         src="@/assets/calla_lily_purple_rose_ribbon_trans.webp"
@@ -144,6 +152,14 @@
         decoding="async"
       />
      
+
+     <img
+        src="@/assets/magenta_purple_rose_dew_trans.webp"
+        class="right-magenta_purple" 
+        alt="Right Floral Accent"
+        draggable="false"
+        decoding="async"
+      />
 
   </div>
 </template>
