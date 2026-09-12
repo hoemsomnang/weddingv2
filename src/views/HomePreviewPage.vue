@@ -15,6 +15,13 @@
         decoding="async"
         fetchpriority="high"
       />
+      <img
+        src="@/assets/fairytale_palace_purple_stairs_trans.webp"
+        class="preview-fullscreen-palace-img"
+        alt="Fairytale Palace Purple Stairs Background"
+        draggable="false"
+        decoding="async"
+      />
       <div class="preview-fullscreen-bg-overlay"></div>
     </div>
 
