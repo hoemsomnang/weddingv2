@@ -41,6 +41,50 @@
       />
     </section>
 
+    <!-- ── Top-Left Wisteria Hanging Accent ── -->
+    <img
+      src="@/assets/wisteria_hanging_clusters_trans.webp"
+      class="top-left-wisteria-img"
+      alt="Top Left Wisteria Hanging Blossom"
+      draggable="false"
+      decoding="async"
+    />
+    <img
+      src="@/assets/wisteria_hanging_clusters_trans.webp"
+      class="top-left-wisteria-img-1"
+      alt="Top Left Wisteria Hanging Blossom"
+      draggable="false"
+      decoding="async"
+    />
+
+    <img
+      src="@/assets/wisteria_hanging_clusters_trans.webp"
+      class="top-left-wisteria-img-2"
+      alt="Top Left Wisteria Hanging Blossom"
+      draggable="false"
+      decoding="async"
+    />
+
+
+
+
+    <!-- ── Top-Right Wisteria Hanging Accent ── -->
+    <img
+      src="@/assets/wisteria_hanging_clusters_right_trans.webp"
+      class="top-right-wisteria-img"
+      alt="Top Right Wisteria Hanging Blossom"
+      draggable="false"
+      decoding="async"
+    />
+
+    <img
+      src="@/assets/wisteria_hanging_clusters_right_trans.webp"
+      class="top-right-wisteria-img-1"
+      alt="Top Right Wisteria Hanging Blossom"
+      draggable="false"
+      decoding="async"
+    />
+
     <!-- ── Hero Greeting ── -->
     <section
       class="hero-greeting-block fade-in"

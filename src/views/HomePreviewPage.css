@@ -509,3 +509,133 @@
     transform: scaleX(-1) rotate(4deg) translateY(-3px);
   }
 }
+
+/* ── Top-Left Wisteria Hanging Accent ────────────────────── */
+.top-left-wisteria-img {
+  position: absolute;
+  top: -12px;
+  left: -14px;
+  width: clamp(95px, 30vw, 140px);
+  height: auto;
+  max-height: clamp(110px, 25vh, 160px);
+  object-fit: contain;
+  object-position: top left;
+  filter: drop-shadow(0 6px 16px rgba(110, 50, 160, 0.22));
+  transform-origin: top left;
+  transform: rotate(-2deg);
+  display: block;
+  pointer-events: none;
+  z-index: 6;
+  line-height: 0;
+  overflow: visible;
+  animation: wisteriaTopLeftSway 6.8s ease-in-out infinite alternate;
+}
+
+
+
+.top-left-wisteria-img-1 {
+  position: absolute;
+    top: -27px;
+    left: 88px;
+    width: clamp(90px, 30vw, 116px);
+    height: auto;
+    max-height: clamp(96px, 25vh, 145px);
+    object-fit: contain;
+    object-position: top left;
+    filter: drop-shadow(0 6px 16px rgba(110, 50, 160, 0.22));
+    transform-origin: top left;
+    transform: rotate(-2deg);
+    display: block;
+    pointer-events: none;
+    z-index: 6;
+    line-height: 0;
+    overflow: visible;
+    animation: wisteriaTopLeftSway-53e2aeed 6.8s ease-in-out infinite alternate;
+}
+
+.top-left-wisteria-img-2 {
+    position: absolute;
+    top: -31px;
+    left: 176px;
+    width: clamp(90px, 30vw, 116px);
+    height: auto;
+    max-height: clamp(96px, 25vh, 145px);
+    object-fit: contain;
+    object-position: top left;
+    filter: drop-shadow(0 6px 16px rgba(110, 50, 160, 0.22));
+    transform-origin: top left;
+    transform: rotate(-2deg);
+    display: block;
+    pointer-events: none;
+    z-index: 5;
+    line-height: 0;
+    overflow: visible;
+    animation: wisteriaTopLeftSway-53e2aeed 6.8s ease-in-out infinite alternate;
+}
+
+@keyframes wisteriaTopLeftSway {
+  0% {
+    transform: rotate(-2deg) translateY(0);
+  }
+  50% {
+    transform: rotate(1deg) translateY(1.5px);
+  }
+  100% {
+    transform: rotate(-3.5deg) translateY(0.5px);
+  }
+}
+
+
+
+/* ── Top-right Wisteria Hanging Accent ────────────────────── */ 
+.top-right-wisteria-img {
+  position: absolute;
+  top: -12px;
+  right: -14px;
+  width: clamp(95px, 30vw, 140px);
+  height: auto;
+  max-height: clamp(110px, 25vh, 160px);
+  object-fit: contain;
+  object-position: top right;
+  filter: drop-shadow(0 6px 16px rgba(110, 50, 160, 0.22));
+  transform-origin: top right;
+  transform: rotate(2deg);
+  display: block;
+  pointer-events: none;
+  z-index: 6;
+  line-height: 0;
+  overflow: visible;
+  animation: wisteriaTopRightSway 6.8s ease-in-out infinite alternate -3.4s;
+}
+
+.top-right-wisteria-img-1 {
+  position: absolute;
+    top: -27px;
+    right: 88px;
+    width: clamp(90px, 30vw, 116px);
+    height: auto;
+    max-height: clamp(96px, 25vh, 145px);
+    object-fit: contain;
+    object-position: top right;
+    filter: drop-shadow(0 6px 16px rgba(110, 50, 160, 0.22));
+    transform-origin: top right;
+    transform: rotate(-2deg);
+    display: block;
+    pointer-events: none;
+    z-index: 6;
+    line-height: 0;
+    overflow: visible;
+    animation: wisteriaTopLeftSway-53e2aeed 6.8s ease-in-out infinite alternate;
+}
+
+@keyframes wisteriaTopRightSway {
+  0% {
+    transform: rotate(2deg) translateY(0);
+  }
+  50% {
+    transform: rotate(-1deg) translateY(1.5px);
+  }
+  100% {
+    transform: rotate(3.5deg) translateY(0.5px);
+  }
+}
