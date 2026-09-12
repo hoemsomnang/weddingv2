@@ -113,16 +113,16 @@
         decoding="async"
       />
     <img
-        src="@/assets/purple_rose_dew_ref2_trans.webp"
+        src="@/assets/purple_rose_dew_ref2_right_trans.webp"
         class="right-purple_rose_dew_ref2_trans"
-        alt="Left Floral Accent"
+        alt="Right Floral Accent"
         draggable="false"
         decoding="async"
       />
       <img
-        src="@/assets/purple_rose_dew_ref1_trans.webp"
+        src="@/assets/purple_rose_dew_ref1_right_trans.webp"
         class="right-purple_rose_dew_ref1_trans" 
-        alt="Left Floral Accent"
+        alt="Right Floral Accent"
         draggable="false"
         decoding="async"
       />
