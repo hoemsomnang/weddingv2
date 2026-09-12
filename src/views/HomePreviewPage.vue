@@ -94,6 +94,14 @@
         decoding="async"
       />
 
+      <img
+        src="@/assets/magenta_purple_rose_dew_trans.webp"
+        class="left-magenta_purple_rose_dew_trans" 
+        alt="Left Floral Accent"
+        draggable="false"
+        decoding="async"
+      />
+
 
       
     <!-- ── Right Side Floral Accent ── -->
@@ -122,6 +130,15 @@
       <img
         src="@/assets/purple_lily_vase_bouquet_right_trans.webp"
         class="right-purple_lily_vase_bouquet_trans" 
+        alt="Right Floral Accent"
+        draggable="false"
+        decoding="async"
+      />
+
+
+    <img
+        src="@/assets/magenta_purple_rose_dew_right_trans.webp"
+        class="right-magenta_purple_rose_dew_trans" 
         alt="Right Floral Accent"
         draggable="false"
         decoding="async"
