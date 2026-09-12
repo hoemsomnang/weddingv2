@@ -515,9 +515,9 @@
   position: absolute;
   top: 2px;
   left: -14px;
-  width: clamp(95px, 30vw, 140px);
+  width: clamp(75px, 30vw, 120px);
   height: auto;
-  max-height: clamp(110px, 25vh, 160px);
+  max-height: clamp(90px, 25vh, 140px);
   object-fit: contain;
   object-position: top left;
   filter: drop-shadow(0 6px 16px rgba(110, 50, 160, 0.22));
@@ -537,9 +537,9 @@
   position: absolute;
     top: -27px;
     left: 88px;
-    width: clamp(90px, 30vw, 116px);
+    width: clamp(70px, 30vw, 96px);
     height: auto;
-    max-height: clamp(96px, 25vh, 145px);
+    max-height: clamp(76px, 25vh, 125px);
     object-fit: contain;
     object-position: top left;
     filter: drop-shadow(0 6px 16px rgba(110, 50, 160, 0.22));
@@ -557,9 +557,9 @@
     position: absolute;
     top: -31px;
     left: 176px;
-    width: clamp(90px, 30vw, 116px);
+    width: clamp(70px, 30vw, 96px);
     height: auto;
-    max-height: clamp(96px, 25vh, 145px);
+    max-height: clamp(76px, 25vh, 125px);
     object-fit: contain;
     object-position: top left;
     filter: drop-shadow(0 6px 16px rgba(110, 50, 160, 0.22));
@@ -577,9 +577,9 @@
     position: absolute;
     top: -31px;
     left: -10px;
-    width: clamp(90px, 30vw, 116px);
+    width: clamp(70px, 30vw, 96px);
     height: auto;
-    max-height: clamp(96px, 25vh, 145px);
+    max-height: clamp(76px, 25vh, 140px);
     object-fit: contain;
     object-position: top left;
     filter: drop-shadow(0 6px 16px rgba(110, 50, 160, 0.22));
@@ -597,9 +597,9 @@
     position: absolute;
     top: 78px;
     left: -19px;
-    width: clamp(90px, 30vw, 116px);
+    width: clamp(70px, 30vw, 96px);
     height: auto;
-    max-height: clamp(96px, 25vh, 145px);
+    max-height: clamp(76px, 25vh, 125px);
     object-fit: contain;
     object-position: top left;
     filter: drop-shadow(0 6px 16px rgba(110, 50, 160, 0.22));
@@ -615,10 +615,10 @@
 .top-left-purple_roses_1 {
     position: absolute;
     top: 20px;
-    left: 57px;
-    width: clamp(90px, 30vw, 116px);
+    left: 40px;
+    width: clamp(70px, 30vw, 96px);
     height: auto;
-    max-height: clamp(96px, 25vh, 145px);
+    max-height: clamp(76px, 25vh, 125px);
     object-fit: contain;
     object-position: top left;
     filter: drop-shadow(0 6px 16px rgba(110, 50, 160, 0.22));
@@ -633,11 +633,11 @@
 
 .top-left-purple_roses_2 {
     position: absolute;
-    top: -41px;
+    top: -29px;
     left: 49px;
-    width: clamp(90px, 30vw, 116px);
+    width: clamp(70px, 30vw, 96px);
     height: auto;
-    max-height: clamp(96px, 25vh, 145px);
+    max-height: clamp(76px, 25vh, 125px);
     object-fit: contain;
     object-position: top left;
     filter: drop-shadow(0 6px 16px rgba(110, 50, 160, 0.22));
@@ -652,11 +652,11 @@
 
 .top-left-purple_roses_3 {
     position: absolute;
-    top: -41px;
-    left: 125px;
-    width: clamp(82px, 30vw, 91px);
+    top: -30px;
+    left: 118px;
+    width: clamp(62px, 30vw, 71px);
     height: auto;
-    max-height: clamp(96px, 25vh, 145px);
+    max-height: clamp(76px, 25vh, 125px);
     object-fit: contain;
     object-position: top left;
     filter: drop-shadow(0 6px 16px rgba(110, 50, 160, 0.22));
@@ -688,9 +688,9 @@
   position: absolute;
   top: 2px;
   right: -14px;
-  width: clamp(95px, 30vw, 140px);
+  width: clamp(75px, 30vw, 120px);
   height: auto;
-  max-height: clamp(110px, 25vh, 160px);
+  max-height: clamp(90px, 25vh, 140px);
   object-fit: contain;
   object-position: top right;
   filter: drop-shadow(0 6px 16px rgba(110, 50, 160, 0.22));
@@ -708,9 +708,9 @@
   position: absolute;
     top: -27px;
     right: 88px;
-    width: clamp(90px, 30vw, 116px);
+    width: clamp(70px, 30vw, 96px);
     height: auto;
-    max-height: clamp(96px, 25vh, 145px);
+    max-height: clamp(76px, 25vh, 125px);
     object-fit: contain;
     object-position: top right;
     filter: drop-shadow(0 6px 16px rgba(110, 50, 160, 0.22));
@@ -729,9 +729,9 @@
     position: absolute;
     top: -31px;
     right: -6px;
-    width: clamp(90px, 30vw, 116px);
+    width: clamp(70px, 30vw, 96px);
     height: auto;
-    max-height: clamp(96px, 25vh, 145px);
+    max-height: clamp(76px, 25vh, 140px);
     object-fit: contain;
     object-position: top right;
     filter: drop-shadow(0 6px 16px rgba(110, 50, 160, 0.22));
@@ -749,9 +749,9 @@
     position: absolute;
     top: 78px;
     right: -34px;
-    width: clamp(90px, 30vw, 116px);
+    width: clamp(70px, 30vw, 96px);
     height: auto;
-    max-height: clamp(96px, 25vh, 145px);
+    max-height: clamp(76px, 25vh, 125px);
     object-fit: contain;
     object-position: top left;
     filter: drop-shadow(0 6px 16px rgba(110, 50, 160, 0.22));
@@ -768,10 +768,10 @@
 .top-right-purple_roses_1 {
     position: absolute;
     top: 20px;
-    right: 57px;
-    width: clamp(90px, 30vw, 116px);
+    right: 40px;
+    width: clamp(70px, 30vw, 96px);
     height: auto;
-    max-height: clamp(96px, 25vh, 145px);
+    max-height: clamp(76px, 25vh, 125px);
     object-fit: contain;
     object-position: top right;
     filter: drop-shadow(0 6px 16px rgba(110, 50, 160, 0.22));
@@ -786,11 +786,11 @@
 
 .top-right-purple_roses_2 {
     position: absolute;
-    top: -41px;
+    top: -29px;
     right: 56px;
-    width: clamp(90px, 30vw, 116px);
+    width: clamp(70px, 30vw, 96px);
     height: auto;
-    max-height: clamp(96px, 25vh, 145px);
+    max-height: clamp(76px, 25vh, 125px);
     object-fit: contain;
     object-position: top right;
     filter: drop-shadow(0 6px 16px rgba(110, 50, 160, 0.22));
@@ -806,11 +806,11 @@
 
 .top-right-purple_roses_3 {
     position: absolute;
-    top: -41px;
+    top: -30px;
     right: 125px;
-    width: clamp(82px, 30vw, 91px);
+    width: clamp(62px, 30vw, 71px);
     height: auto;
-    max-height: clamp(96px, 25vh, 145px);
+    max-height: clamp(76px, 25vh, 125px);
     object-fit: contain;
     object-position: top right;
     filter: drop-shadow(0 6px 16px rgba(110, 50, 160, 0.22));
