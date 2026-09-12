@@ -110,6 +110,13 @@
         decoding="async"
       />
 
+          <img
+        src="@/assets/magenta_purple_rose_dew_trans.webp"
+        class="left-magenta_purple_1" 
+        alt="Left Floral Accent"
+        draggable="false"
+        decoding="async"
+      />
 
 
     <!-- ── Right Side Floral Accent ── -->
