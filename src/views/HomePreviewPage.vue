@@ -96,6 +96,15 @@
       draggable="false"
       decoding="async"
     />
+    
+    <img
+      src="@/assets/blooming_roses_bouquet_down_right_trans.webp"
+      class="top-left-purple_roses_3"
+      alt="Top Left Wisteria Hanging Blossom"
+      draggable="false"
+      decoding="async"
+    />
+
 
     <!-- ── Top-Right Wisteria Hanging Accent ── -->
     <img
@@ -145,6 +154,20 @@
       draggable="false"
       decoding="async"
     />
+
+   <img
+      src="@/assets/blooming_roses_bouquet_down_trans.webp"
+      class="top-right-purple_roses_3"
+      alt="Top Left Wisteria Hanging Blossom"
+      draggable="false"
+      decoding="async"
+    />
+
+    
+
+
+
+
     <!-- ── Hero Greeting ── -->
     <section
       class="hero-greeting-block fade-in"

@@ -513,7 +513,7 @@
 /* ── Top-Left Wisteria Hanging Accent ────────────────────── */
 .top-left-wisteria-img {
   position: absolute;
-  top: -12px;
+  top: 2px;
   left: -14px;
   width: clamp(95px, 30vw, 140px);
   height: auto;
@@ -650,6 +650,24 @@
     overflow: visible;
 }
 
+.top-left-purple_roses_3 {
+    position: absolute;
+    top: -41px;
+    left: 125px;
+    width: clamp(82px, 30vw, 91px);
+    height: auto;
+    max-height: clamp(96px, 25vh, 145px);
+    object-fit: contain;
+    object-position: top left;
+    filter: drop-shadow(0 6px 16px rgba(110, 50, 160, 0.22));
+    transform-origin: top left;
+    transform: rotate(-2deg);
+    display: block;
+    pointer-events: none;
+    z-index: 6;
+    line-height: 0;
+    overflow: visible;
+}
 
 @keyframes wisteriaTopLeftSway {
   0% {
@@ -668,7 +686,7 @@
 /* ── Top-right Wisteria Hanging Accent ────────────────────── */ 
 .top-right-wisteria-img {
   position: absolute;
-  top: -12px;
+  top: 2px;
   right: -14px;
   width: clamp(95px, 30vw, 140px);
   height: auto;
@@ -786,6 +804,24 @@
 }
 
 
+.top-right-purple_roses_3 {
+    position: absolute;
+    top: -41px;
+    right: 125px;
+    width: clamp(82px, 30vw, 91px);
+    height: auto;
+    max-height: clamp(96px, 25vh, 145px);
+    object-fit: contain;
+    object-position: top right;
+    filter: drop-shadow(0 6px 16px rgba(110, 50, 160, 0.22));
+    transform-origin: top right;
+    transform: rotate(-2deg);
+    display: block;
+    pointer-events: none;
+    z-index: 6;
+    line-height: 0;
+    overflow: visible;
+}
 
 @keyframes wisteriaTopRightSway {
   0% {
