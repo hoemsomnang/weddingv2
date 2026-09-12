@@ -63,147 +63,54 @@
       />
     </div>-->
 
-    <!-- ── Left Side Floral Accent ── -->
-    <div class="left-flower-wrap" aria-hidden="true">
-      <img
-        src="@/assets/flower_tulip_lilac_spring_trans.webp"
-        class="left-tulip-bg-extra-img"
-        alt="Left Spring Tulip Accent"
+    <!-- ── Left Side Floral Accent ── -->     
+    <img
+        src="@/assets/calla_lily_purple_rose_ribbon_trans.webp"
+        class="call-lily-left-img"
+        alt="Left Floral Accent"
         draggable="false"
         decoding="async"
       />
-      <img
-        src="@/assets/flower_lavender_purple_ribbon_trans.webp"
-        class="left-lavender-ribbon-img"
-        alt="Left Lavender Purple Ribbon Bouquet"
+    <img
+        src="@/assets/purple_rose_dew_ref2_trans.webp"
+        class="left-purple_rose_dew_ref2_trans"
+        alt="Left Floral Accent"
         draggable="false"
         decoding="async"
       />
-      <img
-        src="@/assets/purple_white_tulip_ribbon_trans.webp"
-        class="left-tulip-ribbon-bg-img"
-        alt="Left Purple White Tulip Ribbon Bouquet"
+    <img
+        src="@/assets/purple_rose_dew_ref1_trans.webp"
+        class="left-purple_rose_dew_ref1_trans" 
+        alt="Left Floral Accent"
         draggable="false"
         decoding="async"
       />
-      <img
-        src="@/assets/anemone_colorful_bouquet_trans.webp"
-        class="left-anemone-bg-img"
-        alt="Left Colorful Anemone Bouquet"
-        draggable="false"
-        decoding="async"
-      />
-      <img
-        src="@/assets/flower_pink_lisianthus_branch_trans.webp"
-        class="left-lisianthus-bg-img"
-        alt="Left Pink Lisianthus Branch"
-        draggable="false"
-        decoding="async"
-      />
-      <img
-        src="@/assets/flower_tulip_lilac_spring_trans.webp"
-        class="left-flower-img"
-        alt="Left Spring Tulip & Lilac Flower"
-        draggable="false"
-        decoding="async"
-      />
-      <img
-        src="@/assets/flower_tulip_purple_pink_bouquet_trans.webp"
-        class="left-calla-flower-img"
-        alt="Left Calla Lily & Purple Rose Bouquet"
-        draggable="false"
-        decoding="async"
-      />
-      <img
-        src="@/assets/flower_purple_tulip_cluster_trans.webp"
-        class="left-purple-tulip-cluster-img"
-        alt="Left Purple Tulip Cluster"
-        draggable="false"
-        decoding="async"
-      />
-    </div>
 
+
+      
     <!-- ── Right Side Floral Accent ── -->
-    <div class="right-flower-wrap" aria-hidden="true">
-      <img
-        src="@/assets/flower_tulip_lilac_spring_trans.webp"
-        class="right-tulip-bg-extra-img"
-        alt="Right Spring Tulip Accent"
+    <img
+        src="@/assets/calla_lily_purple_rose_ribbon_trans.webp"
+        class="call-lily-right-img"
+        alt="Right Floral Accent"
+        draggable="false"
+        decoding="async"
+      />
+    <img
+        src="@/assets/purple_rose_dew_ref2_trans.webp"
+        class="right-purple_rose_dew_ref2_trans"
+        alt="Left Floral Accent"
         draggable="false"
         decoding="async"
       />
       <img
-        src="@/assets/flower_lavender_purple_ribbon_trans.webp"
-        class="right-lavender-ribbon-img"
-        alt="Right Lavender Purple Ribbon Bouquet"
+        src="@/assets/purple_rose_dew_ref1_trans.webp"
+        class="right-purple_rose_dew_ref1_trans" 
+        alt="Left Floral Accent"
         draggable="false"
         decoding="async"
       />
-      <img
-        src="@/assets/purple_white_tulip_ribbon_trans.webp"
-        class="right-tulip-ribbon-bg-img"
-        alt="Right Purple White Tulip Ribbon Bouquet"
-        draggable="false"
-        decoding="async"
-      />
-      <img
-        src="@/assets/anemone_colorful_bouquet_trans.webp"
-        class="right-anemone-bg-img"
-        alt="Right Colorful Anemone Bouquet"
-        draggable="false"
-        decoding="async"
-      />
-      <img
-        src="@/assets/flower_pink_lisianthus_branch_trans.webp"
-        class="right-lisianthus-bg-img"
-        alt="Right Pink Lisianthus Branch"
-        draggable="false"
-        decoding="async"
-      />
-      <img
-        src="@/assets/flower_tulip_lilac_spring_trans.webp"
-        class="right-flower-img"
-        alt="Right Spring Tulip & Lilac Flower"
-        draggable="false"
-        decoding="async"
-      />
-      <img
-        src="@/assets/flower_tulip_purple_pink_bouquet_trans.webp"
-        class="right-calla-flower-img"
-        alt="Right Tulip & Lilac Bouquet"
-        draggable="false"
-        decoding="async"
-      />
-      <img
-        src="@/assets/flower_purple_tulip_cluster_trans.webp"
-        class="right-purple-tulip-cluster-img"
-        alt="Right Purple Tulip Cluster"
-        draggable="false"
-        decoding="async"
-      />
-    </div>
-
-    <!-- ── Center Floral Accent ── -->
-    <div class="center-flower-wrap" aria-hidden="true">
-      <img
-        src="@/assets/flower_yellow_purple_bouquet_trans.webp"
-        class="center-flower-img"
-        alt="Center Yellow & Purple Flower"
-        draggable="false"
-        decoding="async"
-      />
-    </div>
-
-    <!-- ── Bottom Purple Floral Border Background ── -->
-    <div class="bottom-floral-bg-wrap" aria-hidden="true">
-      <img
-        src="@/assets/purple_floral_border_trans.webp"
-        class="bottom-floral-bg-img"
-        alt="Purple Floral Border Background"
-        draggable="false"
-        decoding="async"
-      />
-    </div>
+     
 
   </div>
 </template>
@@ -213,8 +120,6 @@ import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import FloatingPetals from '@/components/FloatingPetals.vue'
 import ButterflyEffect from '@/components/ButterflyEffect.vue'
-import CountdownTimer from '@/components/CountdownTimer.vue'
-import GoldDivider from '@/components/GoldDivider.vue'
 import invitation from '@/config/invitation.js'
 
 const router = useRouter()
