@@ -19,7 +19,7 @@
   font-family: var(--font-body, 'Montserrat', sans-serif);
   background: #fbf7f0;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.12);
-  touch-action: none; /* Prevents mobile swipe-scroll / bouncing */
+  touch-action: pan-y; /* Allows vertical swipe-scroll for snap pages */
   user-select: none;
 }
 
@@ -144,33 +144,391 @@
   transform: translateY(0);
 }
 
-/* ── Hero Greeting ───────────────────────────────────────── */
-.hero-greeting-block {
-  text-align: center;
-  margin-top: clamp(175px, 28vh, 220px);
-  padding: 0 20px;
-  position: relative;
-  z-index: 15;
+/* ── Scrollable Snap-Paged Container ─────────────────────── */
+.scrollable-snap-wrapper {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  max-width: 420px;
-  pointer-events: auto;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
+  z-index: 10;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-.khmer-ceremony-title {
+.scrollable-snap-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+/* ── Snap Page Structure ─────────────────────────────────── */
+.snap-page {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  min-height: 100dvh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* ── Section: Invitation Cover (Photo 2) ─────────────────── */
+.section-invitation-cover {
+  padding: clamp(140px, 20vh, 185px) 14px clamp(20px, 3vh, 32px);
+  justify-content: flex-start;
+}
+
+/* ── Invitation Card Container (Transparent - No White Background) ── */
+.invitation-content {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: none;
+  border-radius: 0;
+  padding: 0 12px;
+  box-shadow: none;
+  outline: none;
+  text-align: center;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+/* Main Wedding Ceremony Title */
+.main-wedding-title {
   font-family: var(--font-khmer, 'Moul', serif);
-  font-size: clamp(1.2rem, 4.2vw, 1.6rem);
-  color: #a07018;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8), 0 2px 8px rgba(180, 130, 40, 0.25);
-  margin-bottom: 6px;
+  font-size: clamp(1.25rem, 4.5vw, 1.55rem);
+  line-height: 1.45;
+  background: linear-gradient(135deg, #a07018 0%, #d4a43a 40%, #7d5010 70%, #d4a43a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter:
+    drop-shadow(0 0 2px rgba(255, 255, 255, 1))
+    drop-shadow(0 0 8px rgba(255, 255, 255, 0.9))
+    drop-shadow(0 2px 8px rgba(70, 35, 10, 0.55));
   letter-spacing: 0.02em;
+  margin: 0 0 12px;
 }
 
-.khmer-ceremony-sub {
+/* Parents Section (2 Columns) */
+.parents-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px clamp(10px, 3vw, 22px);
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 0 4px;
+  box-sizing: border-box;
+}
+
+.parent-col {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.parent-col.left-col {
+  text-align: left;
+  align-items: flex-start;
+}
+
+.parent-col.right-col {
+  text-align: right;
+  align-items: flex-end;
+}
+
+.parent-row {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 5px;
   font-family: var(--font-khmer2, 'Hanuman', sans-serif);
-  font-size: clamp(0.9rem, 3.2vw, 1.05rem);
-  color: #6b4038;
-  font-weight: 500;
-  margin-bottom: 16px;
+  line-height: 1.35;
+}
+
+.left-col .parent-row {
+  justify-content: flex-start;
+}
+
+.right-col .parent-row {
+  justify-content: flex-end;
+}
+
+.role-text {
+  font-size: clamp(0.75rem, 2.4vw, 0.84rem);
+  color: #582478;
+  font-weight: 700;
+  text-shadow:
+    0 0 1px #fff,
+    0 0 4px #ffffff,
+    0 0 8px rgba(255, 255, 255, 0.95),
+    0 1px 2px rgba(45, 20, 5, 0.4);
+}
+
+.name-text {
+  font-size: clamp(0.82rem, 2.65vw, 0.94rem);
+  color: #1a0c08;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-shadow:
+    0 0 1px #fff,
+    0 0 4px #ffffff,
+    0 0 8px rgba(255, 255, 255, 0.95),
+    0 1px 2px rgba(45, 20, 5, 0.45);
+}
+
+/* Invitation Subtitle */
+.honor-invite-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: var(--font-khmer2, 'Hanuman', sans-serif);
+  font-weight: 700;
+  font-size: clamp(0.85rem, 2.7vw, 0.98rem);
+  color: #7a4805;
+  margin: 10px auto 9px;
+  text-align: center;
+  letter-spacing: 0.01em;
+  text-shadow:
+    0 0 1px #fff,
+    0 0 4px #ffffff,
+    0 0 8px rgba(255, 255, 255, 0.95),
+    0 1px 2px rgba(60, 30, 10, 0.4);
+}
+
+.honor-invite-title::before,
+.honor-invite-title::after {
+  content: '';
+  display: block;
+  width: 26px;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, #b8860b, transparent);
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.9);
+}
+
+/* Formal Invitation Body Text */
+.formal-invitation-text {
+  margin-bottom: 12px;
+  padding: 0 6px;
+}
+
+.formal-invitation-text p {
+  font-family: var(--font-khmer2, 'Hanuman', sans-serif);
+  font-size: clamp(0.7rem, 2.2vw, 0.79rem);
+  line-height: 1.65;
+  color: #26110b;
+  font-weight: 700;
+  margin-bottom: 3px;
+  word-break: keep-all;
+  text-shadow:
+    0 0 1px #fff,
+    0 0 4px #ffffff,
+    0 0 7px rgba(255, 255, 255, 0.95),
+    0 0 12px rgba(255, 255, 255, 0.85),
+    0 1px 2px rgba(35, 15, 5, 0.5);
+}
+
+/* Groom & Bride Names (2 Columns) */
+.couple-names-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  width: 100%;
+  margin: 10px 0 13px;
+  padding: 6px 4px;
+  background: transparent;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  box-sizing: border-box;
+}
+
+.couple-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.couple-role {
+  font-family: var(--font-khmer2, 'Hanuman', sans-serif);
+  font-size: clamp(0.7rem, 2.2vw, 0.78rem);
+  color: #582478;
+  font-weight: 700;
+  margin-bottom: 3px;
+  text-shadow:
+    0 0 1px #fff,
+    0 0 4px #ffffff,
+    0 0 8px rgba(255, 255, 255, 0.95),
+    0 1px 2px rgba(45, 20, 5, 0.4);
+}
+
+.couple-name {
+  font-family: var(--font-khmer, 'Moul', serif);
+  font-size: clamp(1.05rem, 3.5vw, 1.3rem);
+  color: #9e6e10;
+  background: linear-gradient(135deg, #9e6e10 0%, #d4a43a 40%, #7d5010 70%, #d4a43a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter:
+    drop-shadow(0 0 2px #ffffff)
+    drop-shadow(0 0 6px rgba(255, 255, 255, 0.95))
+    drop-shadow(0 0 12px rgba(255, 255, 255, 0.85))
+    drop-shadow(0 2px 6px rgba(50, 25, 5, 0.6));
+  line-height: 1.35;
+  margin: 0;
+}
+
+/* Wedding Auspicious Date & Time */
+.wedding-datetime-section {
+  margin-bottom: 11px;
+  padding: 0 4px;
+}
+
+.khmer-lunar-date {
+  font-family: var(--font-khmer2, 'Hanuman', sans-serif);
+  font-size: clamp(0.72rem, 2.25vw, 0.8rem);
+  color: #381a12;
+  font-weight: 700;
+  line-height: 1.45;
+  margin-bottom: 4px;
+  text-shadow:
+    0 0 1px #fff,
+    0 0 4px #ffffff,
+    0 0 8px rgba(255, 255, 255, 0.95),
+    0 1px 2px rgba(35, 15, 5, 0.45);
+}
+
+.solar-date-highlight {
+  display: inline-block;
+  font-family: var(--font-khmer, 'Moul', serif);
+  font-size: clamp(0.88rem, 2.8vw, 1.02rem);
+  color: #9c1f48;
+  background: none;
+  border: none;
+  padding: 2px 0;
+  margin: 3px auto;
+  box-shadow: none;
+  text-shadow:
+    0 0 2px #fff,
+    0 0 5px #ffffff,
+    0 0 10px rgba(255, 255, 255, 0.95),
+    0 0 16px rgba(255, 255, 255, 0.9),
+    0 2px 4px rgba(80, 20, 40, 0.45);
+  letter-spacing: 0.01em;
+  line-height: 1.4;
+}
+
+.reception-time {
+  font-family: var(--font-khmer2, 'Hanuman', sans-serif);
+  font-size: clamp(0.72rem, 2.25vw, 0.8rem);
+  color: #26110b;
+  font-weight: 700;
+  margin-top: 4px;
+  line-height: 1.4;
+  text-shadow:
+    0 0 1px #fff,
+    0 0 4px #ffffff,
+    0 0 8px rgba(255, 255, 255, 0.95),
+    0 1px 2px rgba(35, 15, 5, 0.45);
+}
+
+/* Wedding Reception Venue */
+.venue-section {
+  margin-top: 6px;
+  padding-top: 7px;
+  border-top: 1px solid rgba(184, 134, 11, 0.35);
+  box-shadow: 0 -1px 4px rgba(255, 255, 255, 0.8);
+}
+
+.venue-main-name {
+  font-family: var(--font-khmer2, 'Hanuman', sans-serif);
+  font-weight: 700;
+  font-size: clamp(0.82rem, 2.55vw, 0.92rem);
+  color: #1a0c08;
+  margin-bottom: 3px;
+  line-height: 1.35;
+  text-shadow:
+    0 0 1px #fff,
+    0 0 4px #ffffff,
+    0 0 8px rgba(255, 255, 255, 0.95),
+    0 1px 2px rgba(35, 15, 5, 0.45);
+}
+
+.venue-address-line {
+  font-family: var(--font-khmer2, 'Hanuman', sans-serif);
+  font-size: clamp(0.74rem, 2.3vw, 0.82rem);
+  color: #26110b;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 2px;
+  text-shadow:
+    0 0 1px #fff,
+    0 0 4px #ffffff,
+    0 0 8px rgba(255, 255, 255, 0.95),
+    0 1px 2px rgba(35, 15, 5, 0.45);
+}
+
+.venue-closing-wish {
+  font-family: var(--font-khmer2, 'Hanuman', sans-serif);
+  font-size: clamp(0.72rem, 2.25vw, 0.8rem);
+  color: #582478;
+  font-weight: 700;
+  margin-top: 3px;
+  line-height: 1.35;
+  text-shadow:
+    0 0 1px #fff,
+    0 0 4px #ffffff,
+    0 0 8px rgba(255, 255, 255, 0.95),
+    0 1px 2px rgba(45, 20, 5, 0.4);
+}
+
+/* Scroll Down Prompt Indicator */
+.scroll-down-cue {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 9px;
+  cursor: pointer;
+  color: #9e6e10;
+  padding: 4px;
+  background: transparent;
+  border: none;
+  transition: all 0.25s ease;
+  filter:
+    drop-shadow(0 0 3px #ffffff)
+    drop-shadow(0 0 6px rgba(255, 255, 255, 0.95))
+    drop-shadow(0 2px 4px rgba(40, 20, 10, 0.5));
+}
+
+.scroll-down-cue:hover {
+  transform: translateY(2px) scale(1.15);
+  color: #7a4805;
+}
+
+.bounce-down-icon {
+  animation: bounceCue 2s infinite ease-in-out;
+}
+
+@keyframes bounceCue {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(5px);
+  }
+  60% {
+    transform: translateY(2.5px);
+  }
 }
 
 /* ── Optional Background Fairytale Chateau Backdrop ──────── */

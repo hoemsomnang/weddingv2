@@ -182,15 +182,89 @@
 
 
 
-    <!-- ── Hero Greeting ── -->
-    <section
-      class="hero-greeting-block fade-in"
-      :class="{ visible: entered }"
-      style="--delay: 0.4s"
-    >
-      <h1 class="khmer-ceremony-title">{{ invitation.khmerGreeting }}</h1>
-      <p class="khmer-ceremony-sub">{{ invitation.khmerSubtitle[0] || 'សូមគោរពអញ្ជើញចូលរួម' }}</p>
-    </section>
+    <!-- Scrollable Snap-Paged Container -->
+    <div class="scrollable-snap-wrapper" ref="scrollContainer">
+      
+      <!-- ==========================================
+           PAGE 1: MAIN INVITATION CARD (Photo 2)
+           ========================================== -->
+      <section class="snap-page section-invitation-cover" id="page-invite">
+        <div class="invitation-content fade-in" :class="{ visible: entered }" style="--delay: 0.35s">
+          
+          <!-- Main Wedding Ceremony Title -->
+          <h1 class="main-wedding-title">សិរីមង្គលអាពាហ៍ពិពាហ៍</h1>
+
+          <!-- Parents Section (2 Columns) -->
+          <div class="parents-grid">
+            <div class="parent-col left-col">
+              <div class="parent-row">
+                <span class="role-text">លោក</span>
+                <span class="name-text">ហ៊ឹម លាង</span>
+              </div>
+              <div class="parent-row">
+                <span class="role-text">លោកស្រី</span>
+                <span class="name-text">អ៊ុំ ស្រ៊ឺ</span>
+              </div>
+            </div>
+
+            <div class="parent-col right-col">
+              <div class="parent-row">
+                <span class="role-text">លោក</span>
+                <span class="name-text">ឃន សារ៉េត</span>
+              </div>
+              <div class="parent-row">
+                <span class="role-text">លោកស្រី</span>
+                <span class="name-text">ធា ម៉ុំ</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Invitation Subtitle -->
+          <div class="honor-invite-title">
+            មានកិត្តិយសសូមគោរពអញ្ជើញ
+          </div>
+
+          <!-- Formal Invitation Body Text -->
+          <div class="formal-invitation-text">
+            <p>ឯកឧត្តម លោកជំទាវ អ្នកឧកញ៉ា ឧកញ៉ា លោក លោកស្រី អ្នកនាង កញ្ញា</p>
+            <p>អញ្ជើញចូលរួមជាអធិបតី និងភ្ញៀវកិត្តិយស ដើម្បីប្រសិទ្ធពរជ័យ សិរីសួស្តីជ័យមង្គលក្នុង</p>
+            <p>ពិធីសិរីមង្គលអាពាហ៍ពិពាហ៍កូនប្រុស កូនស្រីរបស់យើងខ្ញុំ</p>
+          </div>
+
+          <!-- Groom & Bride Names (2 Columns) -->
+          <div class="couple-names-grid">
+            <div class="couple-col groom-col">
+              <span class="couple-role">កូនប្រុសនាម</span>
+              <h2 class="couple-name">ហ៊ឹម សំណាង</h2>
+            </div>
+            <div class="couple-col bride-col">
+              <span class="couple-role">កូនស្រីនាម</span>
+              <h2 class="couple-name">ឃន សារ៉េន</h2>
+            </div>
+          </div>
+
+          <!-- Wedding Auspicious Date & Time -->
+          <div class="wedding-datetime-section">
+            <p class="khmer-lunar-date">នៅថ្ងៃសៅរ៍ ៦កើត ខែផល្គុន ឆ្នាំមមី អដ្ឋស័ក ពុទ្ធសករាជ ២៥៧០</p>
+            <p class="solar-date-highlight">ត្រូវនឹងថ្ងៃទី ១៣ ខែមីនា ឆ្នាំ ២០២៧</p>
+            <p class="reception-time">វេលាម៉ោង ០៥ : ០០ ល្ងាចនៅ</p>
+          </div>
+
+          <!-- Wedding Reception Venue -->
+          <div class="venue-section">
+            <h3 class="venue-main-name">គេហដ្ឋាននៃសិរីមង្គលអាពាហ៍ពិពាហ៍</h3>
+            <p class="venue-address-line">ស្ថិតនៅ ស្រុកសំពៅលូន ខេត្តបាត់ដំបង</p>
+            <p class="venue-closing-wish">ដោយមេត្រីភាព។</p>
+          </div>
+
+          <!-- Scroll Down Prompt Indicator -->
+          <div class="scroll-down-cue" @click="scrollToPage('page-countdown')">
+            <ChevronDown :size="22" class="bounce-down-icon" />
+          </div>
+
+        </div>
+      </section> 
+    </div>
 
     <!-- ── Background Fairytale Chateau & Garden ── -->
     <!--
@@ -317,9 +391,11 @@ import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import FloatingPetals from '@/components/FloatingPetals.vue'
 import ButterflyEffect from '@/components/ButterflyEffect.vue'
+import ChevronDown from '@/components/ChevronDown.vue'
 import invitation from '@/config/invitation.js'
 
 const router = useRouter()
+const scrollContainer = ref(null)
 
 // ── Entrance animation state (matching CoverPage.vue) ──────
 const entered = ref(false)
@@ -333,6 +409,16 @@ onMounted(() => {
     entered.value = true
   })
 })
+
+function scrollToPage(targetId) {
+  if (!targetId) return
+  const targetEl = document.getElementById(targetId)
+  if (targetEl) {
+    targetEl.scrollIntoView({ behavior: 'smooth' })
+  } else if (scrollContainer.value) {
+    scrollContainer.value.scrollBy({ top: window.innerHeight, behavior: 'smooth' })
+  }
+}
 
 function goBackToCover() {
   router.push({ name: 'cover' })
