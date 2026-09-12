@@ -202,7 +202,10 @@
         class="bottom-bg-img"
         alt="Wedding bottom background"
         draggable="false"
-        decoding="async"
+        decoding="auto"
+        fetchpriority="high"
+        width="960"
+        height="225"
       />
       <!-- ── Vertical side edge floral spires (Left & Right) ── -->
       <img
