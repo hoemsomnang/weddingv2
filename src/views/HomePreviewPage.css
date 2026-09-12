@@ -4,26 +4,22 @@
 
 .home-preview-page {
   position: relative;
-  height: 100vh;
-  height: 100dvh;
-  min-height: 100svh;
-  max-height: 100svh;
+  min-height: 100vh;
+  min-height: 100dvh;
   width: 100%;
-  max-width: 540px;
   margin: 0 auto;
-  background: linear-gradient(180deg, #faf3ea 0%, #fdf8f2 40%, #f7ecde 100%);
   color: var(--text-dark, #2e1c16);
-  overflow: hidden; /* Do not show image overflow, scrollbar or cut-off stems, like CoverPage */
-  box-shadow: 0 0 60px rgba(120, 80, 20, 0.12);
+  overflow-x: hidden;
   padding-bottom: 0;
   display: flex;
   flex-direction: column;
+  align-items: center;
   font-family: var(--font-body, 'Montserrat', sans-serif);
 }
 
-/* ── Full-Screen Sunset Sky Page Background ──────────────── */
+/* ── Full-Screen Islamic Arch Page Background ─────────────── */
 .preview-page-fullscreen-bg {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -33,6 +29,10 @@
   pointer-events: none;
   z-index: 0;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fdf8f2;
 }
 
 .preview-fullscreen-bg-img {
@@ -41,29 +41,19 @@
   object-fit: cover;
   object-position: center top;
   display: block;
-  opacity: 0.85;
-  filter: saturate(1.1) brightness(1.02);
-  transform: scale(1.03);
-  animation: bgPageZoomSlow 24s ease-in-out infinite alternate;
+  opacity: 1;
+  filter: none;
+  transform: none;
+}
+
+@media (max-width: 768px) {
+  .preview-fullscreen-bg-img {
+    object-fit: fill; /* Ensures the complete arch, calligraphy, and lanterns frame the mobile screen edge-to-edge */
+  }
 }
 
 .preview-fullscreen-bg-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 50% 35%, rgba(255, 255, 255, 0.1) 0%, rgba(250, 243, 234, 0.3) 60%, rgba(247, 236, 222, 0.55) 100%);
-  pointer-events: none;
-}
-
-@keyframes bgPageZoomSlow {
-  0% {
-    transform: scale(1.02);
-  }
-  100% {
-    transform: scale(1.06);
-  }
+  display: none;
 }
 
 /* ── Top Navigation Bar ──────────────────────────────────── */
@@ -150,7 +140,7 @@
 }
 
 .chandelier-img {
-  width: min(72vw, 300px);
+  width: min(72vw, 206px);
   max-height: 36vh;
   height: auto;
   object-fit: contain;

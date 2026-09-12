@@ -8,7 +8,7 @@
     <!-- ── Full-Screen Sunset Sky Page Background ── -->
     <div class="preview-page-fullscreen-bg" aria-hidden="true">
       <img
-        src="@/assets/chateau_sky_sunset_backdrop.webp"
+        src="@/assets/islamic_wedding_arch.webp"
         class="preview-fullscreen-bg-img"
         alt="Fairytale Sunset Sky Page Background"
         draggable="false"
@@ -21,21 +21,6 @@
     <!-- ── Ambient Floating Petals & Butterflies ── -->
     <FloatingPetals />
     <ButterflyEffect theme="white" />
-
-    <!-- ── Top Navigation Bar ── -->
-    <header class="preview-nav-bar">
-      <button
-        type="button"
-        class="btn-back-nav"
-        @click="goBackToCover"
-        aria-label="Back to Cover"
-      >
-        <span>←</span>
-        <span>ទំព័រគម្រប</span>
-      </button>
-
-      <span class="preview-badge">Wedding Invitation</span>
-    </header>
 
     <!-- ── Luxury Chandelier Hanging from Top ── -->
     <section
@@ -67,6 +52,7 @@
     </section>
 
     <!-- ── Background Fairytale Chateau & Garden ── -->
+    <!--
     <div class="preview-bg-chateau-wrap" aria-hidden="true">
       <img
         src="@/assets/chateau_garden_original_trans.webp"
@@ -75,7 +61,7 @@
         draggable="false"
         decoding="async"
       />
-    </div>
+    </div>-->
 
     <!-- ── Left Side Floral Accent ── -->
     <div class="left-flower-wrap" aria-hidden="true">
