@@ -65,8 +65,38 @@
       decoding="async"
     />
 
+    <img
+      src="@/assets/wisteria_dense_cascade_trans.webp"
+      class="top-left-wisteria_dense_cascade_trans"
+      alt="Top Left Wisteria Hanging Blossom"
+      draggable="false"
+      decoding="async"
+    />
 
+    <img
+      src="@/assets/wisteria_dense_cascade_trans.webp"
+      class="top-left-wisteria_dense_cascade_trans-1"
+      alt="Top Left Wisteria Hanging Blossom"
+      draggable="false"
+      decoding="async"
+    />
 
+    
+    <img
+      src="@/assets/wisteria_dense_cascade_trans.webp"
+      class="top-left-wisteria_dense_cascade_trans-2"
+      alt="Top Left Wisteria Hanging Blossom"
+      draggable="false"
+      decoding="async"
+    />
+
+    <img
+      src="@/assets/wisteria_dense_cascade_trans.webp"
+      class="top-left-wisteria_dense_cascade_trans-3"
+      alt="Top Left Wisteria Hanging Blossom"
+      draggable="false"
+      decoding="async"
+    />
 
     <!-- ── Top-Right Wisteria Hanging Accent ── -->
     <img
@@ -81,6 +111,39 @@
       src="@/assets/wisteria_hanging_clusters_right_trans.webp"
       class="top-right-wisteria-img-1"
       alt="Top Right Wisteria Hanging Blossom"
+      draggable="false"
+      decoding="async"
+    />
+    
+    <img
+      src="@/assets/wisteria_dense_cascade_right_trans.webp"
+      class="top-right-wisteria-img-2"
+      alt="Top Left Wisteria Hanging Blossom"
+      draggable="false"
+      decoding="async"
+    />
+
+    <img
+      src="@/assets/wisteria_dense_cascade_right_trans.webp"
+      class="top-right-wisteria-img-3"
+      alt="Top Left Wisteria Hanging Blossom"
+      draggable="false"
+      decoding="async"
+    />
+
+    <img
+      src="@/assets/wisteria_dense_cascade_right_trans.webp"
+      class="top-right-wisteria-img-4"
+      alt="Top Left Wisteria Hanging Blossom"
+      draggable="false"
+      decoding="async"
+    />
+
+    
+    <img
+      src="@/assets/wisteria_dense_cascade_right_trans.webp"
+      class="top-right-wisteria-img-5"
+      alt="Top Left Wisteria Hanging Blossom"
       draggable="false"
       decoding="async"
     />
