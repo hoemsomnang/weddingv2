@@ -612,6 +612,45 @@
     overflow: visible;
 } 
 
+.top-left-purple_roses_1 {
+    position: absolute;
+    top: 20px;
+    left: 57px;
+    width: clamp(90px, 30vw, 116px);
+    height: auto;
+    max-height: clamp(96px, 25vh, 145px);
+    object-fit: contain;
+    object-position: top left;
+    filter: drop-shadow(0 6px 16px rgba(110, 50, 160, 0.22));
+    transform-origin: top left;
+    transform: rotate(-2deg);
+    display: block;
+    pointer-events: none;
+    z-index: 5;
+    line-height: 0;
+    overflow: visible;
+} 
+
+.top-left-purple_roses_2 {
+    position: absolute;
+    top: -41px;
+    left: 49px;
+    width: clamp(90px, 30vw, 116px);
+    height: auto;
+    max-height: clamp(96px, 25vh, 145px);
+    object-fit: contain;
+    object-position: top left;
+    filter: drop-shadow(0 6px 16px rgba(110, 50, 160, 0.22));
+    transform-origin: top left;
+    transform: rotate(-2deg);
+    display: block;
+    pointer-events: none;
+    z-index: 6;
+    line-height: 0;
+    overflow: visible;
+}
+
+
 @keyframes wisteriaTopLeftSway {
   0% {
     transform: rotate(-2deg) translateY(0);
@@ -706,6 +745,47 @@
     line-height: 0;
     overflow: visible;
 } 
+
+
+.top-right-purple_roses_1 {
+    position: absolute;
+    top: 20px;
+    right: 57px;
+    width: clamp(90px, 30vw, 116px);
+    height: auto;
+    max-height: clamp(96px, 25vh, 145px);
+    object-fit: contain;
+    object-position: top right;
+    filter: drop-shadow(0 6px 16px rgba(110, 50, 160, 0.22));
+    transform-origin: top right;
+    transform: rotate(-2deg);
+    display: block;
+    pointer-events: none;
+    z-index: 5;
+    line-height: 0;
+    overflow: visible;
+} 
+
+.top-right-purple_roses_2 {
+    position: absolute;
+    top: -41px;
+    right: 56px;
+    width: clamp(90px, 30vw, 116px);
+    height: auto;
+    max-height: clamp(96px, 25vh, 145px);
+    object-fit: contain;
+    object-position: top right;
+    filter: drop-shadow(0 6px 16px rgba(110, 50, 160, 0.22));
+    transform-origin: top right;
+    transform: rotate(-2deg);
+    display: block;
+    pointer-events: none;
+    z-index: 6;
+    line-height: 0;
+    overflow: visible;
+}
+
+
 
 @keyframes wisteriaTopRightSway {
   0% {

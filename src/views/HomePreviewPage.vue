@@ -81,7 +81,21 @@
       decoding="async"
     />
 
+    <img
+      src="@/assets/original_dense_roses_reverted_down_right_trans.webp"
+      class="top-left-purple_roses_1"
+      alt="Top Left Wisteria Hanging Blossom"
+      draggable="false"
+      decoding="async"
+    />
 
+    <img
+      src="@/assets/bicolor_roses_original_down_right_trans.webp"
+      class="top-left-purple_roses_2"
+      alt="Top Left Wisteria Hanging Blossom"
+      draggable="false"
+      decoding="async"
+    />
 
     <!-- ── Top-Right Wisteria Hanging Accent ── -->
     <img
@@ -116,6 +130,21 @@
       decoding="async"
     />
 
+    <img
+      src="@/assets/original_dense_roses_reverted_down_trans.webp"
+      class="top-right-purple_roses_1"
+      alt="Top Left Wisteria Hanging Blossom"
+      draggable="false"
+      decoding="async"
+    />
+
+    <img
+      src="@/assets/bicolor_roses_original_down_trans.webp"
+      class="top-right-purple_roses_2"
+      alt="Top Left Wisteria Hanging Blossom"
+      draggable="false"
+      decoding="async"
+    />
     <!-- ── Hero Greeting ── -->
     <section
       class="hero-greeting-block fade-in"
