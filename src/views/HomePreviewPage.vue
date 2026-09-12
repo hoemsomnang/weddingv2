@@ -66,37 +66,22 @@
     />
 
     <img
-      src="@/assets/wisteria_dense_cascade_trans.webp"
-      class="top-left-wisteria_dense_cascade_trans"
+      src="@/assets/purple_lavender_blooming_roses_down_right_trans.webp"
+      class="top-left-purple_lavender"
       alt="Top Left Wisteria Hanging Blossom"
       draggable="false"
       decoding="async"
     />
 
     <img
-      src="@/assets/wisteria_dense_cascade_trans.webp"
-      class="top-left-wisteria_dense_cascade_trans-1"
+      src="@/assets/purple_roses_hanging_chandelier_right_trans.webp"
+      class="top-left-purple_roses"
       alt="Top Left Wisteria Hanging Blossom"
       draggable="false"
       decoding="async"
     />
 
-    
-    <img
-      src="@/assets/wisteria_dense_cascade_trans.webp"
-      class="top-left-wisteria_dense_cascade_trans-2"
-      alt="Top Left Wisteria Hanging Blossom"
-      draggable="false"
-      decoding="async"
-    />
 
-    <img
-      src="@/assets/wisteria_dense_cascade_trans.webp"
-      class="top-left-wisteria_dense_cascade_trans-3"
-      alt="Top Left Wisteria Hanging Blossom"
-      draggable="false"
-      decoding="async"
-    />
 
     <!-- ── Top-Right Wisteria Hanging Accent ── -->
     <img
@@ -116,33 +101,16 @@
     />
     
     <img
-      src="@/assets/wisteria_dense_cascade_right_trans.webp"
-      class="top-right-wisteria-img-2"
+      src="@/assets/purple_lavender_blooming_roses_down_trans.webp"
+      class="top-right-purple_lavender"
       alt="Top Left Wisteria Hanging Blossom"
       draggable="false"
       decoding="async"
     />
 
     <img
-      src="@/assets/wisteria_dense_cascade_right_trans.webp"
-      class="top-right-wisteria-img-3"
-      alt="Top Left Wisteria Hanging Blossom"
-      draggable="false"
-      decoding="async"
-    />
-
-    <img
-      src="@/assets/wisteria_dense_cascade_right_trans.webp"
-      class="top-right-wisteria-img-4"
-      alt="Top Left Wisteria Hanging Blossom"
-      draggable="false"
-      decoding="async"
-    />
-
-    
-    <img
-      src="@/assets/wisteria_dense_cascade_right_trans.webp"
-      class="top-right-wisteria-img-5"
+      src="@/assets/purple_roses_hanging_chandelier_trans.webp"
+      class="top-right-purple_roses"
       alt="Top Left Wisteria Hanging Blossom"
       draggable="false"
       decoding="async"

@@ -573,11 +573,10 @@
     animation: wisteriaTopLeftSway 6.8s ease-in-out infinite alternate;
 }
 
-
-.top-left-wisteria_dense_cascade_trans {
+.top-left-purple_lavender {
     position: absolute;
-    top: 0px;
-    left: -15px;
+    top: -31px;
+    left: -10px;
     width: clamp(90px, 30vw, 116px);
     height: auto;
     max-height: clamp(96px, 25vh, 145px);
@@ -591,13 +590,13 @@
     z-index: 6;
     line-height: 0;
     overflow: visible;
-    animation: wisteriaTopLeftSway 6.8s ease-in-out infinite alternate;
+    /*animation: wisteriaTopLeftSway 6.8s ease-in-out infinite alternate;*/
 }
 
-.top-left-wisteria_dense_cascade_trans-1 {
+.top-left-purple_roses {
     position: absolute;
-    top: -20px;
-    left: 35px;
+    top: 78px;
+    left: -19px;
     width: clamp(90px, 30vw, 116px);
     height: auto;
     max-height: clamp(96px, 25vh, 145px);
@@ -608,51 +607,10 @@
     transform: rotate(-2deg);
     display: block;
     pointer-events: none;
-    z-index: 6;
+    z-index: 5;
     line-height: 0;
     overflow: visible;
-    animation: wisteriaTopLeftSway 6.8s ease-in-out infinite alternate;
-}
-
-.top-left-wisteria_dense_cascade_trans-2 {
-    position: absolute;
-    top: -30px;
-    left: 89px;
-    width: clamp(90px, 30vw, 116px);
-    height: auto;
-    max-height: clamp(96px, 25vh, 145px);
-    object-fit: contain;
-    object-position: top left;
-    filter: drop-shadow(0 6px 16px rgba(110, 50, 160, 0.22));
-    transform-origin: top left;
-    transform: rotate(-2deg);
-    display: block;
-    pointer-events: none;
-    z-index: 6;
-    line-height: 0;
-    overflow: visible;
-    animation: wisteriaTopLeftSway 6.8s ease-in-out infinite alternate;
-}
-
-.top-left-wisteria_dense_cascade_trans-3 {
-    position: absolute;
-    top: -41px;
-    left: 142px;
-    width: clamp(90px, 30vw, 116px);
-    height: auto;
-    max-height: clamp(96px, 25vh, 145px);
-    object-fit: contain;
-    object-position: top left;
-    filter: drop-shadow(0 6px 16px rgba(110, 50, 160, 0.22));
-    transform-origin: top left;
-    transform: rotate(-2deg);
-    display: block;
-    pointer-events: none;
-    z-index: 6;
-    line-height: 0;
-    overflow: visible;
-    animation: wisteriaTopLeftSway 6.8s ease-in-out infinite alternate;
-}
+} 
 
 @keyframes wisteriaTopLeftSway {
   0% {
@@ -709,30 +667,11 @@
     animation: wisteriaTopRightSway 6.8s ease-in-out infinite alternate -3.4s;
 }
 
-.top-right-wisteria-img-2 {
-position: absolute;
-    top: -21px;
-    right: -18px;
-    width: clamp(90px, 30vw, 116px);
-    height: auto;
-    max-height: clamp(96px, 25vh, 145px);
-    object-fit: contain;
-    object-position: top right;
-    filter: drop-shadow(0 6px 16px rgba(110, 50, 160, 0.22));
-    transform-origin: top right;
-    transform: rotate(-2deg);
-    display: block;
-    pointer-events: none;
-    z-index: 6;
-    line-height: 0;
-    overflow: visible;
-    animation: wisteriaTopRightSway 6.8s ease-in-out infinite alternate -3.4s;
-}
 
-.top-right-wisteria-img-3 {
+.top-right-purple_lavender {
     position: absolute;
-    top: -24px;
-    right: 35px;
+    top: -31px;
+    right: -6px;
     width: clamp(90px, 30vw, 116px);
     height: auto;
     max-height: clamp(96px, 25vh, 145px);
@@ -746,48 +685,27 @@ position: absolute;
     z-index: 6;
     line-height: 0;
     overflow: visible;
-    animation: wisteriaTopRightSway 6.8s ease-in-out infinite alternate -3.4s;
+    /*animation: wisteriaTopLeftSway 6.8s ease-in-out infinite alternate;*/
 }
 
-.top-right-wisteria-img-4 {
-position: absolute;
-    top: -34px;
-    right: 87px;
+.top-right-purple_roses {
+    position: absolute;
+    top: 78px;
+    right: -34px;
     width: clamp(90px, 30vw, 116px);
     height: auto;
     max-height: clamp(96px, 25vh, 145px);
     object-fit: contain;
-    object-position: top right;
+    object-position: top left;
     filter: drop-shadow(0 6px 16px rgba(110, 50, 160, 0.22));
-    transform-origin: top right;
+    transform-origin: top left;
     transform: rotate(-2deg);
     display: block;
     pointer-events: none;
-    z-index: 6;
+    z-index: 5;
     line-height: 0;
     overflow: visible;
-    animation: wisteriaTopRightSway 6.8s ease-in-out infinite alternate -3.4s;
-}
-
-.top-right-wisteria-img-5 {
-     position: absolute;
-    top: -39px;
-    right: 143px;
-    width: clamp(90px, 30vw, 116px);
-    height: auto;
-    max-height: clamp(96px, 25vh, 145px);
-    object-fit: contain;
-    object-position: top right;
-    filter: drop-shadow(0 6px 16px rgba(110, 50, 160, 0.22));
-    transform-origin: top right;
-    transform: rotate(-2deg);
-    display: block;
-    pointer-events: none;
-    z-index: 6;
-    line-height: 0;
-    overflow: visible;
-    animation: wisteriaTopRightSway 6.8s ease-in-out infinite alternate -3.4s;
-}
+} 
 
 @keyframes wisteriaTopRightSway {
   0% {
