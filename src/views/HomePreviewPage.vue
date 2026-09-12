@@ -271,10 +271,24 @@
             <p class="venue-closing-wish">ដោយមេត្រីភាព។</p>
           </div>
 
-          <!-- Scroll Down Prompt Indicator -->
-          <div class="scroll-down-cue" @click="scrollToPage('page-countdown')">
-            <ChevronDown :size="22" class="bounce-down-icon" />
-          </div>
+          <!-- Scroll Down Banner Button (Photo 2 / Luxury Cartouche) -->
+          <button
+            type="button"
+            class="scroll-down-cue scroll-down-banner-btn"
+            @click="scrollToPage('page-countdown')"
+            aria-label="Scroll to next section"
+          >
+            <img
+              src="@/assets/gold_ribbon_banner_new_trans.webp"
+              class="scroll-down-banner-img"
+              alt="Scroll to details"
+              draggable="false"
+              decoding="async"
+            />
+            <div class="scroll-down-banner-inner">
+              <span class="scroll-down-banner-text">អូសឡើងទៅលើ</span>
+            </div>
+          </button>
 
         </div>
       </section> 
@@ -405,7 +419,6 @@ import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import FloatingPetals from '@/components/FloatingPetals.vue'
 import ButterflyEffect from '@/components/ButterflyEffect.vue'
-import ChevronDown from '@/components/ChevronDown.vue'
 import invitation from '@/config/invitation.js'
 
 const router = useRouter()
