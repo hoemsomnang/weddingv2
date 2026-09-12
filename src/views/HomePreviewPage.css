@@ -61,7 +61,7 @@
   display: block;
   opacity: 1;
   transform: translateY(-50px);
-  filter: blur(1.5px);
+  filter: blur(0.5px);
   z-index: 2;
   pointer-events: none;
 }
