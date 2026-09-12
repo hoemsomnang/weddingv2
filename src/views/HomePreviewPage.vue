@@ -111,7 +111,7 @@
       />
 
           <img
-        src="@/assets/magenta_purple_rose_dew_trans.webp"
+        src="@/assets/purple_rose_dew_bloom_right_trans.webp"
         class="left-magenta_purple_1" 
         alt="Left Floral Accent"
         draggable="false"
