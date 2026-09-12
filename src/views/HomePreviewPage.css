@@ -669,6 +669,25 @@
     overflow: visible;
 }
 
+.top-left-purple_roses_4 {
+    position: absolute;
+    top: -30px;
+    left: 178px;
+    width: clamp(62px, 30vw, 71px);
+    height: auto;
+    max-height: clamp(76px, 25vh, 125px);
+    object-fit: contain;
+    object-position: top left;
+    filter: drop-shadow(0 6px 16px rgba(110, 50, 160, 0.22));
+    transform-origin: top left;
+    transform: rotate(-2deg);
+    display: block;
+    pointer-events: none;
+    z-index: 6;
+    line-height: 0;
+    overflow: visible;
+}
+
 @keyframes wisteriaTopLeftSway {
   0% {
     transform: rotate(-2deg) translateY(0);

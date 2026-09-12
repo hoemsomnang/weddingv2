@@ -105,6 +105,13 @@
       decoding="async"
     />
 
+     <img
+      src="@/assets/twotone_purple_roses_down_right_trans.webp"
+      class="top-left-purple_roses_4"
+      alt="Top Left Wisteria Hanging Blossom"
+      draggable="false"
+      decoding="async"
+    />
 
     <!-- ── Top-Right Wisteria Hanging Accent ── -->
     <img
