@@ -15,15 +15,15 @@
         decoding="async"
         fetchpriority="high"
       />
-      <img
+     <!-- <img
         src="@/assets/fairytale_palace_purple_stairs_trans.webp"
         class="preview-fullscreen-palace-img"
         alt="Fairytale Palace Purple Stairs Background"
         draggable="false"
         decoding="async"
-      />
+      />-->
       <div class="preview-fullscreen-bg-overlay"></div>
-    </div>
+    </div> 
 
     <!-- ── Ambient Floating Petals & Butterflies ── -->
     <FloatingPetals />
@@ -306,107 +306,99 @@
       />
     </div>-->
 
+    <!-- ── Bottom Page Wildflower Background Border (3+ repeating tiles) ── -->
+    <div class="bottom-page-wildflower-bg" aria-hidden="true">
+      <img
+        src="@/assets/wildflower_border_uploaded_trans.webp"
+        class="bottom-wildflower-tile bottom-wildflower-1"
+        alt="Bottom Wildflower Background Border"
+        draggable="false"
+        decoding="async"
+      />
+      <img
+        src="@/assets/wildflower_border_uploaded_trans.webp"
+        class="bottom-wildflower-tile bottom-wildflower-2"
+        alt="Bottom Wildflower Background Border"
+        draggable="false"
+        decoding="async"
+      />
+      <img
+        src="@/assets/wildflower_border_uploaded_trans.webp"
+        class="bottom-wildflower-tile bottom-wildflower-3"
+        alt="Bottom Wildflower Background Border"
+        draggable="false"
+        decoding="async"
+      />
+      <img
+        src="@/assets/wildflower_border_uploaded_trans.webp"
+        class="bottom-wildflower-tile bottom-wildflower-4"
+        alt="Bottom Wildflower Background Border"
+        draggable="false"
+        decoding="async"
+      />
+    </div>
+
     <!-- ── Left Side Floral Accent ── -->     
     <img
-        src="@/assets/calla_lily_purple_rose_ribbon_trans.webp"
-        class="call-lily-left-img"
-        alt="Left Floral Accent"
-        draggable="false"
-        decoding="async"
-      />
-    <img
-        src="@/assets/purple_rose_dew_ref2_trans.webp"
-        class="left-purple_rose_dew_ref2_trans"
-        alt="Left Floral Accent"
-        draggable="false"
-        decoding="async"
-      />
-    <img
-        src="@/assets/purple_rose_dew_ref1_trans.webp"
-        class="left-purple_rose_dew_ref1_trans" 
-        alt="Left Floral Accent"
-        draggable="false"
-        decoding="async"
-      />
-
-      <img
-        src="@/assets/purple_lily_vase_bouquet_trans.webp"
-        class="left-purple_lily_vase_bouquet_trans" 
-        alt="Left Floral Accent"
-        draggable="false"
-        decoding="async"
-      />
-
-      <img
-        src="@/assets/magenta_purple_rose_dew_trans.webp"
-        class="left-magenta_purple_rose_dew_trans" 
-        alt="Left Floral Accent"
-        draggable="false"
-        decoding="async"
-      />
-
-    <img
-        src="@/assets/magenta_purple_rose_dew_right_trans.webp"
-        class="left-magenta_purple" 
+        src="@/assets/wedding_flower_cluster_trans.webp"
+        class="wedding_flower_cluster_trans"
         alt="Left Floral Accent"
         draggable="false"
         decoding="async"
       />
 
           <img
-        src="@/assets/purple_rose_dew_bloom_right_trans.webp"
-        class="left-magenta_purple_1" 
+        src="@/assets/purple_carnation_uploaded_trans.webp"
+        class="purple_carnation_uploaded_trans"
         alt="Left Floral Accent"
         draggable="false"
         decoding="async"
       />
 
+    <img
+        src="@/assets/pink_carnation_trio_uploaded_trans.webp"
+        class="bicolor_roses_original_upright_right_trans"
+        alt="Left Floral Accent"
+        draggable="false"
+        decoding="async"
+      />
 
+    <img
+        src="@/assets/purple_peonies_bloom_trans.webp"
+        class="purple_roses_hanging_chandelier_right_trans"
+        alt="Left Floral Accent"
+        draggable="false"
+        decoding="async"
+      />
+    
     <!-- ── Right Side Floral Accent ── -->
     <img
-        src="@/assets/calla_lily_purple_rose_ribbon_trans.webp"
-        class="call-lily-right-img"
+        src="@/assets/wedding_flower_cluster_trans.webp"
+        class="right-wedding_flower_cluster_trans"
         alt="Right Floral Accent"
         draggable="false"
         decoding="async"
       />
-    <img
-        src="@/assets/purple_rose_dew_ref2_right_trans.webp"
-        class="right-purple_rose_dew_ref2_trans"
-        alt="Right Floral Accent"
+    
+      <img
+        src="@/assets/purple_carnation_uploaded_trans.webp"
+        class="right-purple_carnation_uploaded_trans"
+        alt="Left Floral Accent"
         draggable="false"
         decoding="async"
       />
       <img
-        src="@/assets/purple_rose_dew_ref1_right_trans.webp"
-        class="right-purple_rose_dew_ref1_trans" 
-        alt="Right Floral Accent"
+        src="@/assets/pink_carnation_trio_uploaded_trans.webp"
+        class="right-bicolor_roses_original_upright_right_trans"
+        alt="Left Floral Accent"
         draggable="false"
         decoding="async"
       />
-
-      <img
-        src="@/assets/purple_lily_vase_bouquet_right_trans.webp"
-        class="right-purple_lily_vase_bouquet_trans" 
-        alt="Right Floral Accent"
-        draggable="false"
-        decoding="async"
-      />
-
 
     <img
-        src="@/assets/magenta_purple_rose_dew_right_trans.webp"
-        class="right-magenta_purple_rose_dew_trans" 
-        alt="Right Floral Accent"
-        draggable="false"
-        decoding="async"
-      />
-     
-
-     <img
-        src="@/assets/magenta_purple_rose_dew_trans.webp"
-        class="right-magenta_purple" 
-        alt="Right Floral Accent"
+        src="@/assets/purple_peonies_bloom_trans.webp"
+        class="right-purple_roses_hanging_chandelier_trans"
+        alt="Left Floral Accent"
         draggable="false"
         decoding="async"
       />

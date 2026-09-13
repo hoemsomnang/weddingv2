@@ -684,11 +684,59 @@
   filter: blur(2px) drop-shadow(0 -6px 24px rgba(140, 90, 30, 0.12));
 }
 
+/* ── Bottom Page Wildflower Background Border (Repeating) ── */
+.bottom-page-wildflower-bg {
+  position: absolute;
+  bottom: -17px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: clamp(60px, 12vh, 90px);
+  pointer-events: none;
+  z-index: 3;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.bottom-wildflower-tile {
+  height: 100%;
+  width: clamp(140px, 35vw, 190px);
+  object-fit: contain;
+  object-position: bottom center;
+  flex: 1 0 auto;
+  margin-left: -28px;
+  filter: drop-shadow(0 2px 8px rgba(30, 15, 45, 0.2));
+  pointer-events: none;
+  display: block;
+  transform-origin: bottom center;
+}
+
+.bottom-wildflower-1 {
+  margin-left: -15px;
+  animation: floralSwayLeftA 7s ease-in-out infinite alternate;
+}
+
+.bottom-wildflower-2 {
+  animation: floralSwayLeftB 6.5s ease-in-out infinite alternate -1.5s;
+}
+
+.bottom-wildflower-3 {
+  animation: floralSwayRightA 7.2s ease-in-out infinite alternate -2.5s;
+}
+
+.bottom-wildflower-4 {
+  margin-right: -15px;
+  animation: callaRightSway 6.8s ease-in-out infinite alternate -0.8s;
+}
+
 /* ── Left Side Floral Accent ─────────────────────────────── */
-.call-lily-left-img {
+.wedding_flower_cluster_trans {
     position: absolute;
-    bottom: -22px;
-    left: -21px;
+    bottom: -6px;
+    left: -3px;
     width: clamp(80px, 32vw, 125px);
     height: auto;
     max-height: clamp(80px, 18vh, 100px);
@@ -705,10 +753,11 @@
     animation: floralSwayLeftA 6.5s ease-in-out infinite alternate;
 }
 
-.left-purple_rose_dew_ref2_trans {
+
+.purple_carnation_uploaded_trans {
     position: absolute;
-    bottom: 25px;
-    left: -26px;
+    bottom: -6px;
+    left: -11px;
     width: clamp(80px, 32vw, 125px);
     height: auto;
     max-height: clamp(80px, 18vh, 100px);
@@ -722,13 +771,13 @@
     z-index: 5;
     line-height: 0;
     overflow: visible;
-    animation: floralSwayLeftB 7.2s ease-in-out infinite alternate -1.5s;
+    animation: floralSwayLeftA 6.5s ease-in-out infinite alternate;
 }
 
-.left-purple_rose_dew_ref1_trans {
+.bicolor_roses_original_upright_right_trans {
     position: absolute;
-    bottom: 83px;
-    left: -21px;
+    bottom: 10px;
+    left: 36px;
     width: clamp(80px, 32vw, 125px);
     height: auto;
     max-height: clamp(80px, 18vh, 100px);
@@ -739,19 +788,19 @@
     transform: rotate(3deg);
     display: block;
     pointer-events: none;
-    z-index: 4;
+    z-index: 2;
     line-height: 0;
     overflow: visible;
-    animation: floralSwayLeftC 6.8s ease-in-out infinite alternate -2.8s;
+    animation: floralSwayLeftA 6.5s ease-in-out infinite alternate; 
 }
 
-.left-purple_lily_vase_bouquet_trans {
+.purple_roses_hanging_chandelier_right_trans {
     position: absolute;
-    bottom: 6px;
-    left: 44px;
+    bottom: 60px;
+    left: -10px;
     width: clamp(80px, 32vw, 125px);
     height: auto;
-    max-height: clamp(80px, 18vh, 120px);
+    max-height: clamp(80px, 18vh, 100px);
     object-fit: contain;
     object-position: bottom left;
     filter: drop-shadow(0 4px 14px rgba(120, 60, 160, 0.22));
@@ -759,78 +808,17 @@
     transform: rotate(3deg);
     display: block;
     pointer-events: none;
-    z-index: 4;
+    z-index: 2;
     line-height: 0;
     overflow: visible;
-    animation: floralSwayLeftA 7.6s ease-in-out infinite alternate -0.9s;
+    animation: floralSwayLeftA 6.5s ease-in-out infinite alternate; 
 }
-
-.left-magenta_purple_rose_dew_trans {
-    position: absolute;
-    bottom: -14px;
-    left: 60px;
-    width: clamp(80px, 32vw, 125px);
-    height: auto;
-    max-height: clamp(80px, 18vh, 86px);
-    object-fit: contain;
-    object-position: bottom left;
-    filter: drop-shadow(0 4px 14px rgba(120, 60, 160, 0.22));
-    transform-origin: bottom left;
-    transform: rotate(3deg);
-    display: block;
-    pointer-events: none;
-    z-index: 4;
-    line-height: 0;
-    overflow: visible;
-    animation: floralSwayLeftB 6.2s ease-in-out infinite alternate -3.4s;
-}
-
-.left-magenta_purple {
-    position: absolute;
-    bottom: -10PX;
-    left: 100px;
-    width: clamp(80px, 32vw, 125px);
-    height: auto;
-    max-height: clamp(80px, 18vh, 86px);
-    object-fit: contain;
-    object-position: bottom left;
-    filter: drop-shadow(0 4px 14px rgba(120, 60, 160, 0.22));
-    transform-origin: bottom left;
-    transform: rotate(3deg);
-    display: block;
-    pointer-events: none;
-    z-index: 3;
-    line-height: 0;
-    overflow: visible;
-    animation: floralSwayLeftC 6.7s ease-in-out infinite alternate -1.8s;
-}
-
-.left-magenta_purple_1 {
-    position: absolute;
-    bottom: -20PX;
-    left: 170px;
-    width: clamp(80px, 32vw, 125px);
-    height: auto;
-    max-height: clamp(80px, 18vh, 86px);
-    object-fit: contain;
-    object-position: bottom left;
-    filter: drop-shadow(0 4px 14px rgba(120, 60, 160, 0.22));
-    transform-origin: bottom left;
-    transform: rotate(3deg);
-    display: block;
-    pointer-events: none;
-    z-index: 1;
-    line-height: 0;
-    overflow: visible;
-    animation: floralSwayLeftA 7.1s ease-in-out infinite alternate -2.3s;
-}
-
 
 /* ── Right Side Floral Accent ────────────────────────────── */
-.call-lily-right-img {
+.right-wedding_flower_cluster_trans {
     position: absolute;
-    bottom: -31px;
-    right: 80px;
+    bottom: -6px;
+    right: 52px;
     width: clamp(80px, 32vw, 125px);
     height: auto;
     max-height: clamp(80px, 18vh, 100px);
@@ -844,13 +832,13 @@
     z-index: 6;
     line-height: 0;
     overflow: visible;
-    animation: callaRightSway 6.5s ease-in-out infinite alternate -1.2s;
+    animation: callaRightSway 6.5s ease-in-out infinite alternate;
 }
 
-.right-purple_rose_dew_ref2_trans {
+.right-purple_carnation_uploaded_trans {
     position: absolute;
-    bottom: 25px;
-    right: -21px;
+    bottom: -6px;
+    right: 64px;
     width: clamp(80px, 32vw, 125px);
     height: auto;
     max-height: clamp(80px, 18vh, 100px);
@@ -858,19 +846,20 @@
     object-position: bottom right;
     filter: drop-shadow(0 4px 14px rgba(120, 60, 160, 0.22));
     transform-origin: bottom right;
-    transform: rotate(3deg);
+    transform: scaleX(-1) rotate(3deg);
     display: block;
     pointer-events: none;
     z-index: 5;
     line-height: 0;
     overflow: visible;
-    animation: floralSwayRightB 7.2s ease-in-out infinite alternate -2.5s;
+    animation: callaRightSway 6.5s ease-in-out infinite alternate;
 }
 
-.right-purple_rose_dew_ref1_trans {
+
+.right-bicolor_roses_original_upright_right_trans {
     position: absolute;
-    bottom: 83px;
-    right: -21px;
+    bottom: 10px;
+    right: 90px;
     width: clamp(80px, 32vw, 125px);
     height: auto;
     max-height: clamp(80px, 18vh, 100px);
@@ -878,74 +867,33 @@
     object-position: bottom right;
     filter: drop-shadow(0 4px 14px rgba(120, 60, 160, 0.22));
     transform-origin: bottom right;
-    transform: rotate(3deg);
+    transform: scaleX(-1) rotate(3deg);
     display: block;
     pointer-events: none;
-    z-index: 4;
+    z-index: 2;
     line-height: 0;
     overflow: visible;
-    animation: floralSwayRightC 6.8s ease-in-out infinite alternate -0.7s;
+    animation: callaRightSway 6.5s ease-in-out infinite alternate;
 }
 
-
-.right-purple_lily_vase_bouquet_trans {
+.right-purple_roses_hanging_chandelier_trans {
     position: absolute;
-    bottom: 6px;
-    right: 44px;
+    bottom: 60px;
+    right: 50px;
     width: clamp(80px, 32vw, 125px);
     height: auto;
-    max-height: clamp(80px, 18vh, 120px);
+    max-height: clamp(80px, 18vh, 100px);
     object-fit: contain;
     object-position: bottom right;
     filter: drop-shadow(0 4px 14px rgba(120, 60, 160, 0.22));
     transform-origin: bottom right;
-    transform: rotate(3deg);
+    transform: scaleX(-1) rotate(3deg);
     display: block;
     pointer-events: none;
-    z-index: 4;
+    z-index: 2;
     line-height: 0;
     overflow: visible;
-    animation: floralSwayRightA 7.6s ease-in-out infinite alternate -3.1s;
-}
-
-.right-magenta_purple_rose_dew_trans {
-    position: absolute;
-    bottom: -14px;
-    right: 64px;
-    width: clamp(80px, 32vw, 125px);
-    height: auto;
-    max-height: clamp(80px, 18vh, 86px);
-    object-fit: contain;
-    object-position: bottom right;
-    filter: drop-shadow(0 4px 14px rgba(120, 60, 160, 0.22));
-    transform-origin: bottom right;
-    transform: rotate(3deg);
-    display: block;
-    pointer-events: none;
-    z-index: 4;
-    line-height: 0;
-    overflow: visible;
-    animation: floralSwayRightB 6.2s ease-in-out infinite alternate -1.4s;
-}
-
-.right-magenta_purple {
-    position: absolute;
-    bottom: -14px;
-    right: 100px;
-    width: clamp(80px, 32vw, 125px);
-    height: auto;
-    max-height: clamp(80px, 18vh, 86px);
-    object-fit: contain;
-    object-position: bottom right;
-    filter: drop-shadow(0 4px 14px rgba(120, 60, 160, 0.22));
-    transform-origin: bottom right;
-    transform: rotate(3deg);
-    display: block;
-    pointer-events: none;
-    z-index: 3;
-    line-height: 0;
-    overflow: visible;
-    animation: floralSwayRightC 6.7s ease-in-out infinite alternate -2.9s;
+    animation: callaRightSway 6.5s ease-in-out infinite alternate; 
 }
 
 /* ── Floral Sway Keyframes ───────────────────────────────── */
