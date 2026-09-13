@@ -777,7 +777,7 @@
 .bicolor_roses_original_upright_right_trans {
     position: absolute;
     bottom: 10px;
-    left: 36px;
+    left: 30px;
     width: clamp(80px, 32vw, 125px);
     height: auto;
     max-height: clamp(80px, 18vh, 100px);

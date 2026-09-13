@@ -6,7 +6,7 @@
   <div class="home-preview-page">
 
     <!-- ── Full-Screen Sunset Sky Page Background ── -->
-    <div class="preview-page-fullscreen-bg" aria-hidden="true">
+    <!--  <div class="preview-page-fullscreen-bg" aria-hidden="true">
       <img
         src="@/assets/islamic_wedding_arch.webp"
         class="preview-fullscreen-bg-img"
@@ -15,15 +15,15 @@
         decoding="async"
         fetchpriority="high"
       />
-     <!-- <img
+    <img
         src="@/assets/fairytale_palace_purple_stairs_trans.webp"
         class="preview-fullscreen-palace-img"
         alt="Fairytale Palace Purple Stairs Background"
         draggable="false"
         decoding="async"
-      />-->
+      />
       <div class="preview-fullscreen-bg-overlay"></div>
-    </div> 
+    </div>  -->
 
     <!-- ── Ambient Floating Petals & Butterflies ── -->
     <FloatingPetals />
