@@ -89,7 +89,7 @@
         decoding="async"
       />
       <img
-        src="@/assets/purple_top_right_trans.webp"
+        src="@/assets/purple_top_left_trans.webp"
         class="top-flower-right"
         alt="Top Right Floral Corner"
         draggable="false"

@@ -46,7 +46,7 @@
     />
 
     <img
-      src="@/assets/purple_lavender_blooming_roses_down_right_trans.webp"
+      src="@/assets/purple_lavender_blooming_roses_down_trans.webp"
       class="top-left-purple_lavender"
       alt="Top Left Wisteria Hanging Blossom"
       draggable="false"
@@ -54,7 +54,7 @@
     />
 
     <img
-      src="@/assets/purple_roses_hanging_chandelier_right_trans.webp"
+      src="@/assets/purple_roses_hanging_chandelier_trans.webp"
       class="top-left-purple_roses"
       alt="Top Left Wisteria Hanging Blossom"
       draggable="false"
@@ -62,7 +62,7 @@
     />
 
     <img
-      src="@/assets/original_dense_roses_reverted_down_right_trans.webp"
+      src="@/assets/original_dense_roses_reverted_down_trans.webp"
       class="top-left-purple_roses_1"
       alt="Top Left Wisteria Hanging Blossom"
       draggable="false"
@@ -70,7 +70,7 @@
     />
 
     <img
-      src="@/assets/bicolor_roses_original_down_right_trans.webp"
+      src="@/assets/bicolor_roses_original_down_trans.webp"
       class="top-left-purple_roses_2"
       alt="Top Left Wisteria Hanging Blossom"
       draggable="false"
@@ -78,7 +78,7 @@
     />
     
     <img
-      src="@/assets/blooming_roses_bouquet_down_right_trans.webp"
+      src="@/assets/blooming_roses_bouquet_down_trans.webp"
       class="top-left-purple_roses_3"
       alt="Top Left Wisteria Hanging Blossom"
       draggable="false"
@@ -94,7 +94,7 @@
     />
 
     <img
-      src="@/assets/wisteria_hanging_clusters_right_trans.webp"
+      src="@/assets/wisteria_hanging_clusters_trans.webp"
       class="top-right-wisteria-img"
       alt="Top Right Wisteria Hanging Blossom"
       draggable="false"
@@ -102,7 +102,7 @@
     />
 
     <img
-      src="@/assets/wisteria_hanging_clusters_right_trans.webp"
+      src="@/assets/wisteria_hanging_clusters_trans.webp"
       class="top-right-wisteria-img-1"
       alt="Top Right Wisteria Hanging Blossom"
       draggable="false"
@@ -298,8 +298,24 @@
         decoding="async"
       />
 
+            <img
+        src="@/assets/purple_carnation_uploaded_trans.webp"
+        class="purple_carnation_uploaded_trans"
+        alt="Left Floral Accent"
+        draggable="false"
+        decoding="async"
+      />
+
+            <img
+        src="@/assets/purple_carnation_uploaded_trans.webp"
+        class="purple_carnation_uploaded_trans-1"
+        alt="Left Floral Accent"
+        draggable="false"
+        decoding="async"
+      />
+
       <img
-        src="@/assets/purple_roses_bouquet_bloom_reverted_trans.webp"
+        src="@/assets/purple_roses_bouquet_bloom_trans.webp"
         class="purple_roses_bouquet_bloom_trans"
         alt="Left Floral Accent"
         draggable="false"
@@ -314,6 +330,21 @@
         decoding="async"
       />
 
+          <img
+        src="@/assets/purple_peonies_bloom_trans.webp"
+        class="purple_roses_hanging_chandelier_right_trans"
+        alt="Left Floral Accent"
+        draggable="false"
+        decoding="async"
+      />
+        <img
+        src="@/assets/purple_peonies_bloom_trans.webp"
+        class="purple_roses_hanging_chandelier_right_trans"
+        alt="Left Floral Accent"
+        draggable="false"
+        decoding="async"
+      />
+    
 
 <!--Right bottom  Image -->
 
@@ -325,14 +356,7 @@
         decoding="async"
       />
 
-    <img
-        src="@/assets/purple_peonies_bloom_trans.webp"
-        class="purple_roses_hanging_chandelier_right_trans"
-        alt="Left Floral Accent"
-        draggable="false"
-        decoding="async"
-      />
-    
+
     <img
         src="@/assets/wedding_flower_cluster_trans.webp"
         class="right-wedding_flower_cluster_trans"
@@ -368,10 +392,19 @@
       <img
         src="@/assets/purple_roses_bouquet_bloom_trans.webp"
         class="right-purple_roses_bouquet_bloom_trans"
+        alt="Right Floral Accent"
+        draggable="false"
+        decoding="async"
+      />
+
+    <img
+        src="@/assets/pink_lisianthus_uploaded_trans.webp"
+        class="right-pink_lisianthus_uploaded_trans"
         alt="Left Floral Accent"
         draggable="false"
         decoding="async"
       />
+
 
   </div>
 </template>

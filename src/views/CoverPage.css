@@ -289,6 +289,8 @@ position: absolute;
     width: clamp(110px, 32vw, 150px);
     height: auto;
     display: block;
+    transform: scaleX(-1);
+    transform-origin: top right;
     z-index: 2;
 }
 .top-flower-center {
