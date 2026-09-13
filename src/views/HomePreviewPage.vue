@@ -299,7 +299,7 @@
       />
 
       <img
-        src="@/assets/purple_roses_bouquet_bloom_reverted_trans.png"
+        src="@/assets/purple_roses_bouquet_bloom_reverted_trans.webp"
         class="purple_roses_bouquet_bloom_trans"
         alt="Left Floral Accent"
         draggable="false"
@@ -307,7 +307,7 @@
       />
 
       <img
-        src="@/assets/pink_lisianthus_uploaded_trans.png"
+        src="@/assets/pink_lisianthus_uploaded_trans.webp"
         class="pink_lisianthus_uploaded_trans"
         alt="Left Floral Accent"
         draggable="false"
