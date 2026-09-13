@@ -290,13 +290,32 @@
         decoding="async"
       />
 
-          <img
+      <img
         src="@/assets/purple_carnation_uploaded_trans.webp"
         class="purple_carnation_uploaded_trans"
         alt="Left Floral Accent"
         draggable="false"
         decoding="async"
       />
+
+      <img
+        src="@/assets/purple_roses_bouquet_bloom_reverted_trans.png"
+        class="purple_roses_bouquet_bloom_trans"
+        alt="Left Floral Accent"
+        draggable="false"
+        decoding="async"
+      />
+
+      <img
+        src="@/assets/pink_lisianthus_uploaded_trans.png"
+        class="pink_lisianthus_uploaded_trans"
+        alt="Left Floral Accent"
+        draggable="false"
+        decoding="async"
+      />
+
+
+<!--Right bottom  Image -->
 
     <img
         src="@/assets/pink_carnation_trio_uploaded_trans.webp"
@@ -340,6 +359,15 @@
     <img
         src="@/assets/purple_peonies_bloom_trans.webp"
         class="right-purple_roses_hanging_chandelier_trans"
+        alt="Left Floral Accent"
+        draggable="false"
+        decoding="async"
+      />
+
+      
+      <img
+        src="@/assets/purple_roses_bouquet_bloom_trans.webp"
+        class="right-purple_roses_bouquet_bloom_trans"
         alt="Left Floral Accent"
         draggable="false"
         decoding="async"
