@@ -352,7 +352,14 @@
         draggable="false"
         decoding="async"
       />
-    
+
+      <img
+        src="@/assets/pink_twin_roses_uploaded_trans.webp"
+        class="pink_twin_roses_uploaded_trans"
+        alt="Left Floral Accent"
+        draggable="false"
+        decoding="async"
+      />
 
 <!--Right bottom  Image -->
 
@@ -415,6 +422,14 @@
       <img
         src="@/assets/original_dense_roses_reverted_up_trans.webp"
         class="right-original_dense_roses_reverted_up_trans"
+        alt="Left Floral Accent"
+        draggable="false"
+        decoding="async"
+      />
+
+            <img
+        src="@/assets/pink_twin_roses_uploaded_trans.webp"
+        class="right-pink_twin_roses_uploaded_trans"
         alt="Left Floral Accent"
         draggable="false"
         decoding="async"

@@ -777,9 +777,9 @@
 
 
 .pink_lisianthus_uploaded_trans {
-    position: absolute;
+position: absolute;
     bottom: 5px;
-    left: 70px;
+    left: 83px;
     width: clamp(80px, 32vw, 125px);
     height: auto;
     max-height: clamp(80px, 18vh, 100px);
@@ -799,6 +799,21 @@
     width: clamp(90px, 32vw, 135px);
     height: auto;
     max-height: clamp(90px, 18vh, 110px);
+    object-fit: contain;
+    display: block;
+    pointer-events: auto;
+    z-index: 1;
+    line-height: 0;
+    overflow: visible;
+}
+
+.pink_twin_roses_uploaded_trans {
+position: absolute;
+    bottom: 2px;
+    left: 45px;
+    width: clamp(80px, 32vw, 125px);
+    height: auto;
+    max-height: clamp(80px, 18vh, 100px);
     object-fit: contain;
     display: block;
     pointer-events: auto;
@@ -908,7 +923,7 @@
 .right-pink_lisianthus_uploaded_trans {
     position: absolute;
     bottom: 5px;
-    right: 106px;
+    right: 124px;
     width: clamp(80px, 32vw, 125px);
     height: auto;
     max-height: clamp(80px, 18vh, 100px);
@@ -934,6 +949,22 @@
     object-fit: contain;
     transform: scaleX(-1);
     display: block;
+    pointer-events: auto;
+    z-index: 1;
+    line-height: 0;
+    overflow: visible;
+}
+
+.right-pink_twin_roses_uploaded_trans {
+position: absolute;
+    bottom: 2px;
+    right: 50px;
+    width: clamp(80px, 32vw, 125px);
+    height: auto;
+    max-height: clamp(80px, 18vh, 100px);
+    object-fit: contain;
+    display: block;
+    transform: scalex(-1);
     pointer-events: auto;
     z-index: 1;
     line-height: 0;
