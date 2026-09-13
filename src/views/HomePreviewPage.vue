@@ -28,7 +28,7 @@
     <!-- ── Ambient Floating Petals & Butterflies ── -->
     <FloatingPetals />
     <ButterflyEffect theme="white" />
-
+       
     <!-- ── Luxury Chandelier Hanging from Top ── -->
     <section
       class="chandelier-section fade-in"
