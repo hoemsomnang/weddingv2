@@ -3,8 +3,57 @@
    Imported once via main.js
    ============================================================ */
 
-/* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Montserrat:wght@300;400;500;600&family=Moul&family=Hanuman:wght@400;700&display=swap');
+/* ── Self-Hosted Khmer Typography (Instant 0ms Mobile Rendering) ── */
+@font-face {
+  font-family: 'Moul';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/Moul-khmer.woff2') format('woff2');
+  unicode-range: U+1780-17FF, U+19E0-19FF, U+200C-200D, U+25CC;
+}
+@font-face {
+  font-family: 'Moul';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/Moul-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Hanuman';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/Hanuman-400-khmer.woff2') format('woff2');
+  unicode-range: U+1780-17FF, U+19E0-19FF, U+200C-200D, U+25CC;
+}
+@font-face {
+  font-family: 'Hanuman';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/Hanuman-400-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Hanuman';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/Hanuman-700-khmer.woff2') format('woff2');
+  unicode-range: U+1780-17FF, U+19E0-19FF, U+200C-200D, U+25CC;
+}
+@font-face {
+  font-family: 'Hanuman';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/Hanuman-700-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 
 /* ── Custom Properties ───────────────────────────────────── */
 :root {
@@ -28,11 +77,11 @@
   --text-mid:     #6b4038;
   --text-lt:      #9e7060;
 
-  /* Typography */
+  /* Typography with Instant System Khmer Fallbacks */
   --font-script:  'Alex Brush', cursive;
   --font-serif:   'Cormorant Garamond', Georgia, serif;
-  --font-khmer:   'Moul', 'Hanuman', serif;
-  --font-khmer2:  'Hanuman', sans-serif;
+  --font-khmer:   'Moul', 'Khmer OS Muol Light', 'Khmer OS Muol', 'Khmer Sangam MN', 'Noto Serif Khmer', serif;
+  --font-khmer2:  'Hanuman', 'Khmer OS Battambang', 'Khmer Sangam MN', 'Noto Sans Khmer', sans-serif;
   --font-cap:     'Cinzel', serif;
   --font-body:    'Montserrat', sans-serif;
 

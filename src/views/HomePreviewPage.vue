@@ -345,13 +345,7 @@
         decoding="async"
       />
 
-      <img
-        src="@/assets/original_dense_roses_reverted_up_trans.webp"
-        class="original_dense_roses_reverted_up_trans"
-        alt="Left Floral Accent"
-        draggable="false"
-        decoding="async"
-      />
+ 
 
       <img
         src="@/assets/pink_twin_roses_uploaded_trans.webp"
@@ -419,13 +413,7 @@
         draggable="false"
         decoding="async"
       />
-      <img
-        src="@/assets/original_dense_roses_reverted_up_trans.webp"
-        class="right-original_dense_roses_reverted_up_trans"
-        alt="Left Floral Accent"
-        draggable="false"
-        decoding="async"
-      />
+
 
             <img
         src="@/assets/pink_twin_roses_uploaded_trans.webp"
@@ -448,17 +436,15 @@ import invitation from '@/config/invitation.js'
 const router = useRouter()
 const scrollContainer = ref(null)
 
-// ── Entrance animation state (matching CoverPage.vue) ──────
-const entered = ref(false)
+// ── Entrance state (immediate 0ms visibility on mobile) ──
+const entered = ref(true)
 
 function onImgLoad() {
   entered.value = true
 }
 
 onMounted(() => {
-  requestAnimationFrame(() => {
-    entered.value = true
-  })
+  entered.value = true
 })
 
 function scrollToPage(targetId) {
