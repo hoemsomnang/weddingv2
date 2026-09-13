@@ -344,6 +344,14 @@
         draggable="false"
         decoding="async"
       />
+
+      <img
+        src="@/assets/original_dense_roses_reverted_up_trans.webp"
+        class="original_dense_roses_reverted_up_trans"
+        alt="Left Floral Accent"
+        draggable="false"
+        decoding="async"
+      />
     
 
 <!--Right bottom  Image -->
@@ -404,7 +412,13 @@
         draggable="false"
         decoding="async"
       />
-
+      <img
+        src="@/assets/original_dense_roses_reverted_up_trans.webp"
+        class="right-original_dense_roses_reverted_up_trans"
+        alt="Left Floral Accent"
+        draggable="false"
+        decoding="async"
+      />
 
   </div>
 </template>

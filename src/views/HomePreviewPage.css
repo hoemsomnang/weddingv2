@@ -792,6 +792,20 @@
     overflow: visible;
 }
 
+.original_dense_roses_reverted_up_trans {
+    position: absolute;
+    bottom: 79px;
+    left: -39px;
+    width: clamp(90px, 32vw, 135px);
+    height: auto;
+    max-height: clamp(90px, 18vh, 110px);
+    object-fit: contain;
+    display: block;
+    pointer-events: auto;
+    z-index: 1;
+    line-height: 0;
+    overflow: visible;
+}
 
 /* ── Right Side Floral Accent ────────────────────────────── */
 .right-wedding_flower_cluster_trans {
@@ -906,6 +920,22 @@
     display: block;
     pointer-events: auto;
     z-index: 2;
+    line-height: 0;
+    overflow: visible;
+}
+
+.right-original_dense_roses_reverted_up_trans {
+    position: absolute;
+    bottom: 79px;
+    right: -39px;
+    width: clamp(90px, 32vw, 135px);
+    height: auto;
+    max-height: clamp(90px, 18vh, 110px);
+    object-fit: contain;
+    transform: scaleX(-1);
+    display: block;
+    pointer-events: auto;
+    z-index: 1;
     line-height: 0;
     overflow: visible;
 }
