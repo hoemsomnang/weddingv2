@@ -23,52 +23,6 @@
   user-select: none;
 }
 
-/* ── Full-Screen Islamic Arch Page Background ─────────────── */
-.preview-page-fullscreen-bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 0;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.preview-fullscreen-bg-img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  display: block;
-  opacity: 1;
-  filter: none;
-  transform: none;
-  z-index: 1;
-}
-
-.preview-fullscreen-palace-img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center bottom;
-  display: block;
-  opacity: 1;
-  transform: translateY(-50px);
-  z-index: 2;
-  pointer-events: none;
-}
-
-.preview-fullscreen-bg-overlay {
-  display: none;
-}
-
 /* ── Luxury Chandelier Hanging from Top ──────────────────── */
 .chandelier-section {
   position: absolute;
@@ -658,32 +612,6 @@
   }
 }
 
-/* ── Optional Background Fairytale Chateau Backdrop ──────── */
-.preview-bg-chateau-wrap {
-  position: absolute;
-  bottom: 230px;
-  left: 0;
-  right: 0;
-  width: 100%;
-  pointer-events: none;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  line-height: 0;
-}
-
-.preview-bg-chateau-img {
-  width: min(100%, 520px);
-  height: auto;
-  max-height: 60vh;
-  object-fit: contain;
-  object-position: bottom center;
-  display: block;
-  opacity: 0.92;
-  filter: blur(2px) drop-shadow(0 -6px 24px rgba(140, 90, 30, 0.12));
-}
-
 /* ── Bottom Page Wildflower Background Border (Repeating) ── */
 .bottom-page-wildflower-bg {
   position: absolute;
@@ -915,15 +843,6 @@
   }
 }
 
-@keyframes floralSwayLeftC {
-  0% {
-    transform: rotate(2deg) translateY(0);
-  }
-  100% {
-    transform: rotate(4.5deg) translateY(-3px);
-  }
-}
-
 @keyframes floralSwayRightA {
   0% {
     transform: rotate(1.5deg) translateY(0);
@@ -933,23 +852,6 @@
   }
 }
 
-@keyframes floralSwayRightB {
-  0% {
-    transform: rotate(4deg) translateY(0);
-  }
-  100% {
-    transform: rotate(1.5deg) translateY(-2px);
-  }
-}
-
-@keyframes floralSwayRightC {
-  0% {
-    transform: rotate(2deg) translateY(0);
-  }
-  100% {
-    transform: rotate(4.5deg) translateY(-3px);
-  }
-}
 
 @keyframes callaRightSway {
   0% {

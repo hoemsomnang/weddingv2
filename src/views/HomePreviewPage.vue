@@ -1,35 +1,9 @@
-<!--
-  HomePreviewPage.vue
-  Digital Wedding Invitation Preview & Details Page
--->
 <template>
   <div class="home-preview-page">
 
-    <!-- ── Full-Screen Sunset Sky Page Background ── -->
-    <!--  <div class="preview-page-fullscreen-bg" aria-hidden="true">
-      <img
-        src="@/assets/islamic_wedding_arch.webp"
-        class="preview-fullscreen-bg-img"
-        alt="Fairytale Sunset Sky Page Background"
-        draggable="false"
-        decoding="async"
-        fetchpriority="high"
-      />
-    <img
-        src="@/assets/fairytale_palace_purple_stairs_trans.webp"
-        class="preview-fullscreen-palace-img"
-        alt="Fairytale Palace Purple Stairs Background"
-        draggable="false"
-        decoding="async"
-      />
-      <div class="preview-fullscreen-bg-overlay"></div>
-    </div>  -->
-
-    <!-- ── Ambient Floating Petals & Butterflies ── -->
     <FloatingPetals />
     <ButterflyEffect theme="white" />
        
-    <!-- ── Luxury Chandelier Hanging from Top ── -->
     <section
       class="chandelier-section fade-in"
       :class="{ visible: entered }"
@@ -48,7 +22,6 @@
       />
     </section>
 
-    <!-- ── Top-Left Wisteria Hanging Accent ── -->
     <img
       src="@/assets/wisteria_hanging_clusters_trans.webp"
       class="top-left-wisteria-img"
@@ -120,7 +93,6 @@
       decoding="async"
     />
 
-    <!-- ── Top-Right Wisteria Hanging Accent ── -->
     <img
       src="@/assets/wisteria_hanging_clusters_right_trans.webp"
       class="top-right-wisteria-img"
@@ -179,22 +151,13 @@
 
     
 
-
-
-
-    <!-- Scrollable Snap-Paged Container -->
     <div class="scrollable-snap-wrapper" ref="scrollContainer">
       
-      <!-- ==========================================
-           PAGE 1: MAIN INVITATION CARD (Photo 2)
-           ========================================== -->
       <section class="snap-page section-invitation-cover" id="page-invite">
         <div class="invitation-content fade-in" :class="{ visible: entered }" style="--delay: 0.35s">
           
-          <!-- Main Wedding Ceremony Title -->
           <h1 class="main-wedding-title">សិរីមង្គលអាពាហ៍ពិពាហ៍</h1>
 
-          <!-- Parents Section (2 Columns) -->
           <div class="parents-grid">
             <div class="parent-col left-col">
               <div class="parent-row">
@@ -219,7 +182,6 @@
             </div>
           </div>
 
-          <!-- Invitation Subtitle with Left & Right Small Ornaments -->
           <div class="honor-invite-title">
             <img
               src="@/assets/gold_baroque_pediment_trans.webp"
@@ -238,14 +200,12 @@
             />
           </div>
 
-          <!-- Formal Invitation Body Text -->
           <div class="formal-invitation-text">
             <p>ឯកឧត្តម លោកជំទាវ អ្នកឧកញ៉ា ឧកញ៉ា លោក លោកស្រី អ្នកនាង កញ្ញា</p>
             <p>អញ្ជើញចូលរួមជាអធិបតី និងភ្ញៀវកិត្តិយស ដើម្បីប្រសិទ្ធពរជ័យ សិរីសួស្តីជ័យមង្គលក្នុង</p>
             <p>ពិធីសិរីមង្គលអាពាហ៍ពិពាហ៍កូនប្រុស កូនស្រីរបស់យើងខ្ញុំ</p>
           </div>
 
-          <!-- Groom & Bride Names (2 Columns) -->
           <div class="couple-names-grid">
             <div class="couple-col groom-col">
               <span class="couple-role">កូនប្រុសនាម</span>
@@ -257,21 +217,18 @@
             </div>
           </div>
 
-          <!-- Wedding Auspicious Date & Time -->
           <div class="wedding-datetime-section">
             <p class="khmer-lunar-date">នៅថ្ងៃសៅរ៍ ៦កើត ខែផល្គុន ឆ្នាំមមី អដ្ឋស័ក ពុទ្ធសករាជ ២៥៧០</p>
             <p class="solar-date-highlight">ត្រូវនឹងថ្ងៃទី ១៣ ខែមីនា ឆ្នាំ ២០២៧</p>
             <p class="reception-time">វេលាម៉ោង ០៥ : ០០ ល្ងាចនៅ</p>
           </div>
 
-          <!-- Wedding Reception Venue -->
           <div class="venue-section">
             <h3 class="venue-main-name">គេហដ្ឋាននៃសិរីមង្គលអាពាហ៍ពិពាហ៍</h3>
             <p class="venue-address-line">ស្ថិតនៅ ស្រុកសំពៅលូន ខេត្តបាត់ដំបង</p>
             <p class="venue-closing-wish">ដោយមេត្រីភាព។</p>
           </div>
 
-          <!-- Scroll Down Banner Button (Photo 2 / Luxury Cartouche) -->
           <button
             type="button"
             class="scroll-down-cue scroll-down-banner-btn"
@@ -294,19 +251,6 @@
       </section> 
     </div>
 
-    <!-- ── Background Fairytale Chateau & Garden ── -->
-    <!--
-    <div class="preview-bg-chateau-wrap" aria-hidden="true">
-      <img
-        src="@/assets/chateau_garden_original_trans.webp"
-        class="preview-bg-chateau-img"
-        alt="Fairytale Chateau & Garden Backdrop"
-        draggable="false"
-        decoding="async"
-      />
-    </div>-->
-
-    <!-- ── Bottom Page Wildflower Background Border (3+ repeating tiles) ── -->
     <div class="bottom-page-wildflower-bg" aria-hidden="true">
       <img
         src="@/assets/wildflower_border_uploaded_trans.webp"
@@ -338,7 +282,6 @@
       />
     </div>
 
-    <!-- ── Left Side Floral Accent ── -->     
     <img
         src="@/assets/wedding_flower_cluster_trans.webp"
         class="wedding_flower_cluster_trans"
@@ -371,7 +314,6 @@
         decoding="async"
       />
     
-    <!-- ── Right Side Floral Accent ── -->
     <img
         src="@/assets/wedding_flower_cluster_trans.webp"
         class="right-wedding_flower_cluster_trans"
