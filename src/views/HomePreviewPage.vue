@@ -153,75 +153,25 @@
         decoding="async"
       />
     </div>
-
+  <!-- Left bottom Image -->
     <img
-        src="@/assets/wedding_flower_cluster_trans.webp"
-        class="wedding_flower_cluster_trans"
+        src="@/assets/purple_flower bouquet_.webp"
+        class="purple_flower_bouquet"
+        alt="Left Floral Accent"
+        draggable="false"
+        decoding="async"
+      />
+    <img
+        src="@/assets/jeweled_floral_butterflies_trans.webp"
+        class="jeweled_floral_butterflies_trans"
         alt="Left Floral Accent"
         draggable="false"
         decoding="async"
       />
 
       <img
-        src="@/assets/purple_carnation_uploaded_trans.webp"
-        class="purple_carnation_uploaded_trans"
-        alt="Left Floral Accent"
-        draggable="false"
-        decoding="async"
-      />
-
-            <img
-        src="@/assets/purple_carnation_uploaded_trans.webp"
-        class="purple_carnation_uploaded_trans"
-        alt="Left Floral Accent"
-        draggable="false"
-        decoding="async"
-      />
-
-            <img
-        src="@/assets/purple_carnation_uploaded_trans.webp"
-        class="purple_carnation_uploaded_trans-1"
-        alt="Left Floral Accent"
-        draggable="false"
-        decoding="async"
-      />
-
-      <img
-        src="@/assets/purple_roses_bouquet_bloom_trans.webp"
-        class="purple_roses_bouquet_bloom_trans"
-        alt="Left Floral Accent"
-        draggable="false"
-        decoding="async"
-      />
-
-      <img
-        src="@/assets/pink_lisianthus_uploaded_trans.webp"
-        class="pink_lisianthus_uploaded_trans"
-        alt="Left Floral Accent"
-        draggable="false"
-        decoding="async"
-      />
-
-          <img
-        src="@/assets/purple_peonies_bloom_trans.webp"
-        class="purple_roses_hanging_chandelier_right_trans"
-        alt="Left Floral Accent"
-        draggable="false"
-        decoding="async"
-      />
-        <img
-        src="@/assets/purple_peonies_bloom_trans.webp"
-        class="purple_roses_hanging_chandelier_right_trans"
-        alt="Left Floral Accent"
-        draggable="false"
-        decoding="async"
-      />
-
- 
-
-      <img
-        src="@/assets/pink_twin_roses_uploaded_trans.webp"
-        class="pink_twin_roses_uploaded_trans"
+        src="@/assets/purple_flower.webp"
+        class="purple_flower"
         alt="Left Floral Accent"
         draggable="false"
         decoding="async"
@@ -230,66 +180,25 @@
 <!--Right bottom  Image -->
 
     <img
-        src="@/assets/pink_carnation_trio_uploaded_trans.webp"
-        class="bicolor_roses_original_upright_right_trans"
-        alt="Left Floral Accent"
-        draggable="false"
-        decoding="async"
-      />
-
-
-    <img
-        src="@/assets/wedding_flower_cluster_trans.webp"
-        class="right-wedding_flower_cluster_trans"
+        src="@/assets/purple_flower bouquet_.webp"
+        class="right_purple_flower_bouquet"
         alt="Right Floral Accent"
         draggable="false"
         decoding="async"
       />
-    
-      <img
-        src="@/assets/purple_carnation_uploaded_trans.webp"
-        class="right-purple_carnation_uploaded_trans"
-        alt="Left Floral Accent"
-        draggable="false"
-        decoding="async"
-      />
-      <img
-        src="@/assets/pink_carnation_trio_uploaded_trans.webp"
-        class="right-bicolor_roses_original_upright_right_trans"
-        alt="Left Floral Accent"
-        draggable="false"
-        decoding="async"
-      />
 
     <img
-        src="@/assets/purple_peonies_bloom_trans.webp"
-        class="right-purple_roses_hanging_chandelier_trans"
+        src="@/assets/jeweled_floral_butterflies_trans.webp"
+        class="right_jeweled_floral_butterflies_trans"
         alt="Left Floral Accent"
         draggable="false"
         decoding="async"
       />
-
       
-      <img
-        src="@/assets/purple_roses_bouquet_bloom_trans.webp"
-        class="right-purple_roses_bouquet_bloom_trans"
-        alt="Right Floral Accent"
-        draggable="false"
-        decoding="async"
-      />
 
     <img
-        src="@/assets/pink_lisianthus_uploaded_trans.webp"
-        class="right-pink_lisianthus_uploaded_trans"
-        alt="Left Floral Accent"
-        draggable="false"
-        decoding="async"
-      />
-
-
-            <img
-        src="@/assets/pink_twin_roses_uploaded_trans.webp"
-        class="right-pink_twin_roses_uploaded_trans"
+        src="@/assets/purple_flower.webp"
+        class="right_purple_flower"
         alt="Left Floral Accent"
         draggable="false"
         decoding="async"
