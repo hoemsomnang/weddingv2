@@ -123,86 +123,74 @@
       </section> 
     </div>
 
-    <div class="bottom-page-wildflower-bg" aria-hidden="true">
+    <!-- Bottom Floral Background -->
+    <div class="bottom-page-background" aria-hidden="true">
       <img
-        src="@/assets/wildflower_border_uploaded_trans.webp"
-        class="bottom-wildflower-tile bottom-wildflower-1"
-        alt="Bottom Wildflower Background Border"
-        draggable="false"
-        decoding="async"
-      />
-      <img
-        src="@/assets/wildflower_border_uploaded_trans.webp"
-        class="bottom-wildflower-tile bottom-wildflower-2"
-        alt="Bottom Wildflower Background Border"
-        draggable="false"
-        decoding="async"
-      />
-      <img
-        src="@/assets/wildflower_border_uploaded_trans.webp"
-        class="bottom-wildflower-tile bottom-wildflower-3"
-        alt="Bottom Wildflower Background Border"
-        draggable="false"
-        decoding="async"
-      />
-      <img
-        src="@/assets/wildflower_border_uploaded_trans.webp"
-        class="bottom-wildflower-tile bottom-wildflower-4"
-        alt="Bottom Wildflower Background Border"
+        src="@/assets/bottom_background.webp"
+        class="bottom-background-img"
+        alt="Bottom Floral Background"
         draggable="false"
         decoding="async"
       />
     </div>
-  <!-- Left bottom Image -->
-    <img
-        src="@/assets/purple_flower bouquet_.webp"
-        class="purple_flower_bouquet"
-        alt="Left Floral Accent"
-        draggable="false"
-        decoding="async"
-      />
-    <img
-        src="@/assets/jeweled_floral_butterflies_trans.webp"
-        class="jeweled_floral_butterflies_trans"
-        alt="Left Floral Accent"
-        draggable="false"
-        decoding="async"
-      />
 
-      <img
-        src="@/assets/purple_flower.webp"
-        class="purple_flower"
-        alt="Left Floral Accent"
-        draggable="false"
-        decoding="async"
-      />
 
-<!--Right bottom  Image -->
+
+
+    <!-- Bottom Left Purple Flower Bouquet Accent -->
+    <img
+      src="@/assets/purple_flower_bouquet_v2.webp"
+      class="bottom-left-purple-bouquet"
+      alt="Bottom Left Floral Bouquet"
+      draggable="false"
+      decoding="async"
+    />
 
     <img
-        src="@/assets/purple_flower bouquet_.webp"
-        class="right_purple_flower_bouquet"
-        alt="Right Floral Accent"
-        draggable="false"
-        decoding="async"
-      />
+      src="@/assets/purple_cosmos_original_trans.webp"
+      class="purple_cosmos_original_trans"
+      alt="Bottom Right Floral Bouquet"
+      draggable="false"
+      decoding="async"
+    />
+
+        <img
+      src="@/assets/purple_watercolor_original_trans.webp"
+      class="purple_watercolor_original_trans"
+      alt="Bottom Right Floral Bouquet"
+      draggable="false"
+      decoding="async"
+    />
+
+
+
+
+    <!-- Bottom right Purple Flower Bouquet Accent -->
+    <img
+      src="@/assets/purple_flower_bouquet_v2.webp"
+      class="right-bottom-purple-bouquet"
+      alt="Bottom Right Floral Bouquet"
+      draggable="false"
+      decoding="async"
+    />
 
     <img
-        src="@/assets/jeweled_floral_butterflies_trans.webp"
-        class="right_jeweled_floral_butterflies_trans"
-        alt="Left Floral Accent"
-        draggable="false"
-        decoding="async"
-      />
-      
-
+      src="@/assets/purple_cosmos_original_trans.webp"
+      class="right-purple_cosmos_original_trans"
+      alt="Bottom Right Floral Bouquet"
+      draggable="false"
+      decoding="async"
+    />
+    
     <img
-        src="@/assets/purple_flower.webp"
-        class="right_purple_flower"
-        alt="Left Floral Accent"
-        draggable="false"
-        decoding="async"
-      />
+      src="@/assets/purple_watercolor_original_trans.webp"
+      class="right-purple_watercolor_original_trans"
+      alt="Bottom Right Floral Bouquet"
+      draggable="false"
+      decoding="async"
+    />
+
+
 
   </div>
 </template>
