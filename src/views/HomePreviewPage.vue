@@ -162,6 +162,13 @@
       decoding="async"
     />
 
+        <img
+      src="@/assets/purple_floral_spray_trans.webp"
+      class="purple_flower_bloom_trans"
+      alt="Bottom Right Floral Bouquet"
+      draggable="false"
+      decoding="async"
+    />
 
 
 
@@ -190,7 +197,13 @@
       decoding="async"
     />
 
-
+        <img
+      src="@/assets/purple_floral_spray_trans.webp"
+      class="right-purple_flower_bloom_trans"
+      alt="Bottom Right Floral Bouquet"
+      draggable="false"
+      decoding="async"
+    />
 
   </div>
 </template>

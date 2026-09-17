@@ -691,6 +691,18 @@
 }
 
 
+.purple_flower_bloom_trans {
+    position: absolute;
+    bottom: -23px;
+    left: 85px;
+    width: 120px;
+    height: auto;
+    transform: scaleX(-1) rotate(3deg);
+    z-index: 4;
+    pointer-events: none;
+}
+
+
 
 /* ── Bottom-right Floral Accent Bouquet (Easy to adjust) ──── */
 .right-bottom-purple-bouquet {
@@ -728,7 +740,16 @@
 
 
 
-
+.right-purple_flower_bloom_trans {
+    position: absolute;
+    bottom: -23px;
+    right: 85px;
+    width: 120px;
+    height: auto;
+    transform: rotate(3deg);
+    z-index: 4;
+    pointer-events: none;
+}
 
 
 

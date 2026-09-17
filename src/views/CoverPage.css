@@ -225,6 +225,7 @@ position: absolute;
   width: clamp(120px, 32vw, 165px); /* Increased from ~99px - 136px */
   height: auto;
   display: block;
+  transform: scaleX(-1);transform: scaleX(-1);
   z-index: 0;
   pointer-events: none;
   filter: drop-shadow(0 4px 10px rgba(90, 40, 110, 0.08));
