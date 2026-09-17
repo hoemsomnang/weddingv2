@@ -702,6 +702,16 @@
     pointer-events: none;
 }
 
+.purple_delphinium_reference_nobg {
+    position: absolute;
+    bottom: 27px;
+    left: 61px;
+    width: 84px;
+    height: auto;
+    transform: rotate(3deg);
+    z-index: 4;
+    pointer-events: none;
+}
 
 
 /* ── Bottom-right Floral Accent Bouquet (Easy to adjust) ──── */
@@ -751,6 +761,16 @@
     pointer-events: none;
 }
 
+.right-purple_delphinium_reference_nobg {
+    position: absolute;
+    bottom: 27px;
+    right: 61px;
+    width: 84px;
+    height: auto;
+    transform: scaleX(-1) rotate(3deg);
+    z-index: 4;
+    pointer-events: none;
+}
 
 
 /* ── Tablets & iPad (600px - 899px) ── */

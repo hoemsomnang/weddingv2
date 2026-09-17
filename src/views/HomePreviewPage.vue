@@ -170,6 +170,13 @@
       decoding="async"
     />
 
+            <img
+      src="@/assets/purple_delphinium_reference_nobg.webp"
+      class="purple_delphinium_reference_nobg"
+      alt="Bottom Right Floral Bouquet"
+      draggable="false"
+      decoding="async"
+    />
 
 
     <!-- Bottom right Purple Flower Bouquet Accent -->
@@ -204,6 +211,15 @@
       draggable="false"
       decoding="async"
     />
+
+            <img
+      src="@/assets/purple_delphinium_reference_nobg.webp"
+      class="right-purple_delphinium_reference_nobg"
+      alt="Bottom Right Floral Bouquet"
+      draggable="false"
+      decoding="async"
+    />
+
 
   </div>
 </template>
