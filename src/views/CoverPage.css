@@ -225,10 +225,12 @@ position: absolute;
   width: clamp(120px, 32vw, 165px); /* Increased from ~99px - 136px */
   height: auto;
   display: block;
-  transform: scaleX(-1);transform: scaleX(-1);
+  transform-origin: top left;
   z-index: 0;
   pointer-events: none;
   filter: drop-shadow(0 4px 10px rgba(90, 40, 110, 0.08));
+  animation: topFlowerLeftBgSway 6.5s ease-in-out infinite;
+  will-change: transform;
 }
 
 @keyframes topFlowerLeftBgSway {
@@ -253,9 +255,13 @@ position: absolute;
   width: clamp(120px, 32vw, 165px);
   height: auto;
   display: block;
+  transform-origin: top right;
   z-index: 0;
   pointer-events: none;
   filter: drop-shadow(0 4px 10px rgba(90, 40, 110, 0.08));
+  animation: topFlowerRightBgSway 6.5s ease-in-out infinite;
+  animation-delay: -2.8s;
+  will-change: transform;
 }
 
 @keyframes topFlowerRightBgSway {

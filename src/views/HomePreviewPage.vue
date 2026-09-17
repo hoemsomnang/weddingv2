@@ -170,9 +170,17 @@
       decoding="async"
     />
 
-            <img
+    <img
       src="@/assets/purple_delphinium_reference_nobg.webp"
       class="purple_delphinium_reference_nobg"
+      alt="Bottom Right Floral Bouquet"
+      draggable="false"
+      decoding="async"
+    />
+
+    <img
+      src="@/assets/purple_watercolor_corner_trans.webp"
+      class="purple_watercolor_corner_trans"
       alt="Bottom Right Floral Bouquet"
       draggable="false"
       decoding="async"
@@ -220,6 +228,13 @@
       decoding="async"
     />
 
+    <img
+      src="@/assets/purple_watercolor_corner_trans.webp"
+      class="right-purple_watercolor_corner_trans"
+      alt="Bottom Right Floral Bouquet"
+      draggable="false"
+      decoding="async"
+    />
 
   </div>
 </template>

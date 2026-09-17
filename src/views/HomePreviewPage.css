@@ -174,7 +174,7 @@
   font-family: var(--font-khmer, 'Moul', serif);
   font-size: clamp(1.18rem, 4.2vw, 1.48rem);
   line-height: 1.4;
-  padding: 0px 8px;
+  padding: 4px 8px;
   box-sizing: border-box;
   overflow: visible;
   background: linear-gradient(135deg, #a07018 0%, #d4a43a 40%, #7d5010 70%, #d4a43a 100%);
@@ -190,14 +190,14 @@
 
 /* Parents Section (2 Columns) */
 .parents-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2px clamp(8px, 2.5vw, 18px);
-  width: 100%;
-  margin-bottom: 4px;
-  padding: 0 4px;
-  box-sizing: border-box;
-  overflow: visible;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px clamp(8px, 2.5vw, 18px);
+    width: 100%;
+    margin-bottom: 6px;
+    padding: 6px 4px;
+    box-sizing: border-box;
+    overflow: visible;
 }
 
 .parent-col {
@@ -223,7 +223,7 @@
   gap: 4px;
   font-family: var(--font-khmer2, 'Hanuman', sans-serif);
   line-height: 1.38;
-  padding: 0;
+  padding: 2px;
   overflow: visible;
 }
 
@@ -281,8 +281,8 @@
   font-weight: 700;
   font-size: clamp(0.86rem, 2.6vw, 0.98rem);
   color: #7a4805;
-  margin: 3px auto 3px;
-  padding: 1px 4px;
+  margin: 6px auto;
+  padding: 4px 6px;
   box-sizing: border-box;
   overflow: visible;
   text-align: center;
@@ -303,7 +303,7 @@
 .honor-invite-text {
   flex-shrink: 0;
   white-space: nowrap;
-  padding: 0 3px;
+  padding: 2px 4px;
   line-height: 1.38;
   overflow: visible;
 }
@@ -332,19 +332,20 @@
 
 /* Formal Invitation Body Text */
 .formal-invitation-text {
-  margin-bottom: 3px;
-  padding: 0 4px;
+  margin-bottom: 6px;
+  padding: 4px 6px;
+  box-sizing: border-box;
   overflow: visible;
 }
 
 .formal-invitation-text p {
   font-family: var(--font-khmer2, 'Hanuman', sans-serif);
   font-size: clamp(0.76rem, 2.35vw, 0.86rem);
-  line-height: 1.44;
+  line-height: 1.48;
   color: #26110b;
   font-weight: 700;
-  margin-bottom: 1px;
-  padding: 0 2px;
+  margin-bottom: 2px;
+  padding: 2px;
   overflow: visible;
   word-break: normal;
   text-shadow:
@@ -359,10 +360,10 @@
 .couple-names-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4px;
+  gap: 2px clamp(8px, 2.5vw, 18px);
   width: 100%;
-  margin: 3px 0 3px;
-  padding: 1px 4px;
+  margin-bottom: 6px;
+  padding: 6px 4px;
   background: transparent;
   border-radius: 0;
   border: none;
@@ -376,6 +377,8 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  gap: 2px;
+  padding: 2px;
   overflow: visible;
 }
 
@@ -386,7 +389,7 @@
   color: #582478;
   font-weight: 700;
   margin-bottom: 0px;
-  padding: 0 2px;
+  padding: 2px 4px;
   line-height: 1.35;
   overflow: visible;
   text-shadow:
@@ -410,7 +413,7 @@
     drop-shadow(0 0 12px rgba(255, 255, 255, 0.85))
     drop-shadow(0 2px 6px rgba(50, 25, 5, 0.6));
   line-height: 1.38;
-  padding: 1px 4px;
+  padding: 2px 6px;
   box-sizing: border-box;
   overflow: visible;
   margin: 0;
@@ -418,8 +421,9 @@
 
 /* Wedding Auspicious Date & Time */
 .wedding-datetime-section {
-  margin-bottom: 3px;
-  padding: 0 2px;
+  margin-bottom: 6px;
+  padding: 4px;
+  box-sizing: border-box;
   overflow: visible;
 }
 
@@ -429,9 +433,9 @@
   color: #381a12;
   font-weight: 700;
   line-height: 1.38;
-  padding: 0 2px;
+  padding: 2px;
   overflow: visible;
-  margin-bottom: 1px;
+  margin-bottom: 2px;
   text-shadow:
     0 0 1px #fff,
     0 0 4px #ffffff,
@@ -446,8 +450,8 @@
   color: #9c1f48;
   background: none;
   border: none;
-  padding: 1px 6px;
-  margin: 1px auto;
+  padding: 3px 8px;
+  margin: 2px auto;
   box-sizing: border-box;
   overflow: visible;
   box-shadow: none;
@@ -466,8 +470,8 @@
   font-size: clamp(0.78rem, 2.45vw, 0.88rem);
   color: #26110b;
   font-weight: 700;
-  margin-top: 1px;
-  padding: 0 2px;
+  margin-top: 2px;
+  padding: 2px;
   overflow: visible;
   line-height: 1.38;
   text-shadow:
@@ -713,6 +717,16 @@
     pointer-events: none;
 }
 
+.purple_watercolor_corner_trans {
+    position: absolute;
+    bottom: 21px;
+    left: -20px;
+    width: 123px;
+    height: auto;
+    transform: rotate(10deg);
+    z-index: 3;
+    pointer-events: none;
+}
 
 /* ── Bottom-right Floral Accent Bouquet (Easy to adjust) ──── */
 .right-bottom-purple-bouquet {
@@ -772,6 +786,16 @@
     pointer-events: none;
 }
 
+.right-purple_watercolor_corner_trans {
+    position: absolute;
+    bottom: 21px;
+    right: -20px;
+    width: 123px;
+    height: auto;
+    transform: scaleX(-1) rotate(10deg);
+    z-index: 3;
+    pointer-events: none;
+}
 
 /* ── Tablets & iPad (600px - 899px) ── */
 @media (min-width: 600px) {
