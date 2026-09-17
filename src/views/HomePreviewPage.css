@@ -192,10 +192,8 @@
 .parents-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2px clamp(8px, 2.5vw, 18px);
+    gap: 6px clamp(8px, 2.5vw, 18px);
     width: 100%;
-    margin-bottom: 6px;
-    padding: 6px 4px;
     box-sizing: border-box;
     overflow: visible;
 }
@@ -203,7 +201,7 @@
 .parent-col {
   display: flex;
   flex-direction: column;
-  gap: 1px;
+  gap: 2px;
   overflow: visible;
 }
 
@@ -220,10 +218,10 @@
 .parent-row {
   display: inline-flex;
   align-items: baseline;
-  gap: 4px;
+  gap: 5px;
   font-family: var(--font-khmer2, 'Hanuman', sans-serif);
-  line-height: 1.38;
-  padding: 2px;
+  line-height: 1.55;
+  padding: 3px 4px;
   overflow: visible;
 }
 
@@ -240,8 +238,8 @@
   font-size: clamp(0.82rem, 2.5vw, 0.94rem);
   color: #582478;
   font-weight: 700;
-  padding: 0 2px;
-  line-height: 1.38;
+  padding: 2px 3px;
+  line-height: 1.55;
   overflow: visible;
   text-shadow:
     0 0 1px #fff,
@@ -256,8 +254,8 @@
   font-size: clamp(1.0rem, 3.2vw, 1.15rem);
   font-weight: 800;
   letter-spacing: 0.01em;
-  padding: 0 2px;
-  line-height: 1.38;
+  padding: 2px 3px;
+  line-height: 1.55;
   overflow: visible;
   background: linear-gradient(135deg, #a07018 0%, #d4a43a 40%, #7d5010 70%, #d4a43a 100%);
   -webkit-background-clip: text;
