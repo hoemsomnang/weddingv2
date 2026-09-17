@@ -225,26 +225,25 @@ position: absolute;
   width: clamp(120px, 32vw, 165px); /* Increased from ~99px - 136px */
   height: auto;
   display: block;
-  transform-origin: top left;
+  transform: scaleX(-1);
+  transform-origin: center;
   z-index: 0;
   pointer-events: none;
   filter: drop-shadow(0 4px 10px rgba(90, 40, 110, 0.08));
-  animation: topFlowerLeftBgSway 6.5s ease-in-out infinite;
-  will-change: transform;
 }
 
 @keyframes topFlowerLeftBgSway {
   0%, 100% {
-    transform: rotate(0deg) scale(1) translateY(0);
+    transform: scaleX(-1) rotate(0deg) scale(1) translateY(0);
   }
   25% {
-    transform: rotate(2deg) scale(1.02) translateY(1.5px);
+    transform: scaleX(-1) rotate(2deg) scale(1.02) translateY(1.5px);
   }
   50% {
-    transform: rotate(0.5deg) scale(1.008) translateY(-0.8px);
+    transform: scaleX(-1) rotate(0.5deg) scale(1.008) translateY(-0.8px);
   }
   75% {
-    transform: rotate(-1.6deg) scale(1.015) translateY(0.5px);
+    transform: scaleX(-1) rotate(-1.6deg) scale(1.015) translateY(0.5px);
   }
 }
 
@@ -252,16 +251,13 @@ position: absolute;
   position: absolute;
   top: clamp(-16px, -4.5vw, -10px);
   right: clamp(-28px, -5vw, -20px);
-  width: clamp(120px, 32vw, 165px);
+  width: clamp(120px, 32vw, 165px); /* Increased from ~99px - 136px */
   height: auto;
   display: block;
-  transform-origin: top right;
+  transform-origin: center;
   z-index: 0;
   pointer-events: none;
   filter: drop-shadow(0 4px 10px rgba(90, 40, 110, 0.08));
-  animation: topFlowerRightBgSway 6.5s ease-in-out infinite;
-  animation-delay: -2.8s;
-  will-change: transform;
 }
 
 @keyframes topFlowerRightBgSway {
@@ -297,7 +293,7 @@ position: absolute;
     height: auto;
     display: block;
     transform: scaleX(-1);
-    transform-origin: top right;
+    transform-origin: center;
     z-index: 2;
 }
 .top-flower-center {

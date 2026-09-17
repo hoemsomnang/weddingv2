@@ -64,8 +64,7 @@
         decoding="async"
         @load="onImgLoad"
       />
-      
-            
+
       <img
         src="@/assets/purple_flower_bouquet_2.webp"
         class="top-flower-left-bg"
