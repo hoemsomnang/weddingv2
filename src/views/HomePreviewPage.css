@@ -380,7 +380,7 @@
 }
 
 .couple-monogram-crest {
-  width: clamp(66px, 16vw, 84px);
+  width: clamp(96px, 22vw, 114px);
   height: auto;
   display: block;
   object-fit: contain;
