@@ -83,6 +83,15 @@
               <span class="couple-role">កូនប្រុសនាម</span>
               <h2 class="couple-name">ហ៊ឹម សំណាង</h2>
             </div>
+            <div class="couple-crest-center">
+              <img
+                src="@/assets/wedding_monogram_crest_sr_trans.webp"
+                class="couple-monogram-crest"
+                alt="Wedding Monogram Crest"
+                draggable="false"
+                decoding="async"
+              />
+            </div>
             <div class="couple-col bride-col">
               <span class="couple-role">កូនស្រីនាម</span>
               <h2 class="couple-name">ឃន សារ៉េន</h2>
