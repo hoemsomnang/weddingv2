@@ -236,6 +236,15 @@
       decoding="async"
     />
 
+    <!-- Bottom Center Purple Flower Bouquet Accent -->
+    <img
+      src="@/assets/purple_floral_bouquet_new_trans.webp"
+      class="bottom-center-purple-bouquet"
+      alt="Bottom Center Floral Bouquet"
+      draggable="false"
+      decoding="async"
+    />
+
   </div>
 </template>
 
