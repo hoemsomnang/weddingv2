@@ -192,8 +192,9 @@
 .parents-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 6px clamp(8px, 2.5vw, 18px);
+    gap: 4px clamp(6px, 2vw, 16px);
     width: 100%;
+    padding: 2px 2px;
     box-sizing: border-box;
     overflow: visible;
 }
@@ -201,7 +202,7 @@
 .parent-col {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 1px;
   overflow: visible;
 }
 
@@ -218,10 +219,10 @@
 .parent-row {
   display: inline-flex;
   align-items: baseline;
-  gap: 5px;
+  gap: 4px;
   font-family: var(--font-khmer2, 'Hanuman', sans-serif);
-  line-height: 1.55;
-  padding: 3px 4px;
+  line-height: 1.45;
+  padding: 1px 2px;
   overflow: visible;
 }
 
@@ -238,8 +239,8 @@
   font-size: clamp(0.82rem, 2.5vw, 0.94rem);
   color: #582478;
   font-weight: 700;
-  padding: 2px 3px;
-  line-height: 1.55;
+  padding: 0px 1px;
+  line-height: 1.45;
   overflow: visible;
   text-shadow:
     0 0 1px #fff,
@@ -254,8 +255,8 @@
   font-size: clamp(1.0rem, 3.2vw, 1.15rem);
   font-weight: 800;
   letter-spacing: 0.01em;
-  padding: 2px 3px;
-  line-height: 1.55;
+  padding: 0px 1px;
+  line-height: 1.45;
   overflow: visible;
   background: linear-gradient(135deg, #a07018 0%, #d4a43a 40%, #7d5010 70%, #d4a43a 100%);
   -webkit-background-clip: text;
@@ -553,15 +554,19 @@
     0 1px 2px rgba(45, 20, 5, 0.4);
 }
 
-/* Scroll Down Prompt Indicator: Luxury Gold Ribbon Banner Button */
+/* Scroll Down Prompt Indicator: Luxury Gold Flourish Pediment Button */
 .scroll-down-banner-btn {
   position: relative;
   display: inline-flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: clamp(82px, 20vw, 102px);
-  height: clamp(68px, 16.5vw, 86px);
-  margin: 2px auto 0;
+  width: auto;
+  min-width: clamp(95px, 24vw, 130px);
+  max-width: 150px;
+  height: auto;
+  gap: 2px;
+  margin: 3px auto 0;
   padding: 0;
   background: transparent;
   border: none;
@@ -589,13 +594,14 @@
 }
 
 .scroll-down-banner-img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
+  position: relative;
+  width: clamp(75px, 20vw, 105px);
+  height: auto;
+  display: block;
   object-fit: contain;
   pointer-events: none;
   user-select: none;
+  filter: drop-shadow(0 2px 6px rgba(80, 40, 10, 0.25));
 }
 
 .scroll-down-banner-inner {
@@ -605,37 +611,31 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100%;
   padding: 0 4px;
   box-sizing: border-box;
   overflow: visible;
   pointer-events: none;
-  transform: translateY(1px);
-  filter:
-    drop-shadow(0 1px 0 #9e6e10)
-    drop-shadow(0 -1px 0 #9e6e10)
-    drop-shadow(1px 0 0 #9e6e10)
-    drop-shadow(-1px 0 0 #9e6e10)
-    drop-shadow(0 2px 4px rgba(0, 0, 0, 0.95))
-    drop-shadow(0 0 6px rgba(255, 215, 0, 0.35));
+  margin-top: 0px;
 }
 
 .scroll-down-banner-text {
   display: inline-block;
-  font-family: var(--font-khmer, 'Moul', serif);
-  font-size: clamp(0.54rem, 1.9vw, 0.74rem);
+  font-family: var(--font-khmer2, 'Hanuman', sans-serif);
+  font-size: clamp(0.72rem, 2.2vw, 0.82rem);
   font-weight: 800;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.02em;
   line-height: 1.35;
-  padding: 3px 6px;
+  padding: 1px 4px;
   box-sizing: border-box;
   overflow: visible;
-  background: linear-gradient(180deg, #ffffff 0%, #fff6c4 20%, #ffd700 52%, #e5a412 78%, #965a00 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: #ffd700;
+  color: #744205;
   text-align: center;
   white-space: nowrap;
+  text-shadow:
+    0 0 1px #fff,
+    0 0 4px #ffffff,
+    0 0 8px rgba(255, 255, 255, 0.95),
+    0 1px 2px rgba(50, 25, 5, 0.4);
 }
 
 @keyframes bannerFloatCue {

@@ -117,7 +117,7 @@
             aria-label="Scroll to next section"
           >
             <img
-              src="@/assets/gold_ribbon_banner_new_trans.webp"
+              src="@/assets/gold_flourish_3d_trans.webp"
               class="scroll-down-banner-img"
               alt="Scroll to details"
               draggable="false"
