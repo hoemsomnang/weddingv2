@@ -687,9 +687,20 @@
     left: 52px;
     width: 125px;
     height: auto;
-    transform: scaleX(-1) rotate(3deg);
+    transform: scaleX(-1) rotate(0deg);
+    transform-origin: bottom center;
     z-index: 5;
     pointer-events: none;
+    animation: swayDelphiniumRight2deg 5s ease-in-out infinite alternate;
+}
+
+@keyframes swayDelphiniumRight2deg {
+    0% {
+        transform: scaleX(-1) rotate(0deg);
+    }
+    100% {
+        transform: scaleX(-1) rotate(2deg);
+    }
 }
 
 
@@ -767,9 +778,20 @@
     right: 52px;
     width: 125px;
     height: auto;
-    transform: rotate(3deg);
+    transform: rotate(0deg);
+    transform-origin: bottom center;
     z-index: 5;
     pointer-events: none;
+    animation: swayDelphiniumLeft2deg 5s ease-in-out infinite alternate;
+}
+
+@keyframes swayDelphiniumLeft2deg {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(2deg);
+    }
 }
 
 
