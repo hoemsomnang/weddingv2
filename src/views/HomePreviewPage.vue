@@ -3,6 +3,46 @@
 
     <FloatingPetals />
     <ButterflyEffect theme="white" />
+
+    <!-- ── Top floral header arrangement ─────────────────── -->
+    <div class="top-floral-header" aria-hidden="true">
+      <img
+        src="@/assets/horizontal_floral_bridge_trans.webp"
+        class="top-floral-bridge-bg"
+        alt="Top Floral Bridge"
+        draggable="false"
+        decoding="async"
+        fetchpriority="high"
+      />
+      <img
+        src="@/assets/purple_wisteria_trans.webp"
+        class="top-wisteria-left"
+        alt="Top Left Hanging Wisteria"
+        draggable="false"
+        decoding="async"
+      />
+      <img
+        src="@/assets/purple_wisteria_trans.webp"
+        class="top-wisteria-right"
+        alt="Top Right Hanging Wisteria"
+        draggable="false"
+        decoding="async"
+      />
+      <img
+        src="@/assets/purple_top_left_trans.webp"
+        class="top-flower-left"
+        alt="Top Left Floral Corner"
+        draggable="false"
+        decoding="async"
+      />
+      <img
+        src="@/assets/purple_top_left_trans.webp"
+        class="top-flower-right"
+        alt="Top Right Floral Corner"
+        draggable="false"
+        decoding="async"
+      />
+    </div>
        
     <section
       class="chandelier-section fade-in"
