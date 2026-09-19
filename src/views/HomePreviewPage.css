@@ -109,7 +109,7 @@
 /* ── Top-Left Burgundy Cascade Bouquet (Easy to adjust) ── */
 .top-burgundy-cascade-left {
   /* 🎛️ ADJUST POSITION & SIZE HERE: */
-    top: 11px;
+    top: 36px;
     left: -21px;
     width: 115px;
   position: absolute;
@@ -136,7 +136,7 @@
 /* ── Top-Right Burgundy Cascade Bouquet (Easy to adjust) ── */
 .top-burgundy-cascade-right {
   /* 🎛️ ADJUST POSITION & SIZE HERE: */
-  top: 11px;
+  top: 36px;
   right: -21px;
   width: 115px;
 
