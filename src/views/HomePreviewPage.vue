@@ -15,20 +15,6 @@
         fetchpriority="high"
       />
       <img
-        src="@/assets/purple_wisteria_trans.webp"
-        class="top-wisteria-left"
-        alt="Top Left Hanging Wisteria"
-        draggable="false"
-        decoding="async"
-      />
-      <img
-        src="@/assets/purple_wisteria_trans.webp"
-        class="top-wisteria-right"
-        alt="Top Right Hanging Wisteria"
-        draggable="false"
-        decoding="async"
-      />
-      <img
         src="@/assets/new_burgundy_cascade_trans.webp"
         class="top-burgundy-cascade-left"
         alt="Top Left Burgundy Cascade Bouquet"
