@@ -36,7 +36,7 @@
         decoding="async"
       />
       <img
-        src="@/assets/purple_top_left_trans.webp"
+        src="@/assets/new_purple_top_left_trans.webp"
         class="top-flower-left"
         alt="Top Left Floral Corner"
         draggable="false"
@@ -50,7 +50,7 @@
         decoding="async"
       />
       <img
-        src="@/assets/purple_top_left_trans.webp"
+        src="@/assets/new_purple_top_left_trans.webp"
         class="top-flower-right"
         alt="Top Right Floral Corner"
         draggable="false"
