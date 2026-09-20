@@ -408,6 +408,15 @@
       decoding="async"
     /> 
 
+    <!-- Bottom Right Romantic Gazebo Accent -->
+    <img
+      src="@/assets/purple_wedding_gazebo_trans.webp"
+      class="bottom-right-wedding-gazebo"
+      alt="Purple Wedding Gazebo"
+      draggable="false"
+      decoding="async"
+    />
+
     <!-- Bottom Center Purple Flower Bouquet Accent -->
     <img
       src="@/assets/purple_floral_bouquet_new_trans.webp"

@@ -824,8 +824,6 @@
  
 .bottom-nav-btn {
   background: linear-gradient(145deg, rgba(139, 95, 201, 0.22) 0%, rgba(88, 36, 120, 0.28) 100%);
-  backdrop-filter: blur(1px);
-  -webkit-backdrop-filter: blur(1px);
   border: 1.5px solid rgba(196, 168, 240, 0.55);
   box-shadow:
     0 4px 12px rgba(88, 36, 120, 0.18),
@@ -1106,6 +1104,18 @@
     100% {
         transform: scaleX(-1) rotate(10deg);
     }
+}
+
+/* ── Bottom-Right Purple Wedding Gazebo Accent ────────────── */
+.bottom-right-wedding-gazebo {
+    position: absolute;
+    bottom: clamp(40px, 8vh, 75px);
+    right: clamp(-8px, -1vw, 15px);
+    width: clamp(120px, 32vw, 175px);
+    height: auto;
+    z-index: 2;
+    pointer-events: none;
+    filter: drop-shadow(0 6px 16px rgba(70, 25, 90, 0.2));
 }
 
 /* ── Bottom-Center Floral Accent Bouquet ──── */
