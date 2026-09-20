@@ -199,25 +199,32 @@
   opacity: 0;
   transform: translateY(28px);
   transition:
-    opacity 1.6s cubic-bezier(0.18, 0.85, 0.25, 1),
-    transform 1.6s cubic-bezier(0.18, 0.85, 0.25, 1);
+    opacity 0.4s ease,
+    transform 0.4s ease;
   will-change: opacity, transform;
 }
 
 .section-animate-in .anim-item {
   opacity: 1;
   transform: translateY(0);
+  transition:
+    opacity 1.4s cubic-bezier(0.18, 0.85, 0.25, 1),
+    transform 1.4s cubic-bezier(0.18, 0.85, 0.25, 1);
 }
 
 /* Parallel Cascading Delays (Smooth overlapping wave) */
-.section-animate-in .anim-delay-1 { transition-delay: 0.06s; }
-.section-animate-in .anim-delay-2 { transition-delay: 0.16s; }
-.section-animate-in .anim-delay-3 { transition-delay: 0.26s; }
-.section-animate-in .anim-delay-4 { transition-delay: 0.36s; }
-.section-animate-in .anim-delay-5 { transition-delay: 0.46s; }
-.section-animate-in .anim-delay-6 { transition-delay: 0.56s; }
-.section-animate-in .anim-delay-7 { transition-delay: 0.66s; }
-.section-animate-in .anim-delay-8 { transition-delay: 0.76s; }
+.section-animate-in .anim-delay-1 { transition-delay: 0.05s; }
+.section-animate-in .anim-delay-2 { transition-delay: 0.13s; }
+.section-animate-in .anim-delay-3 { transition-delay: 0.21s; }
+.section-animate-in .anim-delay-4 { transition-delay: 0.29s; }
+.section-animate-in .anim-delay-5 { transition-delay: 0.37s; }
+.section-animate-in .anim-delay-6 { transition-delay: 0.45s; }
+.section-animate-in .anim-delay-7 { transition-delay: 0.53s; }
+.section-animate-in .anim-delay-8 { transition-delay: 0.61s; }
+.section-animate-in .anim-delay-9 { transition-delay: 0.69s; }
+.section-animate-in .anim-delay-10 { transition-delay: 0.77s; }
+.section-animate-in .anim-delay-11 { transition-delay: 0.85s; }
+.section-animate-in .anim-delay-12 { transition-delay: 0.93s; }
 
 /* Refined transforms for countdown elements */
 .countdown-box.anim-item {
@@ -248,10 +255,38 @@
   transform: translateY(0) scale(1);
 }
 
+.agenda-timeline-row.anim-item {
+  transform: translateY(22px);
+}
+.section-animate-in .agenda-timeline-row.anim-item {
+  transform: translateY(0);
+}
+
 .agenda-divider-wrap.anim-item {
   transform: translateY(16px) scaleX(0.85);
 }
 .section-animate-in .agenda-divider-wrap.anim-item {
+  transform: translateY(0) scaleX(1);
+}
+
+.location-info-card.anim-item {
+  transform: translateY(24px) scale(0.96);
+}
+.section-animate-in .location-info-card.anim-item {
+  transform: translateY(0) scale(1);
+}
+
+.location-map-container.anim-item {
+  transform: translateY(28px) scale(0.95);
+}
+.section-animate-in .location-map-container.anim-item {
+  transform: translateY(0) scale(1);
+}
+
+.location-divider-wrap.anim-item {
+  transform: translateY(16px) scaleX(0.85);
+}
+.section-animate-in .location-divider-wrap.anim-item {
   transform: translateY(0) scaleX(1);
 }
 
@@ -1525,7 +1560,7 @@
 
 /* 2. Gold Ornate Divider */
 .agenda-divider-wrap {
-  width: clamp(100px, 38vw, 150px);
+  width: clamp(90px, 34vw, 140px);
   height: auto;
   margin: 4px auto 10px;
   display: flex;
@@ -1700,4 +1735,296 @@
   font-weight: 700;
   color: #79490c;
   letter-spacing: 0.01em;
+}
+
+/* ============================================================
+   Section 4: Wedding Location / Venue Map
+   ============================================================ */
+.section-location {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  min-height: 100dvh;
+  padding: clamp(24px, 4.5vh, 44px) 16px clamp(90px, 14vh, 120px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+
+.location-content {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 55px auto 0;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+/* 1. Location Header Title */
+.location-header-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto 4px;
+}
+
+.location-title {
+  font-family: var(--font-koulen, 'Koulen', sans-serif);
+  font-size: clamp(1.22rem, 4.2vw, 1.45rem);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  background: linear-gradient(135deg, #a07018 0%, #d4a43a 40%, #7d5010 70%, #d4a43a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #d4a43a;
+  filter:
+    drop-shadow(0 0 1px #fff)
+    drop-shadow(0 0 4px #ffffff)
+    drop-shadow(0 0 8px rgba(255, 255, 255, 0.95))
+    drop-shadow(0 1px 2px rgba(60, 30, 10, 0.45));
+  margin: 0;
+  padding: 2px 8px;
+  text-align: center;
+}
+
+/* 2. Gold Ornate Divider */
+.location-divider-wrap {
+  width: clamp(90px, 34vw, 140px);
+  height: auto;
+  margin: 4px auto 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.location-ornate-divider {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 6px rgba(90, 40, 20, 0.2));
+}
+
+/* 3. Venue Details Card */
+.location-info-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  margin: 0 auto 12px;
+  padding: 0 8px;
+  box-sizing: border-box;
+}
+
+.location-venue-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(6px, 2vw, 10px);
+}
+
+.location-badge-icon {
+  width: clamp(16px, 4vw, 20px);
+  height: clamp(16px, 4vw, 20px);
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: drop-shadow(0 1px 3px rgba(160, 110, 20, 0.35));
+}
+
+.location-venue-name {
+  font-family: var(--font-koulen, 'Koulen', sans-serif);
+  font-size: clamp(1.02rem, 3.3vw, 1.2rem);
+  font-weight: 700;
+  color: #3b1854;
+  letter-spacing: 0.01em;
+  margin: 0;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9);
+}
+
+.location-address-text {
+  font-family: var(--font-kantumruy, 'Kantumruy Pro', serif);
+  font-size: clamp(0.92rem, 2.7vw, 1.05rem);
+  font-weight: 600;
+  color: #582478;
+  line-height: 1.5;
+  margin: 0;
+  text-align: center;
+  text-shadow:
+    0 0 1px #fff,
+    0 0 4px #ffffff,
+    0 0 8px rgba(255, 255, 255, 0.95),
+    0 1px 2px rgba(45, 20, 5, 0.4);
+}
+
+.location-time-badge {
+  display: inline-block;
+  font-family: var(--font-kantumruy, 'Kantumruy Pro', serif);
+  font-size: clamp(0.82rem, 2.4vw, 0.92rem);
+  font-weight: 700;
+  color: #79490c;
+  background: linear-gradient(135deg, rgba(254, 249, 238, 0.9) 0%, rgba(250, 238, 205, 0.8) 100%);
+  border: 1px dashed rgba(212, 164, 58, 0.6);
+  border-radius: 14px;
+  padding: 3px 14px;
+  margin: 2px 0 0;
+  box-shadow: 0 2px 8px rgba(120, 60, 10, 0.06);
+}
+
+/* 4. Interactive Stylized Map Card */
+.location-map-container {
+  position: relative;
+  width: 100%;
+  max-width: clamp(280px, 84vw, 360px);
+  margin: 0 auto 12px;
+}
+
+.location-map-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: clamp(16px, 4.5vw, 22px);
+  overflow: hidden;
+  border: 2px solid #d4a43a;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.9),
+    0 8px 24px rgba(60, 25, 75, 0.25);
+  background: #f4ecda;
+}
+
+.location-map-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+.location-map-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(40, 15, 60, 0.05);
+  transition: background 0.2s ease;
+}
+
+.location-map-overlay:hover {
+  background: rgba(40, 15, 60, 0.12);
+}
+
+.location-pin-pulse-img {
+  width: clamp(32px, 8vw, 42px);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.45));
+  animation: mapPinPulse 1.8s infinite ease-in-out;
+  user-select: none;
+  pointer-events: none;
+}
+
+@keyframes mapPinPulse {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.16);
+  }
+}
+
+/* 5. Open in Google Maps Action Button (Clean Gold Text Link) */
+.location-action-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto 12px;
+}
+
+.location-directions-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 4px 10px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.22s ease, opacity 0.22s ease;
+}
+
+.location-directions-btn:hover {
+  transform: translateY(-2px) scale(1.04);
+}
+
+.location-directions-btn:active {
+  transform: translateY(1px) scale(0.97);
+}
+
+.location-btn-pin-icon {
+  width: clamp(20px, 5.4vw, 26px);
+  height: clamp(20px, 5.4vw, 26px);
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 5px rgba(60, 25, 10, 0.3));
+  transition: transform 0.22s ease;
+}
+
+.location-directions-btn:hover .location-btn-pin-icon {
+  transform: translateY(-1px) rotate(-4deg);
+}
+
+.location-btn-text {
+  font-family: var(--font-koulen, 'Koulen', sans-serif);
+  font-size: clamp(1.02rem, 3.4vw, 1.22rem);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  background: linear-gradient(135deg, #a07018 0%, #d4a43a 40%, #7d5010 70%, #d4a43a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #d4a43a;
+  filter:
+    drop-shadow(0 0 1px #fff)
+    drop-shadow(0 0 4px #ffffff)
+    drop-shadow(0 0 8px rgba(255, 255, 255, 0.95))
+    drop-shadow(0 1px 2px rgba(60, 30, 10, 0.45));
+  white-space: nowrap;
+  margin: 0;
+}
+
+/* 6. Warm Closing Wish */
+.location-closing-wish {
+  font-family: var(--font-kantumruy, 'Kantumruy Pro', serif);
+  font-size: clamp(0.82rem, 2.5vw, 0.95rem);
+  font-weight: 600;
+  font-style: italic;
+  color: #582478;
+  text-align: center;
+  margin: 0 auto;
+  line-height: 1.5;
+  text-shadow:
+    0 0 1px #fff,
+    0 0 4px #ffffff,
+    0 0 8px rgba(255, 255, 255, 0.95),
+    0 1px 2px rgba(45, 20, 5, 0.4);
+  padding: 0 10px;
 }

@@ -55,10 +55,15 @@ const invitation = {
   /** Human-readable date shown on the invitation card */
   dateDisplay: 'ថ្ងៃអាទិត្យ ទី២៤ ខែវិច្ឆិកា ឆ្នាំ២០២៦',
 
-  /* ── Venue ───────────────────────────────────────────────── */
-  venueName: '',
-  venueAddress: '',
-  venueClosingWish: 'ដោយមេត្រីភាព។',
+  /* ── Venue & Location ────────────────────────────────────── */
+  venueTitle: 'ទីតាំងប្រារព្ធពិធី',
+  venueName: 'គេហដ្ឋាននៃសិរីមង្គលអាពាហ៍ពិពាហ៍',
+  venueAddress: 'ភូមិអូរល្វា ឃុំជ្រៃសីម៉ា ស្រុកសំពៅលូន ខេត្តបាត់ដំបង',
+  venueReceptionTime: 'វេលាម៉ោង ០៥:០០ ល្ងាច',
+  venueButtonText: 'បើកមើលលើ Google Maps',
+  venueClosingWish: 'សូមគោរពអញ្ជើញភ្ញៀវកិត្តិយសទាំងអស់ដោយមេត្រីភាព',
+  venueMapsUrl: 'https://maps.app.goo.gl/TZE8CuT46X9Ze9r28',
+  venueEmbedUrl: 'https://maps.google.com/maps?q=13.489456,102.368097&hl=km&z=16&output=embed',
 
   scrollUpText: 'អូសឡើងទៅលើ',
 

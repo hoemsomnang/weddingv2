@@ -241,11 +241,10 @@
             <div
               v-for="(day, dIndex) in invitation.agendaDays"
               :key="dIndex"
-              class="agenda-day-card anim-item"
-              :class="`anim-delay-${dIndex + 3}`"
+              class="agenda-day-card"
             >
               <!-- Day Header Banner -->
-              <div class="agenda-day-header">
+              <div class="agenda-day-header anim-item anim-delay-3">
                 <span class="agenda-header-ornament">❖</span>
                 <h3 class="agenda-day-title">{{ day.dayTitle }}</h3>
                 <span class="agenda-header-ornament">❖</span>
@@ -256,7 +255,8 @@
                 <div
                   v-for="(item, sIndex) in day.schedule"
                   :key="sIndex"
-                  class="agenda-timeline-row"
+                  class="agenda-timeline-row anim-item"
+                  :class="`anim-delay-${sIndex + 4}`"
                 >
                   <!-- Left: Time -->
                   <div class="agenda-time-col">
@@ -277,7 +277,7 @@
                   <!-- Right: Ceremony Name -->
                   <div class="agenda-detail-col">
                     <img
-                      src="@/assets/khmer_gold_rosette_trans.png"
+                      src="@/assets/khmer_gold_rosette_trans.webp"
                       class="agenda-rosette-bullet"
                       alt="Ornament"
                       draggable="false"
@@ -294,6 +294,99 @@
               </div>
             </div>
           </div>
+
+        </div>
+      </section>
+
+      <!-- ── Section 4: Wedding Location / Venue Map ────────────── -->
+      <section class="snap-page section-location" id="page-location">
+        <div class="location-content" :class="{ 'section-animate-in': isLocationInView }">
+
+          <!-- 1. Location Header Title -->
+          <div class="location-header-wrap anim-item anim-delay-1">
+            <h2 class="location-title">{{ invitation.venueTitle }}</h2>
+          </div>
+
+          <!-- 2. Gold Ornate Divider -->
+          <div class="location-divider-wrap anim-item anim-delay-2">
+            <img
+              src="@/assets/gold_divider_ornate.webp"
+              class="location-ornate-divider"
+              alt="Divider"
+              draggable="false"
+              decoding="async"
+            />
+          </div>
+
+          <!-- 3. Venue Details Card -->
+          <div class="location-info-card anim-item anim-delay-3">
+            <div class="location-venue-badge">
+              <img
+                src="@/assets/khmer_gold_rosette_trans.webp"
+                class="location-badge-icon"
+                alt="Rosette"
+                draggable="false"
+                decoding="async"
+              />
+              <span class="location-venue-name">{{ invitation.venueName }}</span>
+              <img
+                src="@/assets/khmer_gold_rosette_trans.webp"
+                class="location-badge-icon"
+                alt="Rosette"
+                draggable="false"
+                decoding="async"
+              />
+            </div>
+
+            <p class="location-address-text">{{ invitation.venueAddress }}</p>
+            <p class="location-time-badge">{{ invitation.venueReceptionTime }}</p>
+          </div>
+
+          <!-- 4. Interactive Stylized Map Card -->
+          <div class="location-map-container anim-item anim-delay-4">
+            <div class="location-map-frame">
+              <iframe
+                title="Wedding Venue Location Map"
+                :src="invitation.venueEmbedUrl || 'https://maps.google.com/maps?q=13.489456,102.368097&hl=km&z=16&output=embed'"
+                class="location-map-iframe"
+                loading="lazy"
+                allowfullscreen
+              ></iframe>
+              <div class="location-map-overlay" @click="openGoogleMaps" title="Open in Google Maps">
+                <img
+                  src="@/assets/gold_map_marker_pin_trans.webp"
+                  class="location-pin-pulse-img"
+                  alt="Map Location Pin"
+                  draggable="false"
+                  decoding="async"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. Open in Google Maps Action Button -->
+          <div class="location-action-wrap anim-item anim-delay-5">
+            <button
+              type="button"
+              class="location-directions-btn"
+              @click="openGoogleMaps"
+              aria-label="Open in Google Maps"
+            >
+              <img
+                src="@/assets/gold_wedding_pin_trans.webp"
+                class="location-btn-pin-icon"
+                alt="Location Pin"
+                draggable="false"
+                decoding="async"
+              />
+              <span class="location-btn-text">{{ invitation.venueButtonText }}</span>
+            </button>
+          </div>
+
+          <!-- 6. Warm Closing Wish -->
+          <p class="location-closing-wish anim-item anim-delay-6">
+            « {{ invitation.venueClosingWish }} »
+          </p>
 
         </div>
       </section>
@@ -559,21 +652,35 @@ const entered = ref(true)
 const isInviteInView = ref(true)
 const isCountdownInView = ref(false)
 const isAgendaInView = ref(false)
+const isLocationInView = ref(false)
 
 function onImgLoad() {
   entered.value = true
 }
 
-function onContainerScroll() {
+function updateActiveSections() {
   if (!scrollContainer.value) return
   const top = scrollContainer.value.scrollTop
   const h = scrollContainer.value.clientHeight || window.innerHeight
-  // When top is less than 45% of page height, page-invite is in view
-  isInviteInView.value = top < h * 0.45
-  // When top reaches 30% of page height, page-countdown triggers its entrance
-  isCountdownInView.value = top >= h * 0.3
-  // When top reaches 130% of page height, page-agenda triggers its entrance
-  isAgendaInView.value = top >= h * 1.3
+
+  // Symmetrical midpoint boundaries for 4 pages:
+  // Page 0 (Invite): [0, 0.5h)
+  // Page 1 (Countdown): [0.5h, 1.5h)
+  // Page 2 (Agenda): [1.5h, 2.5h)
+  // Page 3 (Location): [2.5h, end]
+  const inInvite = top < h * 0.5
+  const inCountdown = top >= h * 0.5 && top < h * 1.5
+  const inAgenda = top >= h * 1.5 && top < h * 2.5
+  const inLocation = top >= h * 2.5
+
+  if (isInviteInView.value !== inInvite) isInviteInView.value = inInvite
+  if (isCountdownInView.value !== inCountdown) isCountdownInView.value = inCountdown
+  if (isAgendaInView.value !== inAgenda) isAgendaInView.value = inAgenda
+  if (isLocationInView.value !== inLocation) isLocationInView.value = inLocation
+}
+
+function onContainerScroll() {
+  updateActiveSections()
 }
 
 // ── Live Countdown State & Logic ──
@@ -583,6 +690,8 @@ let sectionObserver = null
 
 onMounted(() => {
   entered.value = true
+  updateActiveSections()
+
   countdownTimer = setInterval(() => {
     now.value = Date.now()
   }, 1000)
@@ -592,37 +701,45 @@ onMounted(() => {
     sectionObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.target.id === 'page-countdown') {
-            if (entry.isIntersecting) {
-              isCountdownInView.value = true
-            } else if (scrollContainer.value && scrollContainer.value.scrollTop < 100) {
-              isCountdownInView.value = false
-            }
-          } else if (entry.target.id === 'page-agenda') {
-            if (entry.isIntersecting) {
-              isAgendaInView.value = true
-            } else if (scrollContainer.value && scrollContainer.value.scrollTop < window.innerHeight * 0.5) {
-              isAgendaInView.value = false
-            }
-          } else if (entry.target.id === 'page-invite') {
-            if (entry.isIntersecting) {
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.45) {
+            if (entry.target.id === 'page-invite') {
               isInviteInView.value = true
+              isCountdownInView.value = false
+              isAgendaInView.value = false
+              isLocationInView.value = false
+            } else if (entry.target.id === 'page-countdown') {
+              isInviteInView.value = false
+              isCountdownInView.value = true
+              isAgendaInView.value = false
+              isLocationInView.value = false
+            } else if (entry.target.id === 'page-agenda') {
+              isInviteInView.value = false
+              isCountdownInView.value = false
+              isAgendaInView.value = true
+              isLocationInView.value = false
+            } else if (entry.target.id === 'page-location') {
+              isInviteInView.value = false
+              isCountdownInView.value = false
+              isAgendaInView.value = false
+              isLocationInView.value = true
             }
           }
         })
       },
       {
         root: scrollContainer.value,
-        threshold: 0.25,
+        threshold: 0.45,
       }
     )
 
     const inviteEl = document.getElementById('page-invite')
     const countdownEl = document.getElementById('page-countdown')
     const agendaEl = document.getElementById('page-agenda')
+    const locationEl = document.getElementById('page-location')
     if (inviteEl) sectionObserver.observe(inviteEl)
     if (countdownEl) sectionObserver.observe(countdownEl)
     if (agendaEl) sectionObserver.observe(agendaEl)
+    if (locationEl) sectionObserver.observe(locationEl)
   }
 })
 
@@ -675,6 +792,8 @@ function onScrollUpIndicatorClick() {
     scrollToPage('page-countdown')
   } else if (top < h * 1.5) {
     scrollToPage('page-agenda')
+  } else if (top < h * 2.5) {
+    scrollToPage('page-location')
   } else {
     scrollToPage('page-invite')
   }
@@ -687,7 +806,7 @@ function goBackToCover() {
 function onCalendarClick() {
   const agendaEl = document.getElementById('page-agenda')
   if (agendaEl && scrollContainer.value) {
-    const isAtAgenda = scrollContainer.value.scrollTop >= (agendaEl.offsetTop - 120)
+    const isAtAgenda = scrollContainer.value.scrollTop >= (agendaEl.offsetTop - 120) && scrollContainer.value.scrollTop < (agendaEl.offsetTop + 120)
     if (isAtAgenda) {
       scrollToPage('page-invite')
       return
@@ -697,8 +816,20 @@ function onCalendarClick() {
 }
 
 function onLocationClick() {
-  const query = encodeURIComponent(invitation.receptionTime || 'ភូមិអូរល្វា ឃុំជ្រៃសីម៉ា ស្រុកសំពៅលូន ខេត្តបាត់ដំបង')
-  window.open(`https://www.google.com/maps/search/?api=1&query=${query}`, '_blank')
+  const locationEl = document.getElementById('page-location')
+  if (locationEl && scrollContainer.value) {
+    const isAtLocation = scrollContainer.value.scrollTop >= (locationEl.offsetTop - 120)
+    if (isAtLocation) {
+      scrollToPage('page-invite')
+      return
+    }
+  }
+  scrollToPage('page-location')
+}
+
+function openGoogleMaps() {
+  const url = invitation.venueMapsUrl || 'https://maps.app.goo.gl/TZE8CuT46X9Ze9r28'
+  window.open(url, '_blank')
 }
 
 function onGalleryClick() {
@@ -706,7 +837,7 @@ function onGalleryClick() {
 }
 
 function onWishesClick() {
-  scrollToPage('page-agenda')
+  scrollToPage('page-location')
 }
 </script>
 
