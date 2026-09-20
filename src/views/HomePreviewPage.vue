@@ -143,8 +143,6 @@
           </div>
 
           <div class="venue-section anim-item anim-delay-7">
-            <h3 class="venue-main-name">{{ invitation.venueName }}</h3>
-            <p class="venue-address-line">{{ invitation.venueAddress }}</p>
             <p class="venue-closing-wish">{{ invitation.venueClosingWish }}</p>
           </div>
         </div>
