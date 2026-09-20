@@ -743,7 +743,7 @@
 .bottom-nav-btn {
   background: linear-gradient(145deg, rgba(139, 95, 201, 0.22) 0%, rgba(88, 36, 120, 0.28) 100%);
   backdrop-filter: blur(1px);
-  -webkit-backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(1px);
   border: 1.5px solid rgba(196, 168, 240, 0.55);
   box-shadow:
     0 4px 12px rgba(88, 36, 120, 0.18),
