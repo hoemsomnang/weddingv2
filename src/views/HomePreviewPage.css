@@ -753,8 +753,8 @@
 .bottom-page-background {
   position: absolute;
   bottom: -2px;
-  left: 0;
-  right: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 112%;
   pointer-events: none;
   z-index: 2;
@@ -777,25 +777,23 @@
   pointer-events: none;
 }
 
-/* ── Bottom-Left Floral Accent Bouquet (Easy to adjust) ──── */
+/* ── Bottom-Left Floral Accent Bouquet ──── */
 .bottom-left-purple-bouquet {
     position: absolute;
-    bottom: -26px;
-    left: -28px;
-    width: 125px;
+    bottom: clamp(-32px, -6.67vw, -20px);
+    left: clamp(-36px, -7.18vw, -20px);
+    width: clamp(95px, 32.05vw, 155px);
     height: auto;
     transform: scaleX(-1) rotate(3deg);
     z-index: 6;
     pointer-events: none;
 }
 
-
-
 .purple_cosmos_original_trans {
     position: absolute;
-    bottom: 27px;
-    left: -41px;
-    width: 125px;
+    bottom: clamp(20px, 6.92vw, 36px);
+    left: clamp(-52px, -10.51vw, -30px);
+    width: clamp(95px, 32.05vw, 155px);
     height: auto;
     transform: scaleX(-1) rotate(3deg);
     z-index: 5;
@@ -804,9 +802,9 @@
 
 .purple_watercolor_original_trans {
     position: absolute;
-    bottom: -104px;
-    left: 52px;
-    width: 125px;
+    bottom: clamp(-130px, -26.67vw, -80px);
+    left: clamp(38px, 13.33vw, 68px);
+    width: clamp(95px, 32.05vw, 155px);
     height: auto;
     transform: scaleX(-1) rotate(0deg);
     transform-origin: bottom center;
@@ -824,12 +822,11 @@
     }
 }
 
-
 .purple_flower_bloom_trans {
     position: absolute;
-    bottom: -23px;
-    left: 85px;
-    width: 120px;
+    bottom: clamp(-30px, -5.9vw, -16px);
+    left: clamp(62px, 21.79vw, 110px);
+    width: clamp(90px, 30.77vw, 150px);
     height: auto;
     transform: scaleX(-1) rotate(0deg);
     z-index: 4;
@@ -839,9 +836,9 @@
 
 .purple_delphinium_reference_nobg {
     position: absolute;
-    bottom: 27px;
-    left: 61px;
-    width: 84px;
+    bottom: clamp(20px, 6.92vw, 36px);
+    left: clamp(44px, 15.64vw, 80px);
+    width: clamp(64px, 21.54vw, 105px);
     height: auto;
     transform: rotate(0deg);
     transform-origin: bottom center;
@@ -861,21 +858,21 @@
 
 .purple_watercolor_corner_trans {
     position: absolute;
-    bottom: 21px;
-    left: -20px;
-    width: 123px;
+    bottom: clamp(15px, 5.38vw, 28px);
+    left: clamp(-26px, -5.13vw, -14px);
+    width: clamp(92px, 31.54vw, 152px);
     height: auto;
     transform: rotate(10deg);
     z-index: 3;
     pointer-events: none;
 }
 
-/* ── Bottom-right Floral Accent Bouquet (Easy to adjust) ──── */
+/* ── Bottom-right Floral Accent Bouquet ──── */
 .right-bottom-purple-bouquet {
     position: absolute;
-    bottom: -26px;
-    right: -28px;
-    width: 125px;
+    bottom: clamp(-32px, -6.67vw, -20px);
+    right: clamp(-36px, -7.18vw, -20px);
+    width: clamp(95px, 32.05vw, 155px);
     height: auto;
     transform: rotate(3deg);
     z-index: 6;
@@ -884,9 +881,9 @@
 
 .right-purple_cosmos_original_trans {
     position: absolute;
-    bottom: 27px;
-    right: -41px;
-    width: 125px;
+    bottom: clamp(20px, 6.92vw, 36px);
+    right: clamp(-52px, -10.51vw, -30px);
+    width: clamp(95px, 32.05vw, 155px);
     height: auto;
     transform: rotate(3deg);
     z-index: 5;
@@ -895,9 +892,9 @@
 
 .right-purple_watercolor_original_trans {
     position: absolute;
-    bottom: -104px;
-    right: 52px;
-    width: 125px;
+    bottom: clamp(-130px, -26.67vw, -80px);
+    right: clamp(38px, 13.33vw, 68px);
+    width: clamp(95px, 32.05vw, 155px);
     height: auto;
     transform: rotate(0deg);
     transform-origin: bottom center;
@@ -915,13 +912,11 @@
     }
 }
 
-
-
 .right-purple_flower_bloom_trans {
     position: absolute;
-    bottom: -23px;
-    right: 85px;
-    width: 120px;
+    bottom: clamp(-30px, -5.9vw, -16px);
+    right: clamp(62px, 21.79vw, 110px);
+    width: clamp(90px, 30.77vw, 150px);
     height: auto;
     transform: rotate(0deg);
     z-index: 4;
@@ -931,9 +926,9 @@
 
 .right-purple_delphinium_reference_nobg {
     position: absolute;
-    bottom: 27px;
-    right: 61px;
-    width: 84px;
+    bottom: clamp(20px, 6.92vw, 36px);
+    right: clamp(44px, 15.64vw, 80px);
+    width: clamp(64px, 21.54vw, 105px);
     height: auto;
     transform: scaleX(-1) rotate(0deg);
     transform-origin: bottom center;
@@ -953,9 +948,9 @@
 
 .right-purple_watercolor_corner_trans {
     position: absolute;
-    bottom: 21px;
-    right: -20px;
-    width: 123px;
+    bottom: clamp(15px, 5.38vw, 28px);
+    right: clamp(-26px, -5.13vw, -14px);
+    width: clamp(92px, 31.54vw, 152px);
     height: auto;
     transform: scaleX(-1) rotate(10deg);
     z-index: 3;
@@ -965,10 +960,10 @@
 /* ── Bottom-Center Floral Accent Bouquet ──── */
 .bottom-center-purple-bouquet {
     position: absolute;
-    bottom: -20px;
+    bottom: clamp(-24px, -5.13vw, -15px);
     left: 50%;
     transform: translateX(-50%);
-    width: clamp(60px, 14vw, 95px);
+    width: clamp(60px, 18vw, 105px);
     height: auto;
     z-index: 3;
     pointer-events: none;
@@ -999,7 +994,8 @@
   .bottom-background-img {
     height: clamp(130px, 18vw, 190px);
   }
-  .bottom-left-purple-bouquet {
+  .bottom-left-purple-bouquet,
+  .right-bottom-purple-bouquet {
     width: 145px;
   }
   .bottom-center-purple-bouquet {
@@ -1034,7 +1030,8 @@
   .bottom-background-img {
     height: 180px;
   }
-  .bottom-left-purple-bouquet {
+  .bottom-left-purple-bouquet,
+  .right-bottom-purple-bouquet {
     width: 165px;
   }
   .bottom-center-purple-bouquet {
