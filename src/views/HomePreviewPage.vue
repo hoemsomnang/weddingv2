@@ -44,7 +44,7 @@
       />
     </div>
        
-   <!-- <section
+   <section
       class="chandelier-section fade-in"
       :class="{ visible: entered }"
       style="--delay: 0.2s"
@@ -60,7 +60,7 @@
         fetchpriority="high"
         @load="onImgLoad"
       />
-    </section> -->
+    </section> 
     
 
     <div class="scrollable-snap-wrapper" ref="scrollContainer">

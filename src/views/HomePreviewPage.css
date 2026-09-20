@@ -173,7 +173,7 @@
 
 .chandelier-img {
   position: relative;
-  top: 28px;
+  top: 18px;
   z-index: 2;
   width: min(42vw, 148px);
   max-height: 24vh;
