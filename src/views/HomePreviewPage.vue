@@ -213,8 +213,81 @@
             />
           </div>
 
-          <!-- 6. Down Chevron Cue to return to invitation cover -->
+        </div>
+      </section>
 
+      <!-- ── Section 3: Event Agenda / Wedding Schedule ────────── -->
+      <section class="snap-page section-agenda" id="page-agenda">
+        <div class="agenda-content" :class="{ 'section-animate-in': isAgendaInView }">
+
+          <!-- 1. Agenda Header Title -->
+          <div class="agenda-header-wrap anim-item anim-delay-1">
+            <h2 class="agenda-title">{{ invitation.agendaTitle }}</h2>
+          </div>
+
+          <!-- 2. Gold Ornate Divider -->
+          <div class="agenda-divider-wrap anim-item anim-delay-2">
+            <img
+              src="@/assets/gold_divider_ornate.webp"
+              class="agenda-ornate-divider"
+              alt="Divider"
+              draggable="false"
+              decoding="async"
+            />
+          </div>
+
+          <!-- 3. Agenda Days Program Cards -->
+          <div class="agenda-days-container">
+            <div
+              v-for="(day, dIndex) in invitation.agendaDays"
+              :key="dIndex"
+              class="agenda-day-card anim-item"
+              :class="`anim-delay-${dIndex + 3}`"
+            >
+              <!-- Day Header Banner -->
+              <div class="agenda-day-header">
+                <span class="agenda-header-ornament">❖</span>
+                <h3 class="agenda-day-title">{{ day.dayTitle }}</h3>
+                <span class="agenda-header-ornament">❖</span>
+              </div>
+
+              <!-- Timeline Items List -->
+              <div class="agenda-timeline">
+                <div
+                  v-for="(item, sIndex) in day.schedule"
+                  :key="sIndex"
+                  class="agenda-timeline-row"
+                >
+                  <!-- Left: Time -->
+                  <div class="agenda-time-col">
+                    <span class="agenda-time-text">{{ item.time }}</span>
+                  </div>
+
+                  <!-- Center: Golden Ceremonial Icon -->
+                  <div class="agenda-icon-col">
+                    <img
+                      :src="getAgendaIcon(item.icon)"
+                      class="agenda-ceremony-icon-img"
+                      :alt="item.title"
+                      draggable="false"
+                      decoding="async"
+                    />
+                  </div>
+
+                  <!-- Right: Ceremony Name -->
+                  <div class="agenda-detail-col">
+                    <span class="agenda-colon">:</span>
+                    <span class="agenda-ceremony-name">{{ item.title }}</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Day Notice / Guest Invitation Callout -->
+              <div v-if="day.notice" class="agenda-day-notice">
+                <span class="agenda-notice-text">« {{ day.notice }} »</span>
+              </div>
+            </div>
+          </div>
 
         </div>
       </section>
@@ -224,7 +297,7 @@
     <div class="bottom-action-dock">
       <div
         class="scroll-up-indicator"
-        @click="scrollToPage('page-countdown')"
+        @click="onScrollUpIndicatorClick"
         role="button"
         tabindex="0"
         aria-label="Scroll to next section"
@@ -445,6 +518,33 @@ import FloatingPetals from '@/components/FloatingPetals.vue'
 import ButterflyEffect from '@/components/ButterflyEffect.vue'
 import invitation from '@/config/invitation.js'
 
+// ── 3D Golden Wedding Ceremony Agenda Icons ──
+import iconWelcome from '@/assets/icons/agenda_01_welcome.webp'
+import iconFruit from '@/assets/icons/agenda_02_fruit.webp'
+import iconHall from '@/assets/icons/agenda_03_hall.webp'
+import iconRings from '@/assets/icons/agenda_04_rings.webp'
+import iconMonks from '@/assets/icons/agenda_05_monks.webp'
+import iconHaircut from '@/assets/icons/agenda_06_haircut.webp'
+import iconThread from '@/assets/icons/agenda_07_thread.webp'
+import iconLunch from '@/assets/icons/agenda_08_lunch.webp'
+import iconBanquet from '@/assets/icons/agenda_09_banquet.webp'
+
+const agendaIconMap = {
+  welcome: iconWelcome,
+  fruit: iconFruit,
+  hall: iconHall,
+  rings: iconRings,
+  monks: iconMonks,
+  haircut: iconHaircut,
+  thread: iconThread,
+  lunch: iconLunch,
+  banquet: iconBanquet,
+}
+
+function getAgendaIcon(key) {
+  return agendaIconMap[key] || iconWelcome
+}
+
 const router = useRouter()
 const scrollContainer = ref(null)
 
@@ -452,6 +552,7 @@ const scrollContainer = ref(null)
 const entered = ref(true)
 const isInviteInView = ref(true)
 const isCountdownInView = ref(false)
+const isAgendaInView = ref(false)
 
 function onImgLoad() {
   entered.value = true
@@ -465,6 +566,8 @@ function onContainerScroll() {
   isInviteInView.value = top < h * 0.45
   // When top reaches 30% of page height, page-countdown triggers its entrance
   isCountdownInView.value = top >= h * 0.3
+  // When top reaches 130% of page height, page-agenda triggers its entrance
+  isAgendaInView.value = top >= h * 1.3
 }
 
 // ── Live Countdown State & Logic ──
@@ -489,6 +592,12 @@ onMounted(() => {
             } else if (scrollContainer.value && scrollContainer.value.scrollTop < 100) {
               isCountdownInView.value = false
             }
+          } else if (entry.target.id === 'page-agenda') {
+            if (entry.isIntersecting) {
+              isAgendaInView.value = true
+            } else if (scrollContainer.value && scrollContainer.value.scrollTop < window.innerHeight * 0.5) {
+              isAgendaInView.value = false
+            }
           } else if (entry.target.id === 'page-invite') {
             if (entry.isIntersecting) {
               isInviteInView.value = true
@@ -504,8 +613,10 @@ onMounted(() => {
 
     const inviteEl = document.getElementById('page-invite')
     const countdownEl = document.getElementById('page-countdown')
+    const agendaEl = document.getElementById('page-agenda')
     if (inviteEl) sectionObserver.observe(inviteEl)
     if (countdownEl) sectionObserver.observe(countdownEl)
+    if (agendaEl) sectionObserver.observe(agendaEl)
   }
 })
 
@@ -550,20 +661,33 @@ function scrollToPage(targetId) {
   }
 }
 
+function onScrollUpIndicatorClick() {
+  if (!scrollContainer.value) return
+  const top = scrollContainer.value.scrollTop
+  const h = scrollContainer.value.clientHeight || window.innerHeight
+  if (top < h * 0.5) {
+    scrollToPage('page-countdown')
+  } else if (top < h * 1.5) {
+    scrollToPage('page-agenda')
+  } else {
+    scrollToPage('page-invite')
+  }
+}
+
 function goBackToCover() {
   router.push({ name: 'cover' })
 }
 
 function onCalendarClick() {
-  const countdownEl = document.getElementById('page-countdown')
-  if (countdownEl && scrollContainer.value) {
-    const isAtCountdown = scrollContainer.value.scrollTop >= (countdownEl.offsetTop - 120)
-    if (isAtCountdown) {
+  const agendaEl = document.getElementById('page-agenda')
+  if (agendaEl && scrollContainer.value) {
+    const isAtAgenda = scrollContainer.value.scrollTop >= (agendaEl.offsetTop - 120)
+    if (isAtAgenda) {
       scrollToPage('page-invite')
       return
     }
   }
-  scrollToPage('page-countdown')
+  scrollToPage('page-agenda')
 }
 
 function onLocationClick() {
@@ -576,7 +700,7 @@ function onGalleryClick() {
 }
 
 function onWishesClick() {
-  scrollToPage('page-countdown')
+  scrollToPage('page-agenda')
 }
 </script>
 

@@ -241,6 +241,20 @@
   transform: translateY(0) scale(1);
 }
 
+.agenda-day-card.anim-item {
+  transform: translateY(24px) scale(0.96);
+}
+.section-animate-in .agenda-day-card.anim-item {
+  transform: translateY(0) scale(1);
+}
+
+.agenda-divider-wrap.anim-item {
+  transform: translateY(16px) scaleX(0.85);
+}
+.section-animate-in .agenda-divider-wrap.anim-item {
+  transform: translateY(0) scaleX(1);
+}
+
 /* Subtle glass shimmer when countdown boxes enter */
 .section-animate-in .countdown-box {
   animation: countdownBoxRevealGleam 1.6s cubic-bezier(0.18, 0.85, 0.25, 1) 0.45s backwards;
@@ -1438,5 +1452,258 @@
   transform: translateY(2px) scale(1.1);
 }
 
+/* ============================================================
+   Section 3: Event Agenda / Wedding Schedule (Matching Reference)
+   ============================================================ */
+.section-agenda {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  min-height: 100dvh;
+  padding: clamp(24px, 4.5vh, 44px) 16px clamp(90px, 14vh, 120px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
 
+.agenda-content {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 55px auto 0;
+  box-sizing: border-box;
+  z-index: 10;
+}
 
+/* 1. Header Title & Subtitle */
+.agenda-header-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto 4px;
+}
+
+.agenda-title {
+  font-family: var(--font-koulen, 'Koulen', sans-serif);
+  font-size: clamp(1.22rem, 4.2vw, 1.45rem);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  background: linear-gradient(135deg, #a07018 0%, #d4a43a 40%, #7d5010 70%, #d4a43a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #d4a43a;
+  filter:
+    drop-shadow(0 0 1px #fff)
+    drop-shadow(0 0 4px #ffffff)
+    drop-shadow(0 0 8px rgba(255, 255, 255, 0.95))
+    drop-shadow(0 1px 2px rgba(60, 30, 10, 0.45));
+  margin: 0;
+  padding: 2px 8px;
+  text-align: center;
+}
+
+.agenda-subtitle {
+  font-family: 'Cinzel', 'Playfair Display', Georgia, serif;
+  font-size: clamp(0.72rem, 2.4vw, 0.84rem);
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: #8e6224;
+  text-transform: uppercase;
+  margin-top: 1px;
+  text-shadow: 0 0 2px rgba(255, 255, 255, 0.9);
+}
+
+/* 2. Gold Ornate Divider */
+.agenda-divider-wrap {
+  width: clamp(100px, 38vw, 150px);
+  height: auto;
+  margin: 4px auto 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.agenda-ornate-divider {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 6px rgba(90, 40, 20, 0.2));
+}
+
+/* 3. Days Program Cards Container */
+.agenda-days-container {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, 2.2vh, 16px);
+  width: 100%;
+}
+
+.agenda-day-card {
+  position: relative;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: none;
+  box-shadow: none;
+  padding: 2px 4px;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.agenda-day-card:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Day Header Banner */
+.agenda-day-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px dashed rgba(212, 164, 58, 0.35);
+}
+
+.agenda-header-ornament {
+  color: #d4a43a;
+  font-size: clamp(0.7rem, 2.2vw, 0.82rem);
+}
+
+.agenda-day-title {
+  font-family: var(--font-koulen, 'Koulen', sans-serif);
+  font-size: clamp(0.88rem, 2.9vw, 1.02rem);
+  font-weight: 700;
+  color: #3b1854;
+  letter-spacing: 0.01em;
+  margin: 0;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9);
+}
+
+/* Timeline Layout */
+.agenda-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 1.8vh, 12px);
+  width: 100%;
+}
+
+.agenda-timeline-row {
+  display: grid;
+  grid-template-columns: minmax(120px, max-content) clamp(28px, 7.5vw, 36px) 1fr;
+  align-items: center;
+  gap: clamp(6px, 1.8vw, 10px);
+  position: relative;
+}
+
+.agenda-time-col {
+  text-align: right;
+  padding-right: 2px;
+  white-space: nowrap;
+}
+
+.agenda-time-text {
+  font-family: var(--font-kantumruy, 'Kantumruy Pro', serif);
+  font-size: clamp(1rem, 2.8vw, 1.125rem);
+  font-weight: 600;
+  color: #582478;
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+  line-height: 1.5;
+  text-shadow:
+    0 0 1px #fff,
+    0 0 4px #ffffff,
+    0 0 8px rgba(255, 255, 255, 0.95),
+    0 1px 2px rgba(45, 20, 5, 0.4);
+}
+
+.agenda-icon-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: clamp(28px, 7.5vw, 36px);
+  height: clamp(28px, 7.5vw, 36px);
+  flex-shrink: 0;
+}
+
+.agenda-ceremony-icon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(70, 30, 10, 0.25));
+  transition: transform 0.2s ease;
+  pointer-events: none;
+}
+
+.agenda-timeline-row:hover .agenda-ceremony-icon-img {
+  transform: scale(1.15) rotate(2deg);
+}
+
+.agenda-detail-col {
+  display: flex;
+  align-items: baseline;
+  border-left: 1.5px solid rgba(212, 164, 58, 0.4);
+  padding-left: clamp(7px, 2vw, 10px);
+  min-height: 28px;
+}
+
+.agenda-colon {
+  color: #582478;
+  font-family: var(--font-kantumruy, 'Kantumruy Pro', serif);
+  font-weight: 600;
+  font-size: clamp(1rem, 2.8vw, 1.125rem);
+  margin-right: clamp(4px, 1.2vw, 6px);
+  flex-shrink: 0;
+  line-height: 1.5;
+  text-shadow:
+    0 0 1px #fff,
+    0 0 4px #ffffff,
+    0 0 8px rgba(255, 255, 255, 0.95),
+    0 1px 2px rgba(45, 20, 5, 0.4);
+}
+
+.agenda-ceremony-name {
+  font-family: var(--font-kantumruy, 'Kantumruy Pro', serif);
+  font-size: clamp(1rem, 2.8vw, 1.125rem);
+  font-weight: 600;
+  color: #582478;
+  line-height: 1.5;
+  text-align: left;
+  text-shadow:
+    0 0 1px #fff,
+    0 0 4px #ffffff,
+    0 0 8px rgba(255, 255, 255, 0.95),
+    0 1px 2px rgba(45, 20, 5, 0.4);
+}
+
+/* Day Notice / Banquet Callout */
+.agenda-day-notice {
+  margin-top: 8px;
+  padding: 5px 10px;
+  background: linear-gradient(135deg, rgba(254, 249, 238, 0.85) 0%, rgba(250, 238, 205, 0.7) 100%);
+  border: 1px dashed rgba(212, 164, 58, 0.55);
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(120, 60, 10, 0.05);
+}
+
+.agenda-notice-text {
+  font-family: var(--font-kantumruy, 'Kantumruy Pro', serif);
+  font-size: clamp(0.72rem, 2.3vw, 0.81rem);
+  font-weight: 700;
+  color: #79490c;
+  letter-spacing: 0.01em;
+}
