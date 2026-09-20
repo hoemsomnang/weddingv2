@@ -913,7 +913,7 @@
     transform-origin: bottom center;
     z-index: 3;
     pointer-events: none;
-    animation: swayDelphiniumCornerLeft 2s ease-in-out infinite alternate;
+    animation: swayDelphiniumCornerLeft 4.5s ease-in-out infinite alternate;
 }
 
 @keyframes swayDelphiniumCornerLeft {
@@ -921,7 +921,7 @@
         transform: rotate(4deg);
     }
     100% {
-        transform: rotate(6deg);
+        transform: rotate(10deg);
     }
 }
 
@@ -1014,7 +1014,7 @@
     transform-origin: bottom center;
     z-index: 3;
     pointer-events: none;
-    animation: swayDelphiniumCornerRight 2s ease-in-out infinite alternate;
+    animation: swayDelphiniumCornerRight 4.5s ease-in-out infinite alternate;
 }
 
 @keyframes swayDelphiniumCornerRight {
@@ -1022,7 +1022,7 @@
         transform: scaleX(-1) rotate(4deg);
     }
     100% {
-        transform: scaleX(-1) rotate(6deg);
+        transform: scaleX(-1) rotate(10deg);
     }
 }
 
