@@ -1110,12 +1110,12 @@
 .bottom-right-wedding-gazebo {
     position: absolute;
     bottom: clamp(40px, 8vh, 75px);
-    right: clamp(-8px, -1vw, 15px);
-    width: clamp(140px, 36vw, 195px);
+    right: clamp(-12px, -5vw, 19px);
+    width: clamp(160px, 36vw, 200px);
     height: auto;
     z-index: 2;
     pointer-events: none;
-    filter: drop-shadow(0 6px 16px rgba(70, 25, 90, 0.2));
+    filter: blur(0.5px) drop-shadow(0 6px 16px rgba(70, 25, 90, 0.2));
 }
 
 /* ── Bottom Ground Garden Flowers (Connecting Gazebo & Landscape) ── */
