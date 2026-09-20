@@ -63,14 +63,14 @@
     </section> 
     
 
-    <div class="scrollable-snap-wrapper" ref="scrollContainer">
+    <div class="scrollable-snap-wrapper" ref="scrollContainer" @scroll.passive="onContainerScroll">
       
       <section class="snap-page section-invitation-cover" id="page-invite">
-        <div class="invitation-content fade-in" :class="{ visible: entered }" style="--delay: 0.35s">
+        <div class="invitation-content" :class="{ 'section-animate-in': isInviteInView }">
 
-          <h1 class="main-wedding-title">{{ invitation.pageTitle }}</h1>
+          <h1 class="main-wedding-title anim-item anim-delay-1">{{ invitation.pageTitle }}</h1>
 
-          <div class="parents-grid">
+          <div class="parents-grid anim-item anim-delay-2">
             <div class="parent-col left-col">
               <div class="parent-row">
                 <span class="role-text">{{ invitation.groomFather.role }}</span>
@@ -94,7 +94,7 @@
             </div>
           </div>
 
-          <div class="honor-invite-title">
+          <div class="honor-invite-title anim-item anim-delay-3">
             <img
               src="@/assets/gold_baroque_pediment_trans.webp"
               class="honor-ornament-wing honor-ornament-left"
@@ -112,11 +112,11 @@
             />
           </div>
 
-          <div class="formal-invitation-text">
+          <div class="formal-invitation-text anim-item anim-delay-4">
             <p v-for="(line, i) in invitation.invitationLines" :key="i">{{ line }}</p>
           </div>
 
-          <div class="couple-names-grid">
+          <div class="couple-names-grid anim-item anim-delay-5">
             <div class="couple-col groom-col">
               <span class="couple-role">{{ invitation.groomRole }}</span>
               <h2 class="couple-name">{{ invitation.groomName }}</h2>
@@ -136,17 +136,86 @@
             </div>
           </div>
 
-          <div class="wedding-datetime-section">
+          <div class="wedding-datetime-section anim-item anim-delay-6">
             <p class="khmer-lunar-date">{{ invitation.lunarDate }}</p>
             <p class="solar-date-highlight">{{ invitation.solarDate }}</p>
             <p class="reception-time">{{ invitation.receptionTime }}</p>
           </div>
 
-          <div class="venue-section">
+          <div class="venue-section anim-item anim-delay-7">
             <h3 class="venue-main-name">{{ invitation.venueName }}</h3>
             <p class="venue-address-line">{{ invitation.venueAddress }}</p>
             <p class="venue-closing-wish">{{ invitation.venueClosingWish }}</p>
           </div>
+        </div>
+      </section>
+
+      <!-- ── Section 2: Countdown & Couple Portrait ────────────── -->
+      <section class="snap-page section-countdown" id="page-countdown">
+        <div class="countdown-content" :class="{ 'section-animate-in': isCountdownInView }">
+
+          <!-- 1. Countdown Title -->
+          <div class="countdown-plaque-wrap anim-item anim-delay-1">
+            <h2 class="countdown-plaque-title">ចំនួនថ្ងៃរាប់ថយក្រោយ</h2>
+          </div>
+
+          <!-- 2. Gold Ornate Divider -->
+          <div class="countdown-divider-wrap anim-item anim-delay-2">
+            <img
+              src="@/assets/gold_divider_ornate.webp"
+              class="countdown-diamond-divider"
+              alt="Divider"
+              draggable="false"
+              decoding="async"
+            />
+          </div>
+
+          <!-- 3. Four Countdown Unit Boxes -->
+          <div class="countdown-boxes-row" role="timer" aria-live="polite">
+            <div class="countdown-box anim-item anim-delay-3">
+              <span class="countdown-number">{{ countdown.days }}</span>
+              <span class="countdown-unit-name">{{ countdownLabels.days }}</span>
+            </div>
+
+            <span class="countdown-colon anim-item anim-delay-3">:</span>
+
+            <div class="countdown-box anim-item anim-delay-4">
+              <span class="countdown-number">{{ countdown.hours }}</span>
+              <span class="countdown-unit-name">{{ countdownLabels.hours }}</span>
+            </div>
+
+            <span class="countdown-colon anim-item anim-delay-4">:</span>
+
+            <div class="countdown-box anim-item anim-delay-5">
+              <span class="countdown-number">{{ countdown.mins }}</span>
+              <span class="countdown-unit-name">{{ countdownLabels.mins }}</span>
+            </div>
+
+            <span class="countdown-colon anim-item anim-delay-5">:</span>
+
+            <div class="countdown-box anim-item anim-delay-6">
+              <span class="countdown-number">{{ countdown.secs }}</span>
+              <span class="countdown-unit-name">{{ countdownLabels.secs }}</span>
+            </div>
+          </div>
+
+          <!-- 4. Subtitle / Blessing line -->
+          <p class="countdown-blessing-text anim-item anim-delay-7">សូមអបអរសាទរគូស្វាមីភរិយាថ្មី</p>
+
+          <!-- 5. Couple Portrait Photo Card -->
+          <div class="couple-portrait-card anim-item anim-delay-8">
+            <img
+              src="@/assets/couple_wedding_portrait.jpg"
+              class="couple-portrait-img"
+              alt="Bride and Groom Wedding Portrait"
+              draggable="false"
+              decoding="async"
+            />
+          </div>
+
+          <!-- 6. Down Chevron Cue to return to invitation cover -->
+
+
         </div>
       </section>
     </div>
@@ -352,7 +421,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useRouter } from 'vue-router'
 import FloatingPetals from '@/components/FloatingPetals.vue'
 import ButterflyEffect from '@/components/ButterflyEffect.vue'
@@ -361,15 +430,96 @@ import invitation from '@/config/invitation.js'
 const router = useRouter()
 const scrollContainer = ref(null)
 
-// ── Entrance state (immediate 0ms visibility on mobile) ──
+// ── Entrance & Scroll Section Observation State ──
 const entered = ref(true)
+const isInviteInView = ref(true)
+const isCountdownInView = ref(false)
 
 function onImgLoad() {
   entered.value = true
 }
 
+function onContainerScroll() {
+  if (!scrollContainer.value) return
+  const top = scrollContainer.value.scrollTop
+  const h = scrollContainer.value.clientHeight || window.innerHeight
+  // When top is less than 45% of page height, page-invite is in view
+  isInviteInView.value = top < h * 0.45
+  // When top reaches 30% of page height, page-countdown triggers its entrance
+  isCountdownInView.value = top >= h * 0.3
+}
+
+// ── Live Countdown State & Logic ──
+const now = ref(Date.now())
+let countdownTimer = null
+let sectionObserver = null
+
 onMounted(() => {
   entered.value = true
+  countdownTimer = setInterval(() => {
+    now.value = Date.now()
+  }, 1000)
+
+  // IntersectionObserver for snap sections
+  if (typeof window !== 'undefined' && 'IntersectionObserver' in window) {
+    sectionObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.target.id === 'page-countdown') {
+            if (entry.isIntersecting) {
+              isCountdownInView.value = true
+            } else if (scrollContainer.value && scrollContainer.value.scrollTop < 100) {
+              isCountdownInView.value = false
+            }
+          } else if (entry.target.id === 'page-invite') {
+            if (entry.isIntersecting) {
+              isInviteInView.value = true
+            }
+          }
+        })
+      },
+      {
+        root: scrollContainer.value,
+        threshold: 0.25,
+      }
+    )
+
+    const inviteEl = document.getElementById('page-invite')
+    const countdownEl = document.getElementById('page-countdown')
+    if (inviteEl) sectionObserver.observe(inviteEl)
+    if (countdownEl) sectionObserver.observe(countdownEl)
+  }
+})
+
+onUnmounted(() => {
+  if (countdownTimer) clearInterval(countdownTimer)
+  if (sectionObserver) sectionObserver.disconnect()
+})
+
+const countdownLabels = invitation.countdownLabels || {
+  days: 'ថ្ងៃ',
+  hours: 'ម៉ោង',
+  mins: 'នាទី',
+  secs: 'វិនាទី',
+}
+
+const countdown = computed(() => {
+  const target = new Date(invitation.targetDate || '2026-11-24T08:00:00').getTime()
+  const diff = target - now.value
+  if (diff <= 0) {
+    return { days: '00', hours: '00', mins: '00', secs: '00' }
+  }
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24))
+  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+  const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))
+  const secs = Math.floor((diff % (1000 * 60)) / 1000)
+
+  return {
+    days: String(days).padStart(2, '0'),
+    hours: String(hours).padStart(2, '0'),
+    mins: String(mins).padStart(2, '0'),
+    secs: String(secs).padStart(2, '0'),
+  }
 })
 
 function scrollToPage(targetId) {
@@ -387,6 +537,14 @@ function goBackToCover() {
 }
 
 function onCalendarClick() {
+  const countdownEl = document.getElementById('page-countdown')
+  if (countdownEl && scrollContainer.value) {
+    const isAtCountdown = scrollContainer.value.scrollTop >= (countdownEl.offsetTop - 120)
+    if (isAtCountdown) {
+      scrollToPage('page-invite')
+      return
+    }
+  }
   scrollToPage('page-countdown')
 }
 
