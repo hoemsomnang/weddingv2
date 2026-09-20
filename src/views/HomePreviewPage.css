@@ -333,6 +333,7 @@
 
 .role-text {
   display: inline-block;
+  font-family: var(--font-koulen, 'Koulen', sans-serif);
   font-size: clamp(0.82rem, 2.5vw, 0.94rem);
   color: #582478;
   font-weight: 700;
@@ -541,56 +542,53 @@
 
 .khmer-lunar-date {
   font-family: var(--font-kantumruy, 'Kantumruy Pro', serif);
-  font-size: clamp(0.76rem, 2.35vw, 0.86rem);
-  color: #381a12;
-  font-weight: 700;
-  line-height: 1.38;
+  font-size: clamp(1rem, 2.8vw, 1.125rem);
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  line-height: 1.625;
   padding: 2px;
   overflow: visible;
   margin-bottom: 2px;
   text-shadow:
-    0 0 1px #fff,
-    0 0 4px #ffffff,
-    0 0 8px rgba(255, 255, 255, 0.95),
-    0 1px 2px rgba(35, 15, 5, 0.45);
+    0 1px 3px rgba(0, 0, 0, 0.45),
+    0 0 8px rgba(0, 0, 0, 0.25);
 }
 
 .solar-date-highlight {
   display: inline-block;
-  font-family: var(--font-khmer, 'Moul', serif);
-  font-size: clamp(0.92rem, 2.9vw, 1.05rem);
-  color: #9c1f48;
-  background: none;
-  border: none;
+  font-family: var(--font-koulen, 'Koulen', sans-serif);
+  font-size: clamp(1.0rem, 3.2vw, 1.15rem);
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  line-height: 1.45;
+  background: linear-gradient(135deg, #a07018 0%, #d4a43a 40%, #7d5010 70%, #d4a43a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #d4a43a;
+  filter:
+    drop-shadow(0 0 1px #fff)
+    drop-shadow(0 0 4px #ffffff)
+    drop-shadow(0 0 8px rgba(255, 255, 255, 0.95))
+    drop-shadow(0 1px 2px rgba(60, 30, 10, 0.45));
   padding: 3px 8px;
   margin: 2px auto;
   box-sizing: border-box;
   overflow: visible;
   box-shadow: none;
-  text-shadow:
-    0 0 2px #fff,
-    0 0 5px #ffffff,
-    0 0 10px rgba(255, 255, 255, 0.95),
-    0 0 16px rgba(255, 255, 255, 0.9),
-    0 2px 4px rgba(80, 20, 40, 0.45);
-  letter-spacing: 0.01em;
-  line-height: 1.42;
 }
 
 .reception-time {
   font-family: var(--font-kantumruy, 'Kantumruy Pro', serif);
-  font-size: clamp(0.78rem, 2.45vw, 0.88rem);
-  color: #26110b;
-  font-weight: 700;
+  font-size: clamp(1rem, 2.8vw, 1.125rem);
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
   margin-top: 2px;
   padding: 2px;
   overflow: visible;
-  line-height: 1.38;
+  line-height: 1.625;
   text-shadow:
-    0 0 1px #fff,
-    0 0 4px #ffffff,
-    0 0 8px rgba(255, 255, 255, 0.95),
-    0 1px 2px rgba(35, 15, 5, 0.45);
+    0 1px 3px rgba(0, 0, 0, 0.45),
+    0 0 8px rgba(0, 0, 0, 0.25);
 }
 
 /* Wedding Reception Venue */
@@ -602,50 +600,54 @@
 
 .venue-main-name {
   font-family: var(--font-kantumruy, 'Kantumruy Pro', serif);
-  font-weight: 700;
-  font-size: clamp(0.86rem, 2.7vw, 0.98rem);
-  color: #1a0c08;
+  font-weight: 500;
+  font-size: clamp(1rem, 2.8vw, 1.125rem);
+  color: rgba(255, 255, 255, 0.9);
   margin-bottom: 1px;
   padding: 0 2px;
   overflow: visible;
-  line-height: 1.38;
+  line-height: 1.625;
   text-shadow:
-    0 0 1px #fff,
-    0 0 4px #ffffff,
-    0 0 8px rgba(255, 255, 255, 0.95),
-    0 1px 2px rgba(35, 15, 5, 0.45);
+    0 1px 3px rgba(0, 0, 0, 0.45),
+    0 0 8px rgba(0, 0, 0, 0.25);
 }
 
 .venue-address-line {
   font-family: var(--font-kantumruy, 'Kantumruy Pro', serif);
-  font-size: clamp(0.78rem, 2.45vw, 0.88rem);
-  color: #26110b;
-  font-weight: 700;
-  line-height: 1.38;
+  font-size: clamp(1rem, 2.8vw, 1.125rem);
+  background: linear-gradient(135deg, #a07018 0%, #d4a43a 40%, #7d5010 70%, #d4a43a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #d4a43a;
+  font-weight: 500;
+  line-height: 1.625;
   padding: 0 2px;
   overflow: visible;
   margin-bottom: 1px;
-  text-shadow:
-    0 0 1px #fff,
-    0 0 4px #ffffff,
-    0 0 8px rgba(255, 255, 255, 0.95),
-    0 1px 2px rgba(35, 15, 5, 0.45);
+  filter:
+    drop-shadow(0 0 1px #fff)
+    drop-shadow(0 0 4px #ffffff)
+    drop-shadow(0 0 8px rgba(255, 255, 255, 0.95))
+    drop-shadow(0 1px 2px rgba(60, 30, 10, 0.45));
 }
 
 .venue-closing-wish {
-  font-family: var(--font-koulen, 'Koulen', sans-serif);
-  font-size: clamp(0.76rem, 2.35vw, 0.86rem);
-  color: #582478;
-  font-weight: 700;
+  font-family: var(--font-kantumruy, 'Kantumruy Pro', serif);
+  font-size: clamp(1rem, 2.8vw, 1.125rem);
+  background: linear-gradient(135deg, #a07018 0%, #d4a43a 40%, #7d5010 70%, #d4a43a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #d4a43a;
+  font-weight: 500;
   margin-top: 1px;
   padding: 0 2px;
   overflow: visible;
-  line-height: 1.38;
-  text-shadow:
-    0 0 1px #fff,
-    0 0 4px #ffffff,
-    0 0 8px rgba(255, 255, 255, 0.95),
-    0 1px 2px rgba(45, 20, 5, 0.4);
+  line-height: 1.625;
+  filter:
+    drop-shadow(0 0 1px #fff)
+    drop-shadow(0 0 4px #ffffff)
+    drop-shadow(0 0 8px rgba(255, 255, 255, 0.95))
+    drop-shadow(0 1px 2px rgba(60, 30, 10, 0.45));
 }
 
 /* Scroll Down Prompt Indicator: Luxury Gold Flourish Pediment Button */
