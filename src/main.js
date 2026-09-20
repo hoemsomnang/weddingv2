@@ -6,10 +6,12 @@ import './styles/main.css'
 // ── Routes ──────────────────────────────────────────────────
 import CoverPage from './views/CoverPage.vue'
 import HomePreviewPage from './views/HomePreviewPage.vue'
+import VideoPreView from './views/VideoPreView.vue'
 
 const routes = [
   { path: '/', name: 'cover', component: CoverPage },
   { path: '/home-preview', name: 'homePreviewPage', component: HomePreviewPage, alias: '/homePreviewPage' },
+  { path: '/video-preview', name: 'videoPreView', component: VideoPreView },
 ]
 
 const router = createRouter({

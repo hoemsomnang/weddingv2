@@ -1,0 +1,506 @@
+/* ============================================================
+   VideoPreView.css — Cinematic CSS Animation (20s Loop)
+   Recreates the baroque wedding invitation video in pure CSS
+   ============================================================ */
+
+/* ── Page Root ───────────────────────────────────────────── */
+.vp-root {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: #0a0608;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.vp-root::-webkit-scrollbar { display: none; }
+
+/* ══════════════════════════════════════════════════════════
+   ANIMATION STAGE — Fixed aspect ratio 9:16 portrait frame
+   ══════════════════════════════════════════════════════════ */
+.vp-stage {
+  position: relative;
+  width: min(420px, 100vw);
+  aspect-ratio: 9 / 16;
+  overflow: hidden;
+  background: #b8d4e8;
+  flex-shrink: 0;
+  box-shadow:
+    0 0 0 1px rgba(200, 160, 80, 0.4),
+    0 20px 80px rgba(0, 0, 0, 0.6);
+}
+
+/* ══════════════════════════════════════════════════════════
+   SCENE BASE
+   ══════════════════════════════════════════════════════════ */
+.vp-scene {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.vp-scene-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  will-change: transform, opacity;
+}
+
+/* ══════════════════════════════════════════════════════════
+   SCENE 1: PALACE GATE
+   Visible: 0s→12s | Fade out: 12s→14s | Hidden: 14s→18s | Fade in: 18s→20s
+   BG: Ken Burns slow zoom in throughout
+   ══════════════════════════════════════════════════════════ */
+.vp-scene-gate {
+  z-index: 2;
+  animation: sceneGateFade 20s ease-in-out infinite;
+}
+
+.vp-gate-bg {
+  background-image: url('/vp_scene_gate.png');
+  animation: gateZoom 20s ease-in-out infinite;
+}
+
+@keyframes gateZoom {
+  0%   { transform: scale(1.00); }
+  60%  { transform: scale(1.18); }
+  90%  { transform: scale(1.22); }
+  100% { transform: scale(1.00); }
+}
+
+@keyframes sceneGateFade {
+  /*  0s:  fully visible */
+  0%   { opacity: 1; }
+  /*  55% = 11s: still visible */
+  55%  { opacity: 1; }
+  /*  65% = 13s: fading out */
+  65%  { opacity: 0; }
+  /*  82% = 16.4s: stay hidden */
+  82%  { opacity: 0; }
+  /*  90% = 18s: fade back in */
+  90%  { opacity: 0; }
+  /* 100% = 20s: fully visible again */
+  100% { opacity: 1; }
+}
+
+/* ══════════════════════════════════════════════════════════
+   SCENE 2: COURTYARD
+   Hidden: 0s→11s | Fade in: 11s→14s | Visible: 14s→18s | Fade out: 18s→20s
+   ══════════════════════════════════════════════════════════ */
+.vp-scene-courtyard {
+  z-index: 1;
+  animation: sceneCourtyardFade 20s ease-in-out infinite;
+}
+
+.vp-courtyard-bg {
+  background-image: url('/vp_scene_courtyard.png');
+  animation: courtyardZoom 20s ease-in-out infinite;
+}
+
+@keyframes courtyardZoom {
+  0%   { transform: scale(1.1); }
+  55%  { transform: scale(1.1); }
+  70%  { transform: scale(1.05); }
+  85%  { transform: scale(1.00); }
+  100% { transform: scale(1.1); }
+}
+
+@keyframes sceneCourtyardFade {
+  0%   { opacity: 0; }
+  55%  { opacity: 0; }
+  70%  { opacity: 1; }
+  88%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* ══════════════════════════════════════════════════════════
+   SATIN CURTAINS (open from center top)
+   ══════════════════════════════════════════════════════════ */
+.vp-curtain-left,
+.vp-curtain-right {
+  position: absolute;
+  top: 0;
+  width: 52%;
+  height: 28%;
+  z-index: 4;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(160, 190, 230, 0.92) 0%,
+    rgba(180, 210, 240, 0.75) 60%,
+    rgba(200, 225, 250, 0) 100%
+  );
+  animation: curtainReveal 20s ease-in-out infinite;
+}
+
+.vp-curtain-left {
+  left: 0;
+  transform-origin: top left;
+  border-bottom-right-radius: 60% 30%;
+  animation-name: curtainLeftReveal;
+}
+
+.vp-curtain-right {
+  right: 0;
+  transform-origin: top right;
+  border-bottom-left-radius: 60% 30%;
+  animation-name: curtainRightReveal;
+}
+
+@keyframes curtainLeftReveal {
+  0%,54%  { transform: scaleX(0); opacity: 0; }
+  65%     { transform: scaleX(1); opacity: 1; }
+  88%     { transform: scaleX(1); opacity: 1; }
+  100%    { transform: scaleX(0); opacity: 0; }
+}
+
+@keyframes curtainRightReveal {
+  0%,54%  { transform: scaleX(0); opacity: 0; }
+  65%     { transform: scaleX(1); opacity: 1; }
+  88%     { transform: scaleX(1); opacity: 1; }
+  100%    { transform: scaleX(0); opacity: 0; }
+}
+
+/* ── Decorative lace border at top ────────────────────────── */
+.vp-lace-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 18px;
+  z-index: 5;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 6px,
+      rgba(255, 255, 255, 0.7) 6px,
+      rgba(255, 255, 255, 0.7) 8px
+    ),
+    linear-gradient(180deg, rgba(240, 235, 255, 0.85) 0%, transparent 100%);
+  animation: laceFade 20s ease-in-out infinite;
+}
+
+@keyframes laceFade {
+  0%,54% { opacity: 0; }
+  65%    { opacity: 1; }
+  88%    { opacity: 1; }
+  100%   { opacity: 0; }
+}
+
+/* ══════════════════════════════════════════════════════════
+   TEXT OVERLAY: "The Wedding of TIARA & VEGA"
+   ══════════════════════════════════════════════════════════ */
+.vp-text-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 6;
+  pointer-events: none;
+  gap: 4px;
+}
+
+/* "The Wedding of" — script italic */
+.vp-text-script {
+  font-family: 'Georgia', 'Palatino Linotype', serif;
+  font-style: italic;
+  font-size: clamp(1.0rem, 3.5vw, 1.5rem);
+  color: #1a2a60;
+  margin: 0 0 4px;
+  letter-spacing: 0.04em;
+  text-shadow:
+    0 0 8px rgba(255,255,255,0.9),
+    0 2px 8px rgba(10, 20, 80, 0.3);
+  animation: textScriptReveal 20s ease-in-out infinite;
+  will-change: opacity, transform;
+}
+
+@keyframes textScriptReveal {
+  0%,57%  { opacity: 0; transform: translateY(12px); }
+  68%     { opacity: 1; transform: translateY(0); }
+  86%     { opacity: 1; transform: translateY(0); }
+  94%     { opacity: 0; transform: translateY(-8px); }
+  100%    { opacity: 0; transform: translateY(12px); }
+}
+
+/* "TIARA & VEGA" — bold serif names */
+.vp-text-names {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  margin: 0;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-weight: 900;
+  line-height: 1.1;
+  animation: textNamesReveal 20s ease-in-out infinite;
+  will-change: opacity, transform;
+}
+
+@keyframes textNamesReveal {
+  0%,62%  { opacity: 0; transform: scale(0.82); }
+  74%     { opacity: 1; transform: scale(1); }
+  86%     { opacity: 1; transform: scale(1); }
+  94%     { opacity: 0; transform: scale(1.05); }
+  100%    { opacity: 0; transform: scale(0.82); }
+}
+
+.vp-name-line {
+  display: block;
+  font-size: clamp(2rem, 9vw, 3.8rem);
+  color: #1a2a60;
+  letter-spacing: 0.12em;
+  text-shadow:
+    0 0 2px #fff,
+    0 0 16px rgba(255,255,255,0.85),
+    0 3px 12px rgba(10, 20, 80, 0.28);
+}
+
+.vp-name-amp {
+  display: block;
+  font-size: clamp(1.2rem, 5vw, 2.2rem);
+  color: #b8760c;
+  font-style: italic;
+  letter-spacing: 0.1em;
+  text-shadow:
+    0 0 2px #fff,
+    0 0 10px rgba(255,255,255,0.8),
+    0 2px 8px rgba(120, 60, 10, 0.3);
+  margin: 2px 0;
+}
+
+/* ══════════════════════════════════════════════════════════
+   FLOATING PETALS
+   ══════════════════════════════════════════════════════════ */
+.vp-petals {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 7;
+}
+
+.vp-petal {
+  position: absolute;
+  border-radius: 50% 10% 50% 10%;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+/* Generate varied petals with different colors, sizes, timings */
+/* Pink lily petals */
+.vp-petal-1  { width: 10px; height: 14px; background: rgba(235, 140, 160, 0.75); top: -5%; left: 15%;  animation: petalFall 7s  1.0s ease-in infinite; }
+.vp-petal-2  { width:  8px; height: 12px; background: rgba(220, 100, 130, 0.70); top: -5%; left: 72%;  animation: petalFall 9s  0.0s ease-in infinite; }
+.vp-petal-3  { width: 12px; height:  9px; background: rgba(230, 170, 190, 0.65); top: -5%; left: 38%;  animation: petalFall 8s  2.5s ease-in infinite; }
+.vp-petal-4  { width:  7px; height: 11px; background: rgba(200, 140, 170, 0.80); top: -5%; left: 55%;  animation: petalFall 6s  4.0s ease-in infinite; }
+.vp-petal-5  { width: 11px; height:  8px; background: rgba(240, 200, 215, 0.70); top: -5%; left: 25%;  animation: petalFall 10s 1.5s ease-in infinite; }
+/* Purple iris petals */
+.vp-petal-6  { width:  9px; height: 13px; background: rgba(150, 100, 220, 0.65); top: -5%; left: 82%;  animation: petalFall 8s  3.2s ease-in infinite; }
+.vp-petal-7  { width: 13px; height: 10px; background: rgba(170, 130, 230, 0.60); top: -5%; left: 8%;   animation: petalFall 11s 0.8s ease-in infinite; }
+.vp-petal-8  { width:  8px; height: 12px; background: rgba(130,  80, 200, 0.70); top: -5%; left: 47%;  animation: petalFall 7s  5.0s ease-in infinite; }
+.vp-petal-9  { width: 10px; height:  9px; background: rgba(190, 160, 240, 0.60); top: -5%; left: 63%;  animation: petalFall 9s  2.0s ease-in infinite; }
+/* White calla lily */
+.vp-petal-10 { width: 14px; height: 11px; background: rgba(255, 250, 245, 0.80); top: -5%; left: 32%;  animation: petalFall 8s  6.0s ease-in infinite; }
+.vp-petal-11 { width:  9px; height: 14px; background: rgba(245, 240, 235, 0.75); top: -5%; left: 90%;  animation: petalFall 7s  1.8s ease-in infinite; }
+/* Blue hydrangea */
+.vp-petal-12 { width: 11px; height:  8px; background: rgba(160, 200, 240, 0.65); top: -5%; left: 5%;   animation: petalFall 10s 4.5s ease-in infinite; }
+.vp-petal-13 { width:  8px; height: 11px; background: rgba(140, 180, 230, 0.70); top: -5%; left: 78%;  animation: petalFall 6s  3.0s ease-in infinite; }
+.vp-petal-14 { width: 12px; height:  9px; background: rgba(180, 215, 245, 0.60); top: -5%; left: 42%;  animation: petalFall 9s  0.5s ease-in infinite; }
+/* Small pink */
+.vp-petal-15 { width:  6px; height:  9px; background: rgba(250, 180, 200, 0.75); top: -5%; left: 58%;  animation: petalFall 7s  7.0s ease-in infinite; }
+.vp-petal-16 { width:  9px; height:  7px; background: rgba(220, 120, 150, 0.65); top: -5%; left: 20%;  animation: petalFall 8s  2.8s ease-in infinite; }
+.vp-petal-17 { width:  7px; height: 10px; background: rgba(210, 160, 185, 0.70); top: -5%; left: 68%;  animation: petalFall 11s 5.5s ease-in infinite; }
+.vp-petal-18 { width: 10px; height:  8px; background: rgba(160, 120, 200, 0.65); top: -5%; left: 85%;  animation: petalFall 9s  3.8s ease-in infinite; }
+
+@keyframes petalFall {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px) rotate(0deg) translateX(0);
+  }
+  10% { opacity: 0.85; }
+  80% { opacity: 0.7; }
+  100% {
+    opacity: 0;
+    transform: translateY(110vh) rotate(540deg) translateX(40px);
+  }
+}
+
+/* Give each petal a subtle horizontal drift via additional animations */
+.vp-petal-1  { animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+.vp-petal-3  { animation-timing-function: cubic-bezier(0.55, 0.06, 0.68, 0.19); }
+.vp-petal-5  { animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+.vp-petal-7  { animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1); }
+.vp-petal-9  { animation-timing-function: cubic-bezier(0.55, 0.06, 0.68, 0.19); }
+
+/* ══════════════════════════════════════════════════════════
+   INFO PANEL (below the stage)
+   ══════════════════════════════════════════════════════════ */
+.vp-info-panel {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0 0 40px;
+  box-sizing: border-box;
+}
+
+/* ── Header ──────────────────────────────────────────────── */
+.vp-info-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(200, 160, 80, 0.2);
+  background: rgba(253, 245, 236, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.vp-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: 1.5px solid rgba(160, 112, 24, 0.4);
+  border-radius: 24px;
+  padding: 6px 14px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #7a4805;
+  cursor: pointer;
+  transition: all 0.22s ease;
+}
+.vp-back-btn:hover {
+  background: rgba(160, 112, 24, 0.1);
+  border-color: rgba(160, 112, 24, 0.65);
+  transform: translateX(-2px);
+}
+
+.vp-info-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #c8901e;
+  letter-spacing: 0.04em;
+  background: rgba(200, 144, 30, 0.1);
+  border: 1px solid rgba(200, 144, 30, 0.3);
+  border-radius: 20px;
+  padding: 4px 10px;
+}
+
+/* ── Info Blocks ─────────────────────────────────────────── */
+.vp-info-block {
+  padding: 18px 16px;
+  border-bottom: 1px solid rgba(200, 160, 80, 0.15);
+  background: rgba(253, 247, 238, 0.9);
+}
+
+.vp-info-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin: 0 0 12px;
+  color: #7a4805;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  letter-spacing: 0.03em;
+}
+
+.vp-info-text {
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: #3a200e;
+  margin: 0;
+  font-weight: 500;
+}
+.vp-info-text strong { color: #7a4805; font-weight: 700; }
+
+/* ── Timeline ────────────────────────────────────────────── */
+.vp-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.vp-timeline-item {
+  display: grid;
+  grid-template-columns: 72px 20px 1fr;
+  align-items: start;
+  gap: 0 8px;
+}
+
+.vp-tl-time {
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: #c8901e;
+  letter-spacing: 0.04em;
+  padding-top: 2px;
+  white-space: nowrap;
+}
+
+.vp-tl-bar {
+  width: 3px;
+  align-self: stretch;
+  background: linear-gradient(180deg, #c8901e, rgba(200, 144, 30, 0.2));
+  border-radius: 4px;
+  min-height: 40px;
+  margin-top: 4px;
+}
+
+.vp-tl-body strong {
+  display: block;
+  font-size: 0.8rem;
+  color: #5a3010;
+  margin-bottom: 3px;
+}
+.vp-tl-body p {
+  font-size: 0.74rem;
+  color: #6b4020;
+  line-height: 1.5;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* ── Tags ────────────────────────────────────────────────── */
+.vp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.vp-tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #5a3010;
+  background: rgba(255, 245, 225, 0.9);
+  border: 1px solid rgba(200, 160, 80, 0.35);
+  border-radius: 20px;
+  padding: 4px 10px;
+  letter-spacing: 0.01em;
+  transition: all 0.2s ease;
+}
+.vp-tag:hover {
+  background: rgba(212, 164, 58, 0.18);
+  border-color: rgba(200, 144, 30, 0.55);
+  transform: translateY(-1px);
+}
+
