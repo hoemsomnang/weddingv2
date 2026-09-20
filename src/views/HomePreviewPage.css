@@ -64,9 +64,9 @@
 /* ── Top-Left Burgundy Cascade Bouquet (Easy to adjust) ── */
 .top-burgundy-cascade-left {
   /* 🎛️ ADJUST POSITION & SIZE HERE: */
-    top: 36px;
+    top: 40px;
     left: -21px;
-    width: 94px;
+    width: 80px;
   position: absolute;
   height: auto;
   display: block;
@@ -74,6 +74,13 @@
   pointer-events: none;
   filter: drop-shadow(0 6px 14px rgba(70, 20, 30, 0.2));
   transform-origin: top center;
+  animation: burgundyCascadeSway 6.5s ease-in-out infinite;
+}
+
+@keyframes burgundyCascadeSway {
+  0%   { transform: rotate(-1deg); }
+  50%  { transform: rotate(1deg); }
+  100% { transform: rotate(-1deg); }
 }
 
 .top-flower-left {
@@ -91,18 +98,24 @@
 /* ── Top-Right Burgundy Cascade Bouquet (Easy to adjust) ── */
 .top-burgundy-cascade-right {
   /* 🎛️ ADJUST POSITION & SIZE HERE: */
-  top: 36px;
+  top: 40px;
   right: -21px;
-  width: 94px;
+  width: 80px;
 
   position: absolute;
   height: auto;
   display: block;
-  transform: scaleX(-1);
   transform-origin: top center;
   z-index: 0;
   pointer-events: none;
   filter: drop-shadow(0 6px 14px rgba(70, 20, 30, 0.2));
+  animation: burgundyCascadeSwayRight 6.5s ease-in-out infinite;
+}
+
+@keyframes burgundyCascadeSwayRight {
+  0%   { transform: scaleX(-1) rotate(-1deg); }
+  50%  { transform: scaleX(-1) rotate(1deg); }
+  100% { transform: scaleX(-1) rotate(-1deg); }
 }
 
 .top-flower-right {
