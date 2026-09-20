@@ -291,7 +291,7 @@
     grid-template-columns: 1fr 1fr;
     gap: 4px clamp(6px, 2vw, 16px);
     width: 100%;
-    padding: 2px 2px;
+    padding: 0px 2px;
     box-sizing: border-box;
     overflow: visible;
 }
@@ -309,8 +309,9 @@
 }
 
 .parent-col.right-col {
-  text-align: right;
-  align-items: flex-end;
+  text-align: left;
+  align-items: flex-start;
+  justify-self: end;
 }
 
 .parent-row {
@@ -328,7 +329,7 @@
 }
 
 .right-col .parent-row {
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 .role-text {
@@ -378,8 +379,8 @@
   font-weight: 700;
   font-size: clamp(0.86rem, 2.6vw, 0.98rem);
   color: #7a4805;
-  margin: 6px auto;
-  padding: 4px 6px;
+  margin: 4px auto;
+  padding: 2px 4px;
   box-sizing: border-box;
   overflow: visible;
   text-align: center;
@@ -429,8 +430,8 @@
 
 /* Formal Invitation Body Text */
 .formal-invitation-text {
-  margin-bottom: 6px;
-  padding: 4px 6px;
+  margin-bottom: 2px;
+  padding: 2px 4px;
   box-sizing: border-box;
   overflow: visible;
 }
@@ -457,8 +458,8 @@
   align-items: center;
   gap: 2px clamp(4px, 1.5vw, 12px);
   width: 100%;
-  margin-bottom: 6px;
-  padding: 6px 4px;
+  margin-bottom: 2px;
+  padding: 3px 4px;
   background: transparent;
   border-radius: 0;
   border: none;
@@ -613,7 +614,7 @@
 }
 
 .venue-address-line {
-  font-family: var(--font-kantumruy, 'Kantumruy Pro', serif);
+  font-family: var(--font-koulen, 'Koulen', sans-serif);
   font-size: clamp(1rem, 2.8vw, 1.125rem);
   background: linear-gradient(135deg, #a07018 0%, #d4a43a 40%, #7d5010 70%, #d4a43a 100%);
   -webkit-background-clip: text;
