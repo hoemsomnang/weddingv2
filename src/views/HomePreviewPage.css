@@ -243,7 +243,7 @@
 
 /* ── Section: Invitation Cover (Photo 2) ─────────────────── */
 .section-invitation-cover {
-  padding: clamp(118px, 16vh, 150px) 12px 10px;
+  padding: clamp(118px, 16vh, 150px) 12px clamp(90px, 15vh, 120px);
   justify-content: flex-start;
 }
 
@@ -657,19 +657,24 @@
     0 1px 2px rgba(45, 20, 5, 0.4);
 }
 
-/* ── Bottom Action Dock & 4 Navigation Buttons ───────────── */
+/* ── Bottom Action Dock & 4 Navigation Buttons (Fixed at Bottom) ───── */
 .bottom-action-dock {
+  position: absolute;
+  bottom: clamp(10px, 2.5vh, 22px);
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin: 6px auto 0;
-  padding: 0 4px;
+  max-width: 440px;
+  margin: 0 auto;
+  padding: 0 8px;
   box-sizing: border-box;
   overflow: visible;
-  position: relative;
-  z-index: 12;
+  z-index: 50;
+  pointer-events: auto;
 }
 
 .scroll-up-indicator {
@@ -737,7 +742,7 @@
 
 .bottom-nav-btn {
   background: linear-gradient(145deg, rgba(139, 95, 201, 0.22) 0%, rgba(88, 36, 120, 0.28) 100%);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(1px);
   -webkit-backdrop-filter: blur(10px);
   border: 1.5px solid rgba(196, 168, 240, 0.55);
   box-shadow:

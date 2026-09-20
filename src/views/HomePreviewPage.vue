@@ -147,83 +147,83 @@
             <p class="venue-address-line">{{ invitation.venueAddress }}</p>
             <p class="venue-closing-wish">{{ invitation.venueClosingWish }}</p>
           </div>
-
-          <div class="bottom-action-dock">
-            <div
-              class="scroll-up-indicator"
-              @click="scrollToPage('page-countdown')"
-              role="button"
-              tabindex="0"
-              aria-label="Scroll to next section"
-            >
-              <svg class="scroll-up-chevron" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 9L12 3L19 9" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M5 16L12 10L19 16" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              <span class="scroll-up-text">{{ invitation.scrollUpText }}</span>
-            </div>
-
-            <div class="bottom-nav-buttons-row">
-              <button
-                type="button"
-                class="bottom-nav-btn"
-                @click="onCalendarClick"
-                aria-label="Wedding Program & Calendar"
-              >
-                <img
-                  src="@/assets/btn_calendar.svg"
-                  alt="Calendar"
-                  draggable="false"
-                  decoding="async"
-                />
-              </button>
-
-              <button
-                type="button"
-                class="bottom-nav-btn"
-                @click="onLocationClick"
-                aria-label="Venue Location Map"
-              >
-                <img
-                  src="@/assets/btn_location.svg"
-                  alt="Location"
-                  draggable="false"
-                  decoding="async"
-                />
-              </button>
-
-              <button
-                type="button"
-                class="bottom-nav-btn"
-                @click="onGalleryClick"
-                aria-label="Photo & Video Gallery"
-              >
-                <img
-                  src="@/assets/btn_gallery.svg"
-                  alt="Gallery"
-                  draggable="false"
-                  decoding="async"
-                />
-              </button>
-
-              <button
-                type="button"
-                class="bottom-nav-btn"
-                @click="onWishesClick"
-                aria-label="Guest Wishes & Comments"
-              >
-                <img
-                  src="@/assets/btn_wishes.svg"
-                  alt="Wishes"
-                  draggable="false"
-                  decoding="async"
-                />
-              </button>
-            </div>
-          </div>
-
         </div>
       </section>
+    </div>
+
+    <!-- ── Fixed Bottom Action Dock (Persistent on scroll) ─────── -->
+    <div class="bottom-action-dock">
+      <div
+        class="scroll-up-indicator"
+        @click="scrollToPage('page-countdown')"
+        role="button"
+        tabindex="0"
+        aria-label="Scroll to next section"
+      >
+        <svg class="scroll-up-chevron" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 9L12 3L19 9" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M5 16L12 10L19 16" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="scroll-up-text">{{ invitation.scrollUpText }}</span>
+      </div>
+
+      <div class="bottom-nav-buttons-row">
+        <button
+          type="button"
+          class="bottom-nav-btn"
+          @click="onCalendarClick"
+          aria-label="Wedding Program & Calendar"
+        >
+          <img
+            src="@/assets/btn_calendar.svg"
+            alt="Calendar"
+            draggable="false"
+            decoding="async"
+          />
+        </button>
+
+        <button
+          type="button"
+          class="bottom-nav-btn"
+          @click="onLocationClick"
+          aria-label="Venue Location Map"
+        >
+          <img
+            src="@/assets/btn_location.svg"
+            alt="Location"
+            draggable="false"
+            decoding="async"
+          />
+        </button>
+
+        <button
+          type="button"
+          class="bottom-nav-btn"
+          @click="onGalleryClick"
+          aria-label="Photo & Video Gallery"
+        >
+          <img
+            src="@/assets/btn_gallery.svg"
+            alt="Gallery"
+            draggable="false"
+            decoding="async"
+          />
+        </button>
+
+        <button
+          type="button"
+          class="bottom-nav-btn"
+          @click="onWishesClick"
+          aria-label="Guest Wishes & Comments"
+        >
+          <img
+            src="@/assets/btn_wishes.svg"
+            alt="Wishes"
+            draggable="false"
+            decoding="async"
+          />
+        </button>
+      </div>
     </div>
 
     <!-- Bottom Floral Background -->
