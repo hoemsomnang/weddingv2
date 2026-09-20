@@ -281,13 +281,13 @@
       decoding="async"
     />
 
-    <img
+  <!--  <img
       src="@/assets/purple_watercolor_corner_trans.webp"
       class="purple_watercolor_corner_trans"
       alt="Bottom Right Floral Bouquet"
       draggable="false"
       decoding="async"
-    />
+    />-->
 
 
     <!-- Bottom right Purple Flower Bouquet Accent -->
@@ -331,13 +331,13 @@
       decoding="async"
     />
 
-    <img
+  <!--  <img
       src="@/assets/purple_watercolor_corner_trans.webp"
       class="right-purple_watercolor_corner_trans"
       alt="Bottom Right Floral Bouquet"
       draggable="false"
       decoding="async"
-    />
+    /> -->
 
     <!-- Bottom Center Purple Flower Bouquet Accent -->
     <img
