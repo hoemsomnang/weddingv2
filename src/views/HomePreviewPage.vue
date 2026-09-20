@@ -417,6 +417,15 @@
       decoding="async"
     />
 
+    <!-- Bottom Ground Garden Flowers (Connecting Gazebo & Landscape) -->
+    <img
+      src="@/assets/purple_ground_flowers_trans.webp"
+      class="bottom-ground-garden-flowers"
+      alt="Ground Garden Flowers"
+      draggable="false"
+      decoding="async"
+    />
+
     <!-- Bottom Center Purple Flower Bouquet Accent -->
     <img
       src="@/assets/purple_floral_bouquet_new_trans.webp"
