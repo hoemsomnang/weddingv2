@@ -199,18 +199,6 @@
 
           <!-- 4. Subtitle / Blessing line -->
           <p class="countdown-blessing-text anim-item anim-delay-7">សូមអបអរសាទរគូស្វាមីភរិយាថ្មី</p>
-
-          <!-- 5. Couple Portrait Photo Card -->
-          <div class="couple-portrait-card anim-item anim-delay-8">
-            <img
-              src="@/assets/couple_wedding_portrait.jpg"
-              class="couple-portrait-img"
-              alt="Bride and Groom Wedding Portrait"
-              draggable="false"
-              decoding="async"
-            />
-          </div>
-
         </div>
       </section>
 
@@ -1201,11 +1189,25 @@ const countdownLabels = invitation.countdownLabels || {
   secs: 'វិនាទី',
 }
 
+const khmerDigits = ['០', '១', '២', '៣', '៤', '៥', '៦', '៧', '៨', '៩']
+function toKhmerNum(num, pad = 2) {
+  return String(num)
+    .padStart(pad, '0')
+    .split('')
+    .map(ch => (ch >= '0' && ch <= '9' ? khmerDigits[Number(ch)] : ch))
+    .join('')
+}
+
 const countdown = computed(() => {
-  const target = new Date(invitation.targetDate || '2026-11-24T08:00:00').getTime()
+  const target = new Date(invitation.targetDate || '2027-03-13T08:00:00').getTime()
   const diff = target - now.value
   if (diff <= 0) {
-    return { days: '00', hours: '00', mins: '00', secs: '00' }
+    return {
+      days: toKhmerNum(0),
+      hours: toKhmerNum(0),
+      mins: toKhmerNum(0),
+      secs: toKhmerNum(0),
+    }
   }
   const days = Math.floor(diff / (1000 * 60 * 60 * 24))
   const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
@@ -1213,10 +1215,10 @@ const countdown = computed(() => {
   const secs = Math.floor((diff % (1000 * 60)) / 1000)
 
   return {
-    days: String(days).padStart(2, '0'),
-    hours: String(hours).padStart(2, '0'),
-    mins: String(mins).padStart(2, '0'),
-    secs: String(secs).padStart(2, '0'),
+    days: toKhmerNum(days),
+    hours: toKhmerNum(hours),
+    mins: toKhmerNum(mins),
+    secs: toKhmerNum(secs),
   }
 })
 

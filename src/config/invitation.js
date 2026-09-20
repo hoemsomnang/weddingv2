@@ -41,7 +41,7 @@ const invitation = {
    * ISO date-time string used by the countdown timer.
    * Format: 'YYYY-MM-DDTHH:mm:ss'
    */
-  targetDate: '2026-11-24T08:00:00',
+  targetDate: '2027-03-13T08:00:00',
 
   /** Khmer lunar calendar date line */
   lunarDate: 'នៅថ្ងៃសៅរ៍ ៦កើត ខែផល្គុន ឆ្នាំមមី អដ្ឋស័ក ពុទ្ធសករាជ ២៥៧០',
@@ -53,7 +53,7 @@ const invitation = {
   receptionTime: 'វេលាម៉ោង ០៥ : ០០ ល្ងាចនៅ គេហដ្ឋាននៃសិរីមង្គលអាពាហ៍ពិពាហ៍ ស្ថិតនៅ ភូមិអូរល្វា ឃុំជ្រៃសីម៉ា ស្រុកសំពៅលូន ខេត្តបាត់ដំបង',
 
   /** Human-readable date shown on the invitation card */
-  dateDisplay: 'ថ្ងៃអាទិត្យ ទី២៤ ខែវិច្ឆិកា ឆ្នាំ២០២៦',
+  dateDisplay: 'ថ្ងៃសៅរ៍ ទី១៣ ខែមីនា ឆ្នាំ២០២៧',
 
   /* ── Venue & Location ────────────────────────────────────── */
   venueTitle: 'ទីតាំងប្រារព្ធពិធី',
