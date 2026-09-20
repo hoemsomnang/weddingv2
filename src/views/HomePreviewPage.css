@@ -657,88 +657,122 @@
     0 1px 2px rgba(45, 20, 5, 0.4);
 }
 
-/* Scroll Down Prompt Indicator: Luxury Gold Flourish Pediment Button */
-.scroll-down-banner-btn {
+/* ── Bottom Action Dock & 4 Navigation Buttons ───────────── */
+.bottom-action-dock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 6px auto 0;
+  padding: 0 4px;
+  box-sizing: border-box;
+  overflow: visible;
   position: relative;
+  z-index: 12;
+}
+
+.scroll-up-indicator {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: auto;
-  min-width: clamp(95px, 24vw, 130px);
-  max-width: 150px;
-  height: auto;
-  gap: 2px;
-  margin: 3px auto 0;
-  padding: 0;
-  background: transparent;
-  border: none;
+  gap: 1px;
   cursor: pointer;
-  outline: none;
-  overflow: visible;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
   animation: bannerFloatCue 3s infinite ease-in-out;
-  transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.28s ease;
+  margin-bottom: 5px;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.scroll-up-indicator:hover {
+  transform: translateY(-2px);
+}
+
+.scroll-up-chevron {
+  width: clamp(18px, 4.8vw, 22px);
+  height: clamp(14px, 3.8vw, 18px);
+  color: #a07018;
+  display: block;
   filter:
-    drop-shadow(0 0 2px rgba(255, 255, 255, 0.95))
-    drop-shadow(0 4px 10px rgba(60, 30, 10, 0.35));
+    drop-shadow(0 0 1px #fff)
+    drop-shadow(0 0 3px #ffffff)
+    drop-shadow(0 1px 2px rgba(60, 30, 10, 0.4));
 }
 
-.scroll-down-banner-btn:hover {
-  transform: translateY(-3px) scale(1.05);
+.scroll-up-text {
+  display: inline-block;
+  font-family: var(--font-kantumruy, 'Kantumruy Pro', serif);
+  font-size: clamp(0.72rem, 2.2vw, 0.82rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  padding: 0 4px;
+  overflow: visible;
+  color: #744205;
+  background: linear-gradient(135deg, #a07018 0%, #d4a43a 40%, #7d5010 70%, #d4a43a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  white-space: nowrap;
   filter:
-    drop-shadow(0 0 5px #ffffff)
-    drop-shadow(0 6px 14px rgba(60, 30, 10, 0.45));
+    drop-shadow(0 0 1px #fff)
+    drop-shadow(0 0 4px #ffffff)
+    drop-shadow(0 0 8px rgba(255, 255, 255, 0.95))
+    drop-shadow(0 1px 2px rgba(50, 25, 5, 0.4));
 }
 
-.scroll-down-banner-btn:active {
-  transform: translateY(1px) scale(0.97);
+.bottom-nav-buttons-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(6px, 2vw, 12px);
+  width: 100%;
+  max-width: 380px;
+  margin: 0 auto;
+  padding: 2px;
+  box-sizing: border-box;
 }
 
-.scroll-down-banner-img {
-  position: relative;
-  width: clamp(75px, 20vw, 105px);
+.bottom-nav-btn {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  outline: none;
+  width: clamp(52px, 15.5vw, 68px);
   height: auto;
+  aspect-ratio: 120 / 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  border-radius: 20px;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.22s ease;
+  filter: drop-shadow(0 2px 5px rgba(60, 25, 75, 0.15));
+}
+
+.bottom-nav-btn:hover {
+  transform: translateY(-3px) scale(1.06);
+  filter: drop-shadow(0 6px 14px rgba(80, 30, 95, 0.28));
+}
+
+.bottom-nav-btn:active {
+  transform: translateY(1px) scale(0.96);
+  filter: drop-shadow(0 1px 3px rgba(60, 25, 75, 0.2));
+}
+
+.bottom-nav-btn img {
+  width: 100%;
+  height: 100%;
   display: block;
   object-fit: contain;
   pointer-events: none;
   user-select: none;
-  filter: drop-shadow(0 2px 6px rgba(80, 40, 10, 0.25));
-}
-
-.scroll-down-banner-inner {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  padding: 0 4px;
-  box-sizing: border-box;
-  overflow: visible;
-  pointer-events: none;
-  margin-top: 0px;
-}
-
-.scroll-down-banner-text {
-  display: inline-block;
-  font-family: var(--font-khmer2, 'Hanuman', sans-serif);
-  font-size: clamp(0.72rem, 2.2vw, 0.82rem);
-  font-weight: 800;
-  letter-spacing: 0.02em;
-  line-height: 1.35;
-  padding: 1px 4px;
-  box-sizing: border-box;
-  overflow: visible;
-  color: #744205;
-  text-align: center;
-  white-space: nowrap;
-  text-shadow:
-    0 0 1px #fff,
-    0 0 4px #ffffff,
-    0 0 8px rgba(255, 255, 255, 0.95),
-    0 1px 2px rgba(50, 25, 5, 0.4);
 }
 
 @keyframes bannerFloatCue {
