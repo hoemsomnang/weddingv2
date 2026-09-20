@@ -50,14 +50,14 @@ const invitation = {
   solarDate: 'ត្រូវនឹងថ្ងៃទី ១៣ ខែមីនា ឆ្នាំ ២០២៧',
 
   /** Time of the reception */
-  receptionTime: 'វេលាម៉ោង ០៥ : ០០ ល្ងាចនៅ',
+  receptionTime: 'វេលាម៉ោង ០៥ : ០០ ល្ងាចនៅ គេហដ្ឋាននៃសិរីមង្គលអាពាហ៍ពិពាហ៍ ស្ថិតនៅ ភូមិអូរល្វា ឃុំជ្រៃសីម៉ា ស្រុកសំពៅលូន ខេត្តបាត់ដំបង',
 
   /** Human-readable date shown on the invitation card */
   dateDisplay: 'ថ្ងៃអាទិត្យ ទី២៤ ខែវិច្ឆិកា ឆ្នាំ២០២៦',
 
   /* ── Venue ───────────────────────────────────────────────── */
-  venueName: 'គេហដ្ឋាននៃសិរីមង្គលអាពាហ៍ពិពាហ៍',
-  venueAddress: 'ស្ថិតនៅ ភូមិអូរល្វា ឃុំជ្រៃសីម៉ា ស្រុកសំពៅលូន ខេត្តបាត់ដំបង',
+  venueName: '',
+  venueAddress: '',
   venueClosingWish: 'ដោយមេត្រីភាព។',
 
   scrollUpText: 'អូសឡើងទៅលើ',
