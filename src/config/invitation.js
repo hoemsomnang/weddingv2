@@ -71,7 +71,6 @@ const invitation = {
         { time: '០៦:៣០ ព្រឹក', icon: 'welcome', title: 'ជួបជុំភ្ញៀវកិត្តិយសទាំងអស់' },
         { time: '០៦:៤៥ ព្រឹក', icon: 'fruit',   title: 'ពិធីហែជំនូន(ផ្លែឈើ)' },
         { time: '០៧:១៥ ព្រឹក', icon: 'hall',    title: 'កូនកំលោះចូលរោងជ័យ(សំពះ)' },
-        { time: '០៨:០៥ ព្រឹក', icon: 'rings',   title: 'ពិធីបំពាក់ចិញ្ចៀន' },
         { time: '០៨:៣០ ព្រឹក', icon: 'monks',   title: 'ពិធីសូត្រមន្តចម្រើនព្រះបរិត្ត' },
         { time: '០៩:៣០ ព្រឹក', icon: 'haircut', title: 'ពិធីកាត់សក់បង្កក់សិរី' },
         { time: '១០:១៥ ព្រឹក', icon: 'thread',  title: 'ពិធីសែនចងដៃកូនចៅ' },

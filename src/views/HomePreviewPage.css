@@ -1654,25 +1654,19 @@
 
 .agenda-detail-col {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   border-left: 1.5px solid rgba(212, 164, 58, 0.4);
   padding-left: clamp(7px, 2vw, 10px);
   min-height: 28px;
 }
 
-.agenda-colon {
-  color: #582478;
-  font-family: var(--font-kantumruy, 'Kantumruy Pro', serif);
-  font-weight: 600;
-  font-size: clamp(1rem, 2.8vw, 1.125rem);
-  margin-right: clamp(4px, 1.2vw, 6px);
+.agenda-rosette-bullet {
+  width: clamp(14px, 3.8vw, 18px);
+  height: clamp(14px, 3.8vw, 18px);
+  object-fit: contain;
+  margin-right: clamp(6px, 1.6vw, 9px);
   flex-shrink: 0;
-  line-height: 1.5;
-  text-shadow:
-    0 0 1px #fff,
-    0 0 4px #ffffff,
-    0 0 8px rgba(255, 255, 255, 0.95),
-    0 1px 2px rgba(45, 20, 5, 0.4);
+  filter: drop-shadow(0 1px 3px rgba(160, 110, 20, 0.35));
 }
 
 .agenda-ceremony-name {

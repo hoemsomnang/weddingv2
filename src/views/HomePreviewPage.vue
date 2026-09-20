@@ -276,7 +276,13 @@
 
                   <!-- Right: Ceremony Name -->
                   <div class="agenda-detail-col">
-                    <span class="agenda-colon">:</span>
+                    <img
+                      src="@/assets/khmer_gold_rosette_trans.png"
+                      class="agenda-rosette-bullet"
+                      alt="Ornament"
+                      draggable="false"
+                      decoding="async"
+                    />
                     <span class="agenda-ceremony-name">{{ item.title }}</span>
                   </div>
                 </div>
