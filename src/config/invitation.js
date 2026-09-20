@@ -44,7 +44,7 @@ const invitation = {
   targetDate: '2026-11-24T08:00:00',
 
   /** Khmer lunar calendar date line */
-  lunarDate: 'ដែលនឹងប្រព្រឹត្តនៅថ្ងៃសៅរ៍ ៦កើត ខែផល្គុន ឆ្នាំមមី អដ្ឋស័ក ពុទ្ធសករាជ ២៥៧០',
+  lunarDate: 'នៅថ្ងៃសៅរ៍ ៦កើត ខែផល្គុន ឆ្នាំមមី អដ្ឋស័ក ពុទ្ធសករាជ ២៥៧០',
 
   /** Solar (Gregorian) date shown prominently */
   solarDate: 'ត្រូវនឹងថ្ងៃទី ១៣ ខែមីនា ឆ្នាំ ២០២៧',
