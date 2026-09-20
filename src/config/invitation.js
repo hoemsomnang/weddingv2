@@ -9,11 +9,34 @@
 const invitation = {
 
   /* ── Couple ──────────────────────────────────────────────── */
-  groomName: 'ពិសិដ្ឋ',
-  brideName: 'ស្រីពៅ',
+  groomName: 'ហ៊ឹម សំណាង',
+  brideName: 'ឃន សារ៉េន',
 
   /** Two initials shown inside the golden monogram crest */
   initials: ['ព', 'ស'],
+
+  /* ── Parents ─────────────────────────────────────────────── */
+  groomFather: { role: 'លោក',    name: 'ហ៊ឹម លាង' },
+  groomMother: { role: 'លោកស្រី', name: 'អ៊ុំ ស្រ៊ឺ' },
+  brideFather: { role: 'លោក',    name: 'អ៊ុង សារ៉េត' },
+  brideMother: { role: 'លោកស្រី', name: 'ធា ម៉ុំ' },
+
+  /* ── Couple Roles ────────────────────────────────────────── */
+  groomRole: 'កូនប្រុសនាម',
+  brideRole: 'កូនស្រីនាម',
+
+  /* ── Page Heading ────────────────────────────────────────── */
+  pageTitle: 'សិរីមង្គលអាពាហ៍ពិពាហ៍',
+
+  /* ── Honor Invite Subtitle ───────────────────────────────── */
+  honorInviteText: 'មានកិត្តិយសសូមគោរពអញ្ជើញ',
+
+  /* ── Formal Invitation Body ──────────────────────────────── */
+  invitationLines: [
+    'ឯកឧត្តម លោកជំទាវ អ្នកឧកញ៉ា ឧកញ៉ា លោក លោកស្រី អ្នកនាង កញ្ញា',
+    'អញ្ជើញចូលរួមជាអធិបតី និងភ្ញៀវកិត្តិយស ដើម្បីប្រសិទ្ធពរជ័យ សិរីសួស្តីជ័យមង្គលក្នុង',
+    'ពិធីសិរីមង្គលអាពាហ៍ពិពាហ៍កូនប្រុស កូនស្រីរបស់យើងខ្ញុំ',
+  ],
 
   /* ── Wedding Date ────────────────────────────────────────── */
   /**
@@ -22,11 +45,25 @@ const invitation = {
    */
   targetDate: '2026-11-24T08:00:00',
 
+  /** Khmer lunar calendar date line */
+  lunarDate: 'នៅថ្ងៃសៅរ៍ ៦កើត ខែផល្គុន ឆ្នាំមមី អដ្ឋស័ក ពុទ្ធសករាជ ២៥៧០',
+
+  /** Solar (Gregorian) date shown prominently */
+  solarDate: 'ត្រូវនឹងថ្ងៃទី ១៣ ខែមីនា ឆ្នាំ ២០២៧',
+
+  /** Time of the reception */
+  receptionTime: 'វេលាម៉ោង ០៥ : ០០ ល្ងាចនៅ',
+
   /** Human-readable date shown on the invitation card */
   dateDisplay: 'ថ្ងៃអាទិត្យ ទី២៤ ខែវិច្ឆិកា ឆ្នាំ២០២៦',
 
   /* ── Venue ───────────────────────────────────────────────── */
   venue: 'សាល ដឹ ហ្គ្រេន ហល · រាជធានីភ្នំពេញ',
+  venueName: 'គេហដ្ឋាននៃសិរីមង្គលអាពាហ៍ពិពាហ៍',
+  venueAddress: 'ស្ថិតនៅ ស្រុកសំពៅលូន ខេត្តបាត់ដំបង',
+  venueClosingWish: 'ដោយមេត្រីភាព។',
+
+  scrollUpText: 'អូសឡើងទៅលើ',
 
   /* ── Khmer Text ──────────────────────────────────────────── */
   /** Main heading in Khmer (above logo) */
