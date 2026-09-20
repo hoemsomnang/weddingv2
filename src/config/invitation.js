@@ -70,6 +70,11 @@ const invitation = {
   gallerySubtitle: 'MEMORIES OF LOVE',
   galleryWishes: 'ស្នាមញញឹមនៃក្តីស្រឡាញ់ និងអនុស្សាវរីយ៍ដ៏ផ្អែមល្ហែម',
 
+  /* ── Photo Album Grid (កម្រងរូបភាព) ────────────────────────── */
+  albumTitle: 'កម្រងរូបភាពអនុស្សាវរីយ៍',
+  albumSubtitle: 'SWEET MEMORIES',
+  albumWishes: 'ស្នាមញញឹម និងអនុស្សាវរីយ៍ដ៏មានតម្លៃមិនអាចបំភ្លេចបាន',
+
   scrollUpText: 'អូសឡើងទៅលើ',
 
   /* ── Wedding Agenda / Program Schedule ─────────────────────── */

@@ -396,7 +396,6 @@
           <!-- 1. Header Title & Subtitle -->
           <div class="gallery-header-wrap anim-item anim-delay-1">
             <h2 class="gallery-title">{{ invitation.galleryTitle || 'វិចិត្រសាល' }}</h2>
-            <span class="gallery-subtitle">{{ invitation.gallerySubtitle || 'MEMORIES OF LOVE' }}</span>
           </div>
 
           <!-- 2. Gold Ornate Divider -->
@@ -457,22 +456,24 @@
                 <span> / {{ galleryPhotos.length }}</span>
               </div>
 
-              <!-- Expand icon cue -->
-              <div class="gallery-expand-cue" @click="openLightbox(currentPhotoIndex)" title="Tap to zoom">
-                <svg viewBox="0 0 24 24" fill="currentColor" class="gallery-zoom-icon">
-                  <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-                  <path d="M12 10h-2v2H9v-2H7V9h2V7h1v2h2v1z"/>
-                </svg>
-              </div>
 
-              <!-- Navigation arrows on photo -->
+              <!-- Navigation arrows on photo using Khmer Gold Rosette -->
               <button
                 type="button"
                 class="gallery-nav-arrow gallery-nav-prev"
                 @click.stop="prevPhoto"
                 aria-label="Previous photo"
               >
-                ‹
+                <img
+                  src="@/assets/khmer_gold_rosette_trans.webp"
+                  class="gallery-nav-rosette-img"
+                  alt=""
+                  aria-hidden="true"
+                  draggable="false"
+                />
+                <svg viewBox="0 0 24 24" class="gallery-nav-chevron" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14.5 17.5L9 12l5.5-5.5" />
+                </svg>
               </button>
               <button
                 type="button"
@@ -480,7 +481,16 @@
                 @click.stop="nextPhoto"
                 aria-label="Next photo"
               >
-                ›
+                <img
+                  src="@/assets/khmer_gold_rosette_trans.webp"
+                  class="gallery-nav-rosette-img"
+                  alt=""
+                  aria-hidden="true"
+                  draggable="false"
+                />
+                <svg viewBox="0 0 24 24" class="gallery-nav-chevron" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9.5 17.5L15 12 9.5 6.5" />
+                </svg>
               </button>
             </div>
 
@@ -518,6 +528,61 @@
           <!-- 5. Warm Blessing / Romantic Quote -->
           <p class="gallery-closing-wish anim-item anim-delay-5">
             « {{ invitation.galleryWishes || 'ស្នាមញញឹមនៃក្តីស្រឡាញ់ និងអនុស្សាវរីយ៍ដ៏ផ្អែមល្ហែម' }} »
+          </p>
+
+        </div>
+      </section>
+
+      <!-- ── Section 6: Photo Album Grid (កម្រងរូបភាពអនុស្សាវរីយ៍) ────── -->
+      <section class="snap-page section-album" id="page-album">
+        <div class="album-content" :class="{ 'section-animate-in': isAlbumInView }">
+
+          <!-- 1. Header Title & Subtitle -->
+          <div class="album-header-wrap anim-item anim-delay-1">
+            <h2 class="album-title">{{ invitation.albumTitle || 'កម្រងរូបភាពអនុស្សាវរីយ៍' }}</h2>
+          </div>
+
+          <!-- 2. Gold Ornate Divider -->
+          <div class="album-divider-wrap anim-item anim-delay-2">
+            <img
+              src="@/assets/gold_divider_ornate.webp"
+              class="album-ornate-divider"
+              alt="Divider"
+              draggable="false"
+              decoding="async"
+            />
+          </div>
+
+          <!-- 3. Photo Album Collage Grid with One-by-One Staggered Animation -->
+          <div class="album-photo-grid">
+            <div
+              v-for="(photo, idx) in albumGridPhotos"
+              :key="idx"
+              class="album-grid-card anim-item"
+              :class="[
+                photo.wide ? 'album-card-wide' : (photo.tall ? 'album-card-tall' : 'album-card-medium'),
+                `album-seq-${idx + 1}`
+              ]"
+              @click="openAlbumLightbox(idx)"
+              role="button"
+              :aria-label="photo.title"
+            >
+              <div class="album-card-inner">
+                <img
+                  :src="photo.src"
+                  class="album-card-img"
+                  :alt="photo.title"
+                  draggable="false"
+                  loading="lazy"
+                />
+                <div class="album-card-glint"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Warm Blessing / Romantic Quote -->
+          <p class="album-closing-wish anim-item album-seq-8">
+            « {{ invitation.albumWishes || 'ស្នាមញញឹម និងអនុស្សាវរីយ៍ដ៏មានតម្លៃមិនអាចបំភ្លេចបាន' }} »
           </p>
 
         </div>
@@ -759,22 +824,22 @@
           <div class="lightbox-content">
             <transition name="lightbox-zoom" mode="out-in">
               <img
-                :key="currentPhotoIndex"
-                :src="galleryPhotos[currentPhotoIndex].src"
+                :key="lightboxIndex"
+                :src="activeLightboxList[lightboxIndex].src"
                 class="lightbox-img"
-                :alt="galleryPhotos[currentPhotoIndex].title"
+                :alt="activeLightboxList[lightboxIndex].title"
               />
             </transition>
             <div class="lightbox-caption">
-              <span class="lightbox-title">{{ galleryPhotos[currentPhotoIndex].title }}</span>
-              <span class="lightbox-counter">{{ currentPhotoIndex + 1 }} / {{ galleryPhotos.length }}</span>
+              <span class="lightbox-title">{{ activeLightboxList[lightboxIndex].title }}</span>
+              <span class="lightbox-counter">{{ lightboxIndex + 1 }} / {{ activeLightboxList.length }}</span>
             </div>
           </div>
 
           <button
             type="button"
             class="lightbox-nav-btn lightbox-prev"
-            @click.stop="prevPhoto"
+            @click.stop="prevLightboxPhoto"
             aria-label="Previous photo"
           >
             ‹
@@ -782,7 +847,7 @@
           <button
             type="button"
             class="lightbox-nav-btn lightbox-next"
-            @click.stop="nextPhoto"
+            @click.stop="nextLightboxPhoto"
             aria-label="Next photo"
           >
             ›
@@ -812,12 +877,14 @@ import iconThread from '@/assets/icons/agenda_07_thread.webp'
 import iconLunch from '@/assets/icons/agenda_08_lunch.webp'
 import iconBanquet from '@/assets/icons/agenda_09_banquet.webp'
 
-// ── Romantic Wedding Gallery Photos ──
+// ── Romantic Wedding Gallery & Album Photos ──
+import albumBanner from '@/assets/gallery/album_01_banner.webp'
 import galleryPhoto1 from '@/assets/gallery/gallery_01_royal.webp'
 import galleryPhoto2 from '@/assets/gallery/gallery_02_traditional.webp'
 import galleryPhoto3 from '@/assets/gallery/gallery_03_modern.webp'
 import galleryPhoto4 from '@/assets/gallery/gallery_04_sunset.webp'
 import galleryPhoto5 from '@/assets/gallery/gallery_05_intimate.webp'
+import couplePortrait from '@/assets/couple_wedding_portrait.jpg'
 
 const galleryPhotos = [
   { src: galleryPhoto1, title: 'រាជសិរីមង្គល', desc: 'Royal Elegance' },
@@ -827,8 +894,20 @@ const galleryPhotos = [
   { src: galleryPhoto5, title: 'ចំណងស្នេហ៍និរន្តរ៍', desc: 'Everlasting Promise' },
 ]
 
+const albumGridPhotos = [
+  { src: albumBanner, title: 'ដង្ហែជំនូនមុខប្រាសាទអង្គរវត្ត', desc: 'Angkor Wat Royal Procession', wide: true },
+  { src: galleryPhoto1, title: 'រាជសិរីមង្គល', desc: 'Royal Elegance' },
+  { src: galleryPhoto2, title: 'បុប្ផាជួបជុំ', desc: 'Garden of Love' },
+  { src: galleryPhoto4, title: 'សន្ធ្យារស្មីស្នេហ៍', desc: 'Golden Sunset' },
+  { src: galleryPhoto5, title: 'ចំណងស្នេហ៍និរន្តរ៍', desc: 'Everlasting Promise' },
+  { src: galleryPhoto3, title: 'វិមានសុភមង្គល', desc: 'Palace Romance', tall: true },
+  { src: couplePortrait, title: 'សេចក្តីស្រឡាញ់ដ៏ស្មោះស្ម័គ្រ', desc: 'True Love', tall: true },
+]
+
 const currentPhotoIndex = ref(0)
 const isLightboxOpen = ref(false)
+const activeLightboxList = ref(galleryPhotos)
+const lightboxIndex = ref(0)
 const isDragging = ref(false)
 const dragOffset = ref(0)
 const slideDirection = ref('next')
@@ -953,10 +1032,28 @@ function selectPhoto(index) {
 }
 
 function openLightbox(index) {
+  activeLightboxList.value = galleryPhotos
   if (typeof index === 'number') {
     currentPhotoIndex.value = index
+    lightboxIndex.value = index
   }
   isLightboxOpen.value = true
+}
+
+function openAlbumLightbox(index) {
+  activeLightboxList.value = albumGridPhotos
+  if (typeof index === 'number') {
+    lightboxIndex.value = index
+  }
+  isLightboxOpen.value = true
+}
+
+function prevLightboxPhoto() {
+  lightboxIndex.value = (lightboxIndex.value - 1 + activeLightboxList.value.length) % activeLightboxList.value.length
+}
+
+function nextLightboxPhoto() {
+  lightboxIndex.value = (lightboxIndex.value + 1) % activeLightboxList.value.length
 }
 
 function closeLightbox() {
@@ -973,6 +1070,7 @@ const isCountdownInView = ref(false)
 const isAgendaInView = ref(false)
 const isLocationInView = ref(false)
 const isGalleryInView = ref(false)
+const isAlbumInView = ref(false)
 
 function onImgLoad() {
   entered.value = true
@@ -983,23 +1081,26 @@ function updateActiveSections() {
   const top = scrollContainer.value.scrollTop
   const h = scrollContainer.value.clientHeight || window.innerHeight
 
-  // Symmetrical midpoint boundaries for 5 pages:
+  // Symmetrical midpoint boundaries for 6 pages:
   // Page 0 (Invite): [0, 0.5h)
   // Page 1 (Countdown): [0.5h, 1.5h)
   // Page 2 (Agenda): [1.5h, 2.5h)
   // Page 3 (Location): [2.5h, 3.5h)
-  // Page 4 (Gallery): [3.5h, end]
+  // Page 4 (Gallery Slider): [3.5h, 4.5h)
+  // Page 5 (Album Grid): [4.5h, end]
   const inInvite = top < h * 0.5
   const inCountdown = top >= h * 0.5 && top < h * 1.5
   const inAgenda = top >= h * 1.5 && top < h * 2.5
   const inLocation = top >= h * 2.5 && top < h * 3.5
-  const inGallery = top >= h * 3.5
+  const inGallery = top >= h * 3.5 && top < h * 4.5
+  const inAlbum = top >= h * 4.5
 
   if (isInviteInView.value !== inInvite) isInviteInView.value = inInvite
   if (isCountdownInView.value !== inCountdown) isCountdownInView.value = inCountdown
   if (isAgendaInView.value !== inAgenda) isAgendaInView.value = inAgenda
   if (isLocationInView.value !== inLocation) isLocationInView.value = inLocation
   if (isGalleryInView.value !== inGallery) isGalleryInView.value = inGallery
+  if (isAlbumInView.value !== inAlbum) isAlbumInView.value = inAlbum
 }
 
 function onContainerScroll() {
@@ -1055,6 +1156,14 @@ onMounted(() => {
               isAgendaInView.value = false
               isLocationInView.value = false
               isGalleryInView.value = true
+              isAlbumInView.value = false
+            } else if (entry.target.id === 'page-album') {
+              isInviteInView.value = false
+              isCountdownInView.value = false
+              isAgendaInView.value = false
+              isLocationInView.value = false
+              isGalleryInView.value = false
+              isAlbumInView.value = true
             }
           }
         })
@@ -1070,11 +1179,13 @@ onMounted(() => {
     const agendaEl = document.getElementById('page-agenda')
     const locationEl = document.getElementById('page-location')
     const galleryEl = document.getElementById('page-gallery')
+    const albumEl = document.getElementById('page-album')
     if (inviteEl) sectionObserver.observe(inviteEl)
     if (countdownEl) sectionObserver.observe(countdownEl)
     if (agendaEl) sectionObserver.observe(agendaEl)
     if (locationEl) sectionObserver.observe(locationEl)
     if (galleryEl) sectionObserver.observe(galleryEl)
+    if (albumEl) sectionObserver.observe(albumEl)
   }
 })
 
@@ -1131,6 +1242,8 @@ function onScrollUpIndicatorClick() {
     scrollToPage('page-location')
   } else if (top < h * 3.5) {
     scrollToPage('page-gallery')
+  } else if (top < h * 4.5) {
+    scrollToPage('page-album')
   } else {
     scrollToPage('page-invite')
   }
@@ -1171,9 +1284,14 @@ function openGoogleMaps() {
 
 function onGalleryClick() {
   const galleryEl = document.getElementById('page-gallery')
-  if (galleryEl && scrollContainer.value) {
-    const isAtGallery = scrollContainer.value.scrollTop >= (galleryEl.offsetTop - 120)
-    if (isAtGallery) {
+  const albumEl = document.getElementById('page-album')
+  if (scrollContainer.value) {
+    const top = scrollContainer.value.scrollTop
+    const h = scrollContainer.value.clientHeight || window.innerHeight
+    if (top >= h * 3.5 && top < h * 4.5) {
+      scrollToPage('page-album')
+      return
+    } else if (top >= h * 4.5) {
       scrollToPage('page-invite')
       return
     }
@@ -1182,7 +1300,7 @@ function onGalleryClick() {
 }
 
 function onWishesClick() {
-  scrollToPage('page-gallery')
+  scrollToPage('page-album')
 }
 </script>
 
