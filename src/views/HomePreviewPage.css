@@ -905,13 +905,24 @@
 
 .purple_watercolor_corner_trans {
     position: absolute;
-    bottom: clamp(15px, 5.38vw, 28px);
-    left: clamp(-26px, -5.13vw, -14px);
+    bottom: clamp(93px, 5.38vw, 28px);
+    left: clamp(-48px, -5.13vw, -55px);
     width: clamp(92px, 31.54vw, 152px);
     height: auto;
-    transform: rotate(10deg);
+    transform: rotate(4deg);
+    transform-origin: bottom center;
     z-index: 3;
     pointer-events: none;
+    animation: swayDelphiniumCornerLeft 2s ease-in-out infinite alternate;
+}
+
+@keyframes swayDelphiniumCornerLeft {
+    0% {
+        transform: rotate(4deg);
+    }
+    100% {
+        transform: rotate(6deg);
+    }
 }
 
 /* ── Bottom-right Floral Accent Bouquet ──── */
@@ -995,13 +1006,24 @@
 
 .right-purple_watercolor_corner_trans {
     position: absolute;
-    bottom: clamp(15px, 5.38vw, 28px);
-    right: clamp(-26px, -5.13vw, -14px);
+    bottom: clamp(93px, 5.38vw, 28px);
+    right: clamp(-48px, -5.13vw, -55px);
     width: clamp(92px, 31.54vw, 152px);
     height: auto;
-    transform: scaleX(-1) rotate(10deg);
+    transform: scaleX(-1) rotate(4deg);
+    transform-origin: bottom center;
     z-index: 3;
     pointer-events: none;
+    animation: swayDelphiniumCornerRight 2s ease-in-out infinite alternate;
+}
+
+@keyframes swayDelphiniumCornerRight {
+    0% {
+        transform: scaleX(-1) rotate(4deg);
+    }
+    100% {
+        transform: scaleX(-1) rotate(6deg);
+    }
 }
 
 /* ── Bottom-Center Floral Accent Bouquet ──── */

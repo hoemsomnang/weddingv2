@@ -281,13 +281,13 @@
       decoding="async"
     />
 
-  <!--  <img
-      src="@/assets/purple_watercolor_corner_trans.webp"
+    <img
+      src="@/assets/purple_delphinium_reference_nobg.webp"
       class="purple_watercolor_corner_trans"
-      alt="Bottom Right Floral Bouquet"
+      alt="Bottom Left Floral Bouquet"
       draggable="false"
       decoding="async"
-    />-->
+    />
 
 
     <!-- Bottom right Purple Flower Bouquet Accent -->
@@ -331,13 +331,13 @@
       decoding="async"
     />
 
-  <!--  <img
-      src="@/assets/purple_watercolor_corner_trans.webp"
+    <img
+      src="@/assets/purple_delphinium_reference_nobg.webp"
       class="right-purple_watercolor_corner_trans"
       alt="Bottom Right Floral Bouquet"
       draggable="false"
       decoding="async"
-    /> -->
+    /> 
 
     <!-- Bottom Center Purple Flower Bouquet Accent -->
     <img
