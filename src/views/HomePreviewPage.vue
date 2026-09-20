@@ -388,6 +388,140 @@
 
         </div>
       </section>
+
+      <!-- ── Section 5: Photo Gallery (វិចិត្រសាល) ──────────────── -->
+      <section class="snap-page section-gallery" id="page-gallery">
+        <div class="gallery-content" :class="{ 'section-animate-in': isGalleryInView }">
+
+          <!-- 1. Header Title & Subtitle -->
+          <div class="gallery-header-wrap anim-item anim-delay-1">
+            <h2 class="gallery-title">{{ invitation.galleryTitle || 'វិចិត្រសាល' }}</h2>
+            <span class="gallery-subtitle">{{ invitation.gallerySubtitle || 'MEMORIES OF LOVE' }}</span>
+          </div>
+
+          <!-- 2. Gold Ornate Divider -->
+          <div class="gallery-divider-wrap anim-item anim-delay-2">
+            <img
+              src="@/assets/gold_divider_ornate.webp"
+              class="gallery-ornate-divider"
+              alt="Divider"
+              draggable="false"
+              decoding="async"
+            />
+          </div>
+
+          <!-- 3. Featured Photo Showcase Card with Smooth Slide Animation -->
+          <div class="gallery-showcase-card anim-item anim-delay-3">
+            <div
+              class="gallery-main-frame"
+              @touchstart="handleTouchStart"
+              @touchmove="handleTouchMove"
+              @touchend="handleTouchEnd"
+              @mousedown="handleMouseDown"
+              @mousemove="handleMouseMove"
+              @mouseup="handleMouseUp"
+              @mouseleave="handleMouseUp"
+            >
+              <!-- Sliding Track with Smooth Hardware-Accelerated Physics -->
+              <div
+                class="gallery-slider-track"
+                :style="trackStyle"
+              >
+                <div
+                  v-for="(photo, pIdx) in galleryPhotos"
+                  :key="pIdx"
+                  class="gallery-slide"
+                  :class="{ 'is-active-slide': pIdx === currentPhotoIndex }"
+                  @click="openLightbox(pIdx)"
+                >
+                  <img
+                    :src="photo.src"
+                    class="gallery-slide-img"
+                    :class="{ 'is-kenburns': pIdx === currentPhotoIndex }"
+                    :alt="photo.title"
+                    draggable="false"
+                  />
+                  <!-- Subtle romantic vignette overlay -->
+                  <div class="gallery-slide-overlay"></div>
+                </div>
+              </div>
+
+              <!-- Golden Shimmer Light Sweep on active frame -->
+              <div class="gallery-gold-sheen" :key="currentPhotoIndex"></div>
+
+              <!-- Counter badge with smooth flip animation -->
+              <div class="gallery-counter-badge">
+                <transition name="count-flip" mode="out-in">
+                  <span :key="currentPhotoIndex" class="count-num">{{ currentPhotoIndex + 1 }}</span>
+                </transition>
+                <span> / {{ galleryPhotos.length }}</span>
+              </div>
+
+              <!-- Expand icon cue -->
+              <div class="gallery-expand-cue" @click="openLightbox(currentPhotoIndex)" title="Tap to zoom">
+                <svg viewBox="0 0 24 24" fill="currentColor" class="gallery-zoom-icon">
+                  <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                  <path d="M12 10h-2v2H9v-2H7V9h2V7h1v2h2v1z"/>
+                </svg>
+              </div>
+
+              <!-- Navigation arrows on photo -->
+              <button
+                type="button"
+                class="gallery-nav-arrow gallery-nav-prev"
+                @click.stop="prevPhoto"
+                aria-label="Previous photo"
+              >
+                ‹
+              </button>
+              <button
+                type="button"
+                class="gallery-nav-arrow gallery-nav-next"
+                @click.stop="nextPhoto"
+                aria-label="Next photo"
+              >
+                ›
+              </button>
+            </div>
+
+            <!-- Current Photo Caption with Glide Transition -->
+            <div class="gallery-photo-caption">
+              <transition name="caption-glide" mode="out-in">
+                <span :key="currentPhotoIndex" class="gallery-caption-title">
+                  {{ galleryPhotos[currentPhotoIndex].title }}
+                </span>
+              </transition>
+            </div>
+          </div>
+
+          <!-- 4. Interactive Thumbnail Strip -->
+          <div class="gallery-thumbs-row anim-item anim-delay-4">
+            <button
+              v-for="(photo, pIdx) in galleryPhotos"
+              :key="pIdx"
+              type="button"
+              class="gallery-thumb-btn"
+              :class="{ 'is-active': pIdx === currentPhotoIndex }"
+              @click="selectPhoto(pIdx)"
+              :aria-label="`Photo ${pIdx + 1}`"
+            >
+              <img
+                :src="photo.src"
+                class="gallery-thumb-img"
+                alt="Thumbnail"
+                draggable="false"
+                loading="lazy"
+              />
+            </button>
+          </div>
+
+          <!-- 5. Warm Blessing / Romantic Quote -->
+          <p class="gallery-closing-wish anim-item anim-delay-5">
+            « {{ invitation.galleryWishes || 'ស្នាមញញឹមនៃក្តីស្រឡាញ់ និងអនុស្សាវរីយ៍ដ៏ផ្អែមល្ហែម' }} »
+          </p>
+
+        </div>
+      </section>
     </div>
 
     <!-- ── Fixed Bottom Action Dock (Persistent on scroll) ─────── -->
@@ -605,6 +739,58 @@
       decoding="async"
     />
 
+    <!-- ── Fullscreen Gallery Lightbox Modal ──────────────────── -->
+    <teleport to="body">
+      <transition name="lightbox-fade">
+        <div
+          v-if="isLightboxOpen"
+          class="gallery-lightbox-backdrop"
+          @click.self="closeLightbox"
+        >
+          <button
+            type="button"
+            class="lightbox-close-btn"
+            @click="closeLightbox"
+            aria-label="Close fullscreen view"
+          >
+            ✕
+          </button>
+
+          <div class="lightbox-content">
+            <transition name="lightbox-zoom" mode="out-in">
+              <img
+                :key="currentPhotoIndex"
+                :src="galleryPhotos[currentPhotoIndex].src"
+                class="lightbox-img"
+                :alt="galleryPhotos[currentPhotoIndex].title"
+              />
+            </transition>
+            <div class="lightbox-caption">
+              <span class="lightbox-title">{{ galleryPhotos[currentPhotoIndex].title }}</span>
+              <span class="lightbox-counter">{{ currentPhotoIndex + 1 }} / {{ galleryPhotos.length }}</span>
+            </div>
+          </div>
+
+          <button
+            type="button"
+            class="lightbox-nav-btn lightbox-prev"
+            @click.stop="prevPhoto"
+            aria-label="Previous photo"
+          >
+            ‹
+          </button>
+          <button
+            type="button"
+            class="lightbox-nav-btn lightbox-next"
+            @click.stop="nextPhoto"
+            aria-label="Next photo"
+          >
+            ›
+          </button>
+        </div>
+      </transition>
+    </teleport>
+
   </div>
 </template>
 
@@ -626,6 +812,114 @@ import iconThread from '@/assets/icons/agenda_07_thread.webp'
 import iconLunch from '@/assets/icons/agenda_08_lunch.webp'
 import iconBanquet from '@/assets/icons/agenda_09_banquet.webp'
 
+// ── Romantic Wedding Gallery Photos ──
+import galleryPhoto1 from '@/assets/gallery/gallery_01_royal.webp'
+import galleryPhoto2 from '@/assets/gallery/gallery_02_traditional.webp'
+import galleryPhoto3 from '@/assets/gallery/gallery_03_modern.webp'
+import galleryPhoto4 from '@/assets/gallery/gallery_04_sunset.webp'
+import galleryPhoto5 from '@/assets/gallery/gallery_05_intimate.webp'
+
+const galleryPhotos = [
+  { src: galleryPhoto1, title: 'រាជសិរីមង្គល', desc: 'Royal Elegance' },
+  { src: galleryPhoto2, title: 'បុប្ផាជួបជុំ', desc: 'Garden of Love' },
+  { src: galleryPhoto3, title: 'វិមានសុភមង្គល', desc: 'Palace Romance' },
+  { src: galleryPhoto4, title: 'សន្ធ្យារស្មីស្នេហ៍', desc: 'Golden Sunset' },
+  { src: galleryPhoto5, title: 'ចំណងស្នេហ៍និរន្តរ៍', desc: 'Everlasting Promise' },
+]
+
+const currentPhotoIndex = ref(0)
+const isLightboxOpen = ref(false)
+const isDragging = ref(false)
+const dragOffset = ref(0)
+const slideDirection = ref('next')
+
+const trackStyle = computed(() => {
+  if (isDragging.value) {
+    return {
+      transform: `translateX(calc(-${currentPhotoIndex.value * 100}% + ${dragOffset.value}px))`,
+      transition: 'none',
+    }
+  }
+  return {
+    transform: `translateX(-${currentPhotoIndex.value * 100}%)`,
+    transition: 'transform 0.55s cubic-bezier(0.19, 1, 0.22, 1)',
+  }
+})
+
+// ── Touch & Mouse Drag Physics for Gallery Slider ──
+let dragStartX = 0
+let dragCurrentX = 0
+
+function handleTouchStart(e) {
+  if (!e.touches || e.touches.length === 0) return
+  isDragging.value = true
+  dragStartX = e.touches[0].clientX
+  dragCurrentX = dragStartX
+  dragOffset.value = 0
+}
+
+function handleTouchMove(e) {
+  if (!isDragging.value || !e.touches || e.touches.length === 0) return
+  dragCurrentX = e.touches[0].clientX
+  const diff = dragCurrentX - dragStartX
+  // Elastic edge resistance
+  if (
+    (currentPhotoIndex.value === 0 && diff > 0) ||
+    (currentPhotoIndex.value === galleryPhotos.length - 1 && diff < 0)
+  ) {
+    dragOffset.value = diff * 0.35
+  } else {
+    dragOffset.value = diff
+  }
+}
+
+function handleTouchEnd() {
+  if (!isDragging.value) return
+  isDragging.value = false
+  const diff = dragCurrentX - dragStartX
+  const threshold = 38
+  if (diff < -threshold) {
+    nextPhoto()
+  } else if (diff > threshold) {
+    prevPhoto()
+  }
+  dragOffset.value = 0
+}
+
+function handleMouseDown(e) {
+  isDragging.value = true
+  dragStartX = e.clientX
+  dragCurrentX = dragStartX
+  dragOffset.value = 0
+}
+
+function handleMouseMove(e) {
+  if (!isDragging.value) return
+  dragCurrentX = e.clientX
+  const diff = dragCurrentX - dragStartX
+  if (
+    (currentPhotoIndex.value === 0 && diff > 0) ||
+    (currentPhotoIndex.value === galleryPhotos.length - 1 && diff < 0)
+  ) {
+    dragOffset.value = diff * 0.35
+  } else {
+    dragOffset.value = diff
+  }
+}
+
+function handleMouseUp() {
+  if (!isDragging.value) return
+  isDragging.value = false
+  const diff = dragCurrentX - dragStartX
+  const threshold = 38
+  if (diff < -threshold) {
+    nextPhoto()
+  } else if (diff > threshold) {
+    prevPhoto()
+  }
+  dragOffset.value = 0
+}
+
 const agendaIconMap = {
   welcome: iconWelcome,
   fruit: iconFruit,
@@ -642,6 +936,33 @@ function getAgendaIcon(key) {
   return agendaIconMap[key] || iconWelcome
 }
 
+function prevPhoto() {
+  slideDirection.value = 'prev'
+  currentPhotoIndex.value = (currentPhotoIndex.value - 1 + galleryPhotos.length) % galleryPhotos.length
+}
+
+function nextPhoto() {
+  slideDirection.value = 'next'
+  currentPhotoIndex.value = (currentPhotoIndex.value + 1) % galleryPhotos.length
+}
+
+function selectPhoto(index) {
+  if (index === currentPhotoIndex.value) return
+  slideDirection.value = index > currentPhotoIndex.value ? 'next' : 'prev'
+  currentPhotoIndex.value = index
+}
+
+function openLightbox(index) {
+  if (typeof index === 'number') {
+    currentPhotoIndex.value = index
+  }
+  isLightboxOpen.value = true
+}
+
+function closeLightbox() {
+  isLightboxOpen.value = false
+}
+
 const router = useRouter()
 const scrollContainer = ref(null)
 
@@ -651,6 +972,7 @@ const isInviteInView = ref(true)
 const isCountdownInView = ref(false)
 const isAgendaInView = ref(false)
 const isLocationInView = ref(false)
+const isGalleryInView = ref(false)
 
 function onImgLoad() {
   entered.value = true
@@ -661,20 +983,23 @@ function updateActiveSections() {
   const top = scrollContainer.value.scrollTop
   const h = scrollContainer.value.clientHeight || window.innerHeight
 
-  // Symmetrical midpoint boundaries for 4 pages:
+  // Symmetrical midpoint boundaries for 5 pages:
   // Page 0 (Invite): [0, 0.5h)
   // Page 1 (Countdown): [0.5h, 1.5h)
   // Page 2 (Agenda): [1.5h, 2.5h)
-  // Page 3 (Location): [2.5h, end]
+  // Page 3 (Location): [2.5h, 3.5h)
+  // Page 4 (Gallery): [3.5h, end]
   const inInvite = top < h * 0.5
   const inCountdown = top >= h * 0.5 && top < h * 1.5
   const inAgenda = top >= h * 1.5 && top < h * 2.5
-  const inLocation = top >= h * 2.5
+  const inLocation = top >= h * 2.5 && top < h * 3.5
+  const inGallery = top >= h * 3.5
 
   if (isInviteInView.value !== inInvite) isInviteInView.value = inInvite
   if (isCountdownInView.value !== inCountdown) isCountdownInView.value = inCountdown
   if (isAgendaInView.value !== inAgenda) isAgendaInView.value = inAgenda
   if (isLocationInView.value !== inLocation) isLocationInView.value = inLocation
+  if (isGalleryInView.value !== inGallery) isGalleryInView.value = inGallery
 }
 
 function onContainerScroll() {
@@ -705,21 +1030,31 @@ onMounted(() => {
               isCountdownInView.value = false
               isAgendaInView.value = false
               isLocationInView.value = false
+              isGalleryInView.value = false
             } else if (entry.target.id === 'page-countdown') {
               isInviteInView.value = false
               isCountdownInView.value = true
               isAgendaInView.value = false
               isLocationInView.value = false
+              isGalleryInView.value = false
             } else if (entry.target.id === 'page-agenda') {
               isInviteInView.value = false
               isCountdownInView.value = false
               isAgendaInView.value = true
               isLocationInView.value = false
+              isGalleryInView.value = false
             } else if (entry.target.id === 'page-location') {
               isInviteInView.value = false
               isCountdownInView.value = false
               isAgendaInView.value = false
               isLocationInView.value = true
+              isGalleryInView.value = false
+            } else if (entry.target.id === 'page-gallery') {
+              isInviteInView.value = false
+              isCountdownInView.value = false
+              isAgendaInView.value = false
+              isLocationInView.value = false
+              isGalleryInView.value = true
             }
           }
         })
@@ -734,10 +1069,12 @@ onMounted(() => {
     const countdownEl = document.getElementById('page-countdown')
     const agendaEl = document.getElementById('page-agenda')
     const locationEl = document.getElementById('page-location')
+    const galleryEl = document.getElementById('page-gallery')
     if (inviteEl) sectionObserver.observe(inviteEl)
     if (countdownEl) sectionObserver.observe(countdownEl)
     if (agendaEl) sectionObserver.observe(agendaEl)
     if (locationEl) sectionObserver.observe(locationEl)
+    if (galleryEl) sectionObserver.observe(galleryEl)
   }
 })
 
@@ -792,6 +1129,8 @@ function onScrollUpIndicatorClick() {
     scrollToPage('page-agenda')
   } else if (top < h * 2.5) {
     scrollToPage('page-location')
+  } else if (top < h * 3.5) {
+    scrollToPage('page-gallery')
   } else {
     scrollToPage('page-invite')
   }
@@ -816,7 +1155,7 @@ function onCalendarClick() {
 function onLocationClick() {
   const locationEl = document.getElementById('page-location')
   if (locationEl && scrollContainer.value) {
-    const isAtLocation = scrollContainer.value.scrollTop >= (locationEl.offsetTop - 120)
+    const isAtLocation = scrollContainer.value.scrollTop >= (locationEl.offsetTop - 120) && scrollContainer.value.scrollTop < (locationEl.offsetTop + 120)
     if (isAtLocation) {
       scrollToPage('page-invite')
       return
@@ -831,11 +1170,19 @@ function openGoogleMaps() {
 }
 
 function onGalleryClick() {
-  router.push({ name: 'videoPreView' })
+  const galleryEl = document.getElementById('page-gallery')
+  if (galleryEl && scrollContainer.value) {
+    const isAtGallery = scrollContainer.value.scrollTop >= (galleryEl.offsetTop - 120)
+    if (isAtGallery) {
+      scrollToPage('page-invite')
+      return
+    }
+  }
+  scrollToPage('page-gallery')
 }
 
 function onWishesClick() {
-  scrollToPage('page-location')
+  scrollToPage('page-gallery')
 }
 </script>
 

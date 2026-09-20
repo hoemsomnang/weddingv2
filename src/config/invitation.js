@@ -65,6 +65,11 @@ const invitation = {
   venueMapsUrl: 'https://maps.app.goo.gl/TZE8CuT46X9Ze9r28',
   venueEmbedUrl: 'https://maps.google.com/maps?q=13.489456,102.368097&hl=km&z=16&output=embed',
 
+  /* ── Photo Gallery (វិចិត្រសាល) ────────────────────────────── */
+  galleryTitle: 'វិចិត្រសាល',
+  gallerySubtitle: 'MEMORIES OF LOVE',
+  galleryWishes: 'ស្នាមញញឹមនៃក្តីស្រឡាញ់ និងអនុស្សាវរីយ៍ដ៏ផ្អែមល្ហែម',
+
   scrollUpText: 'អូសឡើងទៅលើ',
 
   /* ── Wedding Agenda / Program Schedule ─────────────────────── */
