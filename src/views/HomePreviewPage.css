@@ -218,7 +218,7 @@
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   touch-action: pan-y;
-  z-index: 3;
+  z-index: 10;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
@@ -250,6 +250,7 @@
 /* ── Invitation Card Container (Transparent - No White Background) ── */
 .invitation-content {
   position: relative;
+  z-index: 10;
   width: 100%;
   max-width: 440px;
   background: transparent;
