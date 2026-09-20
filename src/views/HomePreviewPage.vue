@@ -455,13 +455,9 @@
                 <img
                   src="@/assets/khmer_gold_rosette_trans.webp"
                   class="gallery-nav-rosette-img"
-                  alt=""
-                  aria-hidden="true"
+                  alt="Previous"
                   draggable="false"
                 />
-                <svg viewBox="0 0 24 24" class="gallery-nav-chevron" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M14.5 17.5L9 12l5.5-5.5" />
-                </svg>
               </button>
               <button
                 type="button"
@@ -472,13 +468,9 @@
                 <img
                   src="@/assets/khmer_gold_rosette_trans.webp"
                   class="gallery-nav-rosette-img"
-                  alt=""
-                  aria-hidden="true"
+                  alt="Next"
                   draggable="false"
                 />
-                <svg viewBox="0 0 24 24" class="gallery-nav-chevron" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M9.5 17.5L15 12 9.5 6.5" />
-                </svg>
               </button>
             </div>
 
@@ -572,6 +564,50 @@
           <p class="album-closing-wish anim-item album-seq-8">
             « {{ invitation.albumWishes || 'ស្នាមញញឹម និងអនុស្សាវរីយ៍ដ៏មានតម្លៃមិនអាចបំភ្លេចបាន' }} »
           </p>
+
+        </div>
+      </section>
+
+      <!-- ── Section 7: Words of Gratitude / សេចក្តីថ្លែងអំណរគុណ ──── -->
+      <section class="snap-page section-thanks" id="page-thanks">
+        <div class="thanks-content" :class="{ 'section-animate-in': isThanksInView }">
+
+          <!-- Frosted Royal Glass Card -->
+          <div class="thanks-card">
+
+            <!-- 1. Header Title -->
+            <h2 class="thanks-title anim-item anim-delay-1">{{ invitation.thanksTitle || 'សេចក្តីថ្លែងអំណរគុណ' }}</h2>
+
+            <!-- 2. First Paragraph: Gratitude to Guests -->
+            <div class="thanks-paragraph thanks-para-1 anim-item anim-delay-2">
+              <p class="thanks-para-lead">យើងខ្ញុំជាមាតាបិតានៃ <strong>កូនប្រុស-កូនស្រី</strong></p>
+              <p class="thanks-para-text">
+                សូមគោរពថ្លែងអំណរគុណយ៉ាងជ្រាលជ្រៅបំផុតចំពោះ ឯកឧត្តម លោកជំទាវ លោកអ្នកឧកញ៉ា អ្នកឧកញ៉ា ឧកញ៉ា លោក លោកស្រី អ្នកនាង កញ្ញា ដែលបានអញ្ជើញចូលរួមជាអធិបតី និងជាភ្ញៀវកិត្តិយសក្នុង ពិធីមង្គលអាពាហ៍ពិពាហ៍ កូនប្រុស-កូនស្រី យើងខ្ញុំ។
+              </p>
+            </div>
+
+            <!-- 3. Second Paragraph: 4 Blessings -->
+            <div class="thanks-paragraph thanks-para-2 anim-item anim-delay-3">
+              <p class="thanks-para-text">
+                យើងខ្ញុំសូមគោរពសម្តែងនូវការរំភើបចិត្តខ្ពង់ខ្ពស់បំផុតជូន ឯកឧត្តម លោកជំទាវ លោកអ្នកឧកញ៉ា អ្នកឧកញ៉ា ឧកញ៉ា លោក លោកស្រី អ្នកនាង កញ្ញា និងភ្ញៀវកិត្តិយស សូមទទួលបាននូវពរទាំងបួនប្រការគឺ
+              </p>
+              <p class="thanks-blessings-four">
+                <strong>អាយុ វណ្ណៈ សុខៈ ពលៈ</strong> កុំបីឃ្លៀងឃ្លាតឡើយ។
+              </p>
+            </div>
+
+            <!-- 4. Big Final Thanks Plaque Image -->
+            <div class="thanks-closing-wrap anim-item anim-delay-4">
+              <img
+                src="@/assets/khmer_orkun_gold_trans.webp"
+                class="thanks-closing-img"
+                alt="អរគុណ"
+                draggable="false"
+                decoding="async"
+              />
+            </div>
+
+          </div>
 
         </div>
       </section>
@@ -1052,36 +1088,41 @@ const router = useRouter()
 const scrollContainer = ref(null)
 
 // ── Entrance & Scroll Section Observation State ──
-const entered = ref(true)
-const isInviteInView = ref(true)
+const entered = ref(false)
+const isInviteInView = ref(false)
 const isCountdownInView = ref(false)
 const isAgendaInView = ref(false)
 const isLocationInView = ref(false)
 const isGalleryInView = ref(false)
 const isAlbumInView = ref(false)
+const isThanksInView = ref(false)
+
+let isInitialMount = true
 
 function onImgLoad() {
   entered.value = true
 }
 
 function updateActiveSections() {
-  if (!scrollContainer.value) return
+  if (!scrollContainer.value || isInitialMount) return
   const top = scrollContainer.value.scrollTop
   const h = scrollContainer.value.clientHeight || window.innerHeight
 
-  // Symmetrical midpoint boundaries for 6 pages:
+  // Symmetrical midpoint boundaries for 7 pages:
   // Page 0 (Invite): [0, 0.5h)
   // Page 1 (Countdown): [0.5h, 1.5h)
   // Page 2 (Agenda): [1.5h, 2.5h)
   // Page 3 (Location): [2.5h, 3.5h)
   // Page 4 (Gallery Slider): [3.5h, 4.5h)
-  // Page 5 (Album Grid): [4.5h, end]
+  // Page 5 (Album Grid): [4.5h, 5.5h)
+  // Page 6 (Words of Thanks): [5.5h, end]
   const inInvite = top < h * 0.5
   const inCountdown = top >= h * 0.5 && top < h * 1.5
   const inAgenda = top >= h * 1.5 && top < h * 2.5
   const inLocation = top >= h * 2.5 && top < h * 3.5
   const inGallery = top >= h * 3.5 && top < h * 4.5
-  const inAlbum = top >= h * 4.5
+  const inAlbum = top >= h * 4.5 && top < h * 5.5
+  const inThanks = top >= h * 5.5
 
   if (isInviteInView.value !== inInvite) isInviteInView.value = inInvite
   if (isCountdownInView.value !== inCountdown) isCountdownInView.value = inCountdown
@@ -1089,6 +1130,7 @@ function updateActiveSections() {
   if (isLocationInView.value !== inLocation) isLocationInView.value = inLocation
   if (isGalleryInView.value !== inGallery) isGalleryInView.value = inGallery
   if (isAlbumInView.value !== inAlbum) isAlbumInView.value = inAlbum
+  if (isThanksInView.value !== inThanks) isThanksInView.value = inThanks
 }
 
 function onContainerScroll() {
@@ -1101,17 +1143,30 @@ let countdownTimer = null
 let sectionObserver = null
 
 onMounted(() => {
-  entered.value = true
-  updateActiveSections()
-
   countdownTimer = setInterval(() => {
     now.value = Date.now()
   }, 1000)
+
+  // Give the browser 1 frame to render initial un-animated state (opacity: 0, translateY: 30px)
+  requestAnimationFrame(() => {
+    setTimeout(() => {
+      isInitialMount = false
+      entered.value = true
+      const top = scrollContainer.value ? scrollContainer.value.scrollTop : 0
+      const h = scrollContainer.value?.clientHeight || window.innerHeight
+      if (top < h * 0.5) {
+        isInviteInView.value = true
+      } else {
+        updateActiveSections()
+      }
+    }, 80)
+  })
 
   // IntersectionObserver for snap sections
   if (typeof window !== 'undefined' && 'IntersectionObserver' in window) {
     sectionObserver = new IntersectionObserver(
       (entries) => {
+        if (isInitialMount) return
         entries.forEach((entry) => {
           if (entry.isIntersecting && entry.intersectionRatio >= 0.45) {
             if (entry.target.id === 'page-invite') {
@@ -1120,24 +1175,32 @@ onMounted(() => {
               isAgendaInView.value = false
               isLocationInView.value = false
               isGalleryInView.value = false
+              isAlbumInView.value = false
+              isThanksInView.value = false
             } else if (entry.target.id === 'page-countdown') {
               isInviteInView.value = false
               isCountdownInView.value = true
               isAgendaInView.value = false
               isLocationInView.value = false
               isGalleryInView.value = false
+              isAlbumInView.value = false
+              isThanksInView.value = false
             } else if (entry.target.id === 'page-agenda') {
               isInviteInView.value = false
               isCountdownInView.value = false
               isAgendaInView.value = true
               isLocationInView.value = false
               isGalleryInView.value = false
+              isAlbumInView.value = false
+              isThanksInView.value = false
             } else if (entry.target.id === 'page-location') {
               isInviteInView.value = false
               isCountdownInView.value = false
               isAgendaInView.value = false
               isLocationInView.value = true
               isGalleryInView.value = false
+              isAlbumInView.value = false
+              isThanksInView.value = false
             } else if (entry.target.id === 'page-gallery') {
               isInviteInView.value = false
               isCountdownInView.value = false
@@ -1145,6 +1208,7 @@ onMounted(() => {
               isLocationInView.value = false
               isGalleryInView.value = true
               isAlbumInView.value = false
+              isThanksInView.value = false
             } else if (entry.target.id === 'page-album') {
               isInviteInView.value = false
               isCountdownInView.value = false
@@ -1152,6 +1216,15 @@ onMounted(() => {
               isLocationInView.value = false
               isGalleryInView.value = false
               isAlbumInView.value = true
+              isThanksInView.value = false
+            } else if (entry.target.id === 'page-thanks') {
+              isInviteInView.value = false
+              isCountdownInView.value = false
+              isAgendaInView.value = false
+              isLocationInView.value = false
+              isGalleryInView.value = false
+              isAlbumInView.value = false
+              isThanksInView.value = true
             }
           }
         })
@@ -1168,12 +1241,14 @@ onMounted(() => {
     const locationEl = document.getElementById('page-location')
     const galleryEl = document.getElementById('page-gallery')
     const albumEl = document.getElementById('page-album')
+    const thanksEl = document.getElementById('page-thanks')
     if (inviteEl) sectionObserver.observe(inviteEl)
     if (countdownEl) sectionObserver.observe(countdownEl)
     if (agendaEl) sectionObserver.observe(agendaEl)
     if (locationEl) sectionObserver.observe(locationEl)
     if (galleryEl) sectionObserver.observe(galleryEl)
     if (albumEl) sectionObserver.observe(albumEl)
+    if (thanksEl) sectionObserver.observe(thanksEl)
   }
 })
 
@@ -1246,6 +1321,8 @@ function onScrollUpIndicatorClick() {
     scrollToPage('page-gallery')
   } else if (top < h * 4.5) {
     scrollToPage('page-album')
+  } else if (top < h * 5.5) {
+    scrollToPage('page-thanks')
   } else {
     scrollToPage('page-invite')
   }
